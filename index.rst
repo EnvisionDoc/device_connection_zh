@@ -3,37 +3,42 @@ Device connection
 
 .. toctree::
    :maxdepth: 1
-   :caption: Back to
+   :hidden:
+   :caption: 返回
 
-   EnOS fundamental <https://docs.envisioniot.com/docs/enos/en/1.0/overview/enos_introduction.html>
+   EnOS™ 智能物联网操作系统 <https://docs.envisioniot.com/docs/enos/zh_CN/latest/overview/enos_introduction.html>
 
 .. toctree::
     :maxdepth: 1
     :caption: Learn
 
-    device_connection_overview
-    device_connection_authentication
+    deviceconnection_overview
+    deviceconnection_authentication
+    secretbased_authentication
+    certificatebased_authentication
     connection_scenarios
-    thing_model_overview
+    model_overview
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Get Started
+
     gettingstarted_device_connection
+    gettingstarted_edge_connection
 
 .. toctree::
    :maxdepth: 1
    :caption: How-to's
 
-   creating_tsl
-   creating_model
-   creating_product
-   creating_device
-   managing_products
-   managing_devices
-   using_sdk
+   cloud/index
+   edge/index
+   device/index
 
 .. toctree::
    :maxdepth: 1
    :caption: Reference
 
-   device_protocol_development_reference
+   nonsdk/index
 
 
 Downloads
