@@ -2,69 +2,11 @@
 
 在EnOS平台中，无论是edge设备，还是直连IoT Hub的设备，都必须满足EnOS的统一鉴权、上线步骤，才能发送数据至平台。
 
-## 概念
+EnOS主要提供以下接入方案：
+- 设备无需通过网关（在我们的场景中，即edge），直接与云端IoT Hub进行连接及通信，完成鉴权，数据上报的场景。通过该方案连接的设备称为**直连设备**。
+- 设备通过edge与EnOS IoT Hub连接。通过该方案连接的设备称为**子设备**。网关代理子设备，帮助他们完成身份的鉴权、上线、数据发送等操作。
 
-
-
-设备与EnOS IoT Hub连接主要涉及以下操作及状态：
-
-- **注册**
-  就是在云端创建一个设备，可以通过Portal方式在界面上创建，也可以通过调用Restful接口方式创建。
-
-- **登录**
-  设备上送数据之前，必须首先登录成功，然后才可以发送数据。设备登录需要使用设备三元组鉴权。
-
-- **激活**
-  设备的第一次登录成功，会激活设备，将设备从**未激活**状态，更新为**已激活**状态。**已激活**状态包含**在线**和**离线**两个子状态，在EnOS控制台中会使用**在线**和**离线**两个子状态来代替显示**已激活**状态。
-
-
-
-## 设备激活方式和设备状态
-
-在EnOS平台初次创建的设备，默认是处于启用但未激活的状态，等待设备激活。设备激活分为_动态激活_和_静态激活_。
-- **动态激活**：动态激活的过程如下：
-  1. 设备第一次尝试连接时携带`ProductKey`，`ProductSecret`，`DeviceKey`来请求激活，鉴权通过以后，返回`DeviceSecret`给设备。
-  2. 设备通过`ProductKey`，`DeviceKey`，`DeviceSecret`尝试登录。
-  3. 设备登录成功以后，设备状态从**未激活**变成**在线**状态。此时设备可以上送数据，如果一段时间内不上送数据，设备状态变成**离线**。
-
-  如需采用动态激活方式，你需要在Product配置中开启**动态激活**。
-
-- **静态激活**：静态激活的过程如下：
-  1. 设备登录请求携带`ProductKey`，`DeviceKey`，`DeviceSecret`。
-  2. 设备登录成功以后，设备状态从**未激活**变成**在线**状态。此时设备可以上送数据，如果一段时间内不上送数据，设备状态变成**离线**。
-
-如果发现设备异常，或者不希望接受该设备的数据，可以认为将其置为**禁用**，此时设备将自动下线，处于**离线**状态。
-
-设备整体的状态可以分为操作状态（Operational state）、激活状态（Activation state）、连接状态（communication state）三个维度，如下表所示：
-
-<table>
-   <tr>
-     <th>操作状态</th>
-     <th>激活状态</th>
-     <th>连接状态</th>
-   </tr>
-   <tr>
-     <td>禁用 Disable</td>
-     <td></td>
-     <td>离线 Offline</td>
-   </tr>
-   <tr>
-     <td>启用 Enable</td>
-     <td>未激活 Inactivated</td>
-     <td></td>
-   </tr>
-   <tr>
-     <td></td>
-     <td>已激活 Activated</td>
-     <td>在线 Online</td>
-   </tr>
-   <tr>
-     <td></td>
-     <td></td>
-     <td>离线 Offline</td>
-   </tr>
-</table>
-
+通常根据设备的硬件能力及对设备连接的安全性要求选择接入方案。
 
 ## 接入场景
 
@@ -82,7 +24,8 @@
 - 带智能采集棒的设备，例如户用逆变器，户用储能电池
 - 智能家居设备，例如监控摄像头，智能温湿度计
 
-### 网关代理连接场景
+### 网关代理(子设备)连接场景
+
 设备需要网关代理才能与云端连接，常见的设备有：
 - 分布式逆变器，网关直采多台逆变器，然后数据上送云端。
 
@@ -104,7 +47,9 @@
 
 下图描绘了不同接入方式和激活方式选择方案的信息流：
 
-![Device connection overview](media/overview_device_connection_2_0_v3.png)
+![Device connection overview](media/overview_device_connection_2_0_v3_1.png)
+
+![Device connection overview](media/overview_device_connection_2_0_v3_2.png)
 
 <table>
    <tr>
@@ -163,23 +108,19 @@
   - 创建Edge产品，并注册Edge设备，获得Edge设备三元组。
   - 创建Edge待接入设备的产品，获得`productkey`。
 
-
 3. Edge出厂需要烧录以下凭据信息：
   - Edge应用的SA，以获得调用EnOS API的权限。
   - 由EnOS Cloud颁发的Edge设备三元组。
   - Edge待接入设备所属的产品`productkey`，以及设备所属Organization的标识，即`orgId`。
-
 
 4. EnOS Cloud对edge调用Restful接口进行如下鉴权：
   - Edge基于SA获得调用EnOS API的权限。如果服务账号不对，则无法调用EnOS API，鉴权失败。
   - EnOS Cloud基于IAM校验edge连接请求中携带的orgId和SA参数，验证orgId所对应的Organization是否注册了Edge应用。如果没有注册Edge App，鉴权失败。
   - EnOS Cloud校验请求参数orgId与`productkey`的归属关系。如果`productkey`对应的产品不属于orgId对应的Organization，校验不通过。
 
-
 5. EnOS Cloud对edge设备进行身份认证
   - Edge默认启用基于密钥的单项认证，Edge携带三元组连接云端，云端对edge三元组进行认证，认证通过以后edge设备登录。
   - Edge的第一次登录会同时激活edge设备，将其状态从**未激活**更新为**在线**状态。
-
 
 6. 如果启用了基于证书的双向认证，证书的生成与分发过程如下：
     - Edge配置中心向EnOS IoT Hub发起证书请求，请求中携带证书请求文件。
@@ -187,17 +128,14 @@
     - Certificate Service产生证书，并返回给IoT Hub。
     - IoT Hub记录Edge关联的证书，并将Edge证书返回给Edge。
 
-
 7. 物联网实施人员在EnOS Edge配置中心配置需要通过edge接入EnOS Cloud的子设备（如逆变器，风机，储能设备等），子设备注册有以下两种方式：
     - 动态注册：在edge配置中心直接创建要接入的设备，配置中心调用IoT Hub的REST API在EnOS Cloud中创建设备。
     - 静态注册：在EnOS Console中创建要接入设备，然后在edge配置中心进行绑定。由edge代理子设备连接至EnOS Cloud。
-
 
 8. 设备数据传输
   - Edge与IoT Hub直接连接，子设备由edge代理连接至EnOS IoT Hub。
   - Edge与与IoT Hub之间的数据传输使用MQTT协议。
   - 如果启用基于证书的双向认证机制，edge与IoT Hub之间的数据传输内容将被证书加密。
-
 
 ### 场景1.2：接入子设备已注册，设备三元组已保存在Edge
 
@@ -224,11 +162,8 @@
   - 采集棒记录`deviceSecret`，自动烧录到设备的固件当中。
   - 采集棒采集逆变器数据，使用`productKey`，`deviceKey`，`deviceSecret`去连接云端，鉴权通过，设备上线，然后发送数据。
 
-
-
 ### 场景2.2：接入设备已注册，设备出厂烧录自身的三元组
 该场景要求设备出厂的时候就需要烧录在云端注册设备得到的设备三元组，这种场景对于烧录要求较高，安全性最高，但是可操作性较低。
-
 
 ### 场景2.3：接入设备已注册，批量设备烧录相同的Product信息
 针对2.2场景可操作性较低的情况，增加了2.3场景。即

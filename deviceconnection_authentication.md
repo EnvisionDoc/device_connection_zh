@@ -1,18 +1,18 @@
-# 安全认证机制
+# 安全认证机制概述
 
 为保证设备与传输的安全，设备接入EnOS IoT Hub之前，需要经过鉴权。EnOS支持**基于密钥的单向认证**和**基于证书的双向认证**两种认证模式。
 
 ## 基于密钥的单向认证（Secret-based Authentication）
 
 讨论基于密钥的单向认证机制之前，你需要了解以下概念：
-- 组织：Organization Unit，简称OU，是EnOS平台上的客户组织。OU的标识（即orgId）在EnOS Cloud全局唯一。
-- 产品密钥证书： `ProductKey`和、`ProductSecret`。
+- **组织**（Organization）：Organization Unit，简称OU，是EnOS平台上的客户组织。OU的标识（即orgId）在EnOS Cloud全局唯一。
+- **产品密钥证书**（Product credentials）： `ProductKey`和、`ProductSecret`。
   - `ProductKey`：是EnOS为产品颁发的全局唯一标识。
   - `ProductSecret`： 由EnOS颁发的产品密钥，与`ProductKey`成对出现。常用于设备的动态激活，在设备初次连接EnOS Cloud时使用`ProductKey`、`ProductSecret`和`DeviceKey`可从云端获取`DeviceSecret`用于设备激活。
-- 设备密钥证书： `DeviceKey`和`DeviceSecret`。
+- **设备密钥证书**（Device credentials）： `DeviceKey`和`DeviceSecret`。
   - `DeviceKey`：在注册设备时，自定义或系统自动生成的设备标识，具备OU内的唯一性。
   - `DeviceSecret`：由EnOS颁发的设备密钥，和`DeviceKey`成对出现。
-- 设备三元组：包含`ProductKey`、`DeviceKey`和`DeviceSecret`三要素，主要用于**基于密钥的认证**。
+- **设备三元组**（Device triple）：包含`ProductKey`、`DeviceKey`和`DeviceSecret`三要素，主要用于**基于密钥的认证**。
 
 基于密钥的认证机制是系统默认执行的。更多信息，参考[基于密钥的认证](secretbased_authentication)。
 
@@ -21,9 +21,9 @@
 基于密钥的认证是使用设备三元组进行设备身份认证，是一种单向的认证机制，即IoT Hub校验设备是否可信，但设备并不校验对端接受数据的IoT Hub是否可信。如果要开启双向认证，则需要使用**基于证书的双向认证**机制。
 
 讨论基于证书的双向认证机制之前，你需要了解以下概念：
-- 证书颁发机构(CA)：数字证书发行机构，能够颁发CA证书。
-- CA证书：是一种数字证书，该证书的持有者可对其他证书进行签名。它符合[IETF RFC 5280](https://tools.ietf.org/html/rfc5280)标准定义的证书格式。
-- 设备证书：基于设备信息产生密钥对，基于密钥对产生证书请求文件CSR，将设备CSR发送给CA，经由CA证书签发产生的证书为设备证书。CA证书在签发产生设备证书的同时，会同时在CA注册此设备证书。设备证书同时也会保存在设备端。
+- **证书颁发机构** (Certificate authority, CA)：数字证书发行机构，能够颁发CA证书。
+- **CA证书** (CA certificate)：是一种数字证书，该证书的持有者可对其他证书进行签名。它符合[IETF RFC 5280](https://tools.ietf.org/html/rfc5280)标准定义的证书格式。
+- **设备证书** (Device certificate)：基于设备信息产生密钥对，基于密钥对产生证书请求文件CSR，将设备CSR发送给CA，经由CA证书签发产生的证书为设备证书。CA证书在签发产生设备证书的同时，会同时在CA注册此设备证书。设备证书同时也会保存在设备端。
 
 EnOS提供CA证书服务，更多内容参考：[X.509 Certificate Service in EnOS](https://docs.envisioniot.com/docs/enos/en/latest/security/x509_ca/index.html#)。
 

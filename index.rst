@@ -25,6 +25,7 @@ Device connection
 
     gettingstarted_device_connection
     gettingstarted_edge_connection
+    gettingstarted_java_ssl_connection
 
 .. toctree::
    :maxdepth: 1

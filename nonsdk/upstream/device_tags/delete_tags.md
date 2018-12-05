@@ -1,5 +1,6 @@
-# 标签信息删除
+# 删除标签信息
 
+上行
 - Request TOPIC /sys/{productKey}/{deviceName}/thing/tag/delete
 
 - Reply TOPIC /sys/{productKey}/{deviceName}/thing/tag/delete_reply
@@ -71,12 +72,12 @@
     <td>code</td>
     <td>Integer</td>
     <td>必需 </td>
-    <td>结果返回码，200 代表请求成功执行。 </td>
+    <td>结果返回码，200代表请求成功执行。 </td>
   </tr>
   <tr>
     <td>data</td>
     <td>String</td>
     <td>可选 </td>
-    <td>返回的详细信息 。JSON 格式 </td>
+    <td>返回的详细信息 。JSON格式 </td>
   </tr>
 </table>

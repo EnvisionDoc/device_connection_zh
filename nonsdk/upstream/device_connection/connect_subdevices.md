@@ -1,8 +1,11 @@
-# 子设备上线
+# 上线子设备
 
+在子设备上线前，需要确保子设备身份已经在EnOS Cloud中注册，并在Edge中添加拓扑关系。云端需要根据拓扑关系对子设备进行身份校验，以确定子设备具有使用网关通道的能力，才会上线该子设备。
+
+上行
 - Request TOPIC: /ext/session/{productKey}/{deviceKey}/combine/login
 
--   Reply TOPIC: /ext/session/{productKey}/{deviceKey}/combine/login_reply
+- Reply TOPIC: /ext/session/{productKey}/{deviceKey}/combine/login_reply
 
 ## 请求数据格式
 
@@ -87,7 +90,7 @@ sign= uppercase(hmac_sha1(deviceSecret, cleanSessiontrueclientId123deviceNametes
     <td>signmethod</td>
     <td>String</td>
     <td>必需 </td>
-    <td>签名方法，支持hmacSha1，hmacSha256，hmacMd5，Sha256</td>
+    <td>签名方法，支持hmacSha1/td>
   </tr>
   <tr>
     <td>timestamp</td>
@@ -117,12 +120,14 @@ sign= uppercase(hmac_sha1(deviceSecret, cleanSessiontrueclientId123deviceNametes
     <td>data</td>
     <td>String </td>
     <td>可选 </td>
-    <td>返回的详细信息 。JSON 格式 </td>
+    <td>返回的详细信息。JSON格式 </td>
   </tr>
   <tr>
     <td>code</td>
     <td>Integer</td>
     <td>必需 </td>
-    <td>结果返回码，200 代表请求成功执行。 </td>
+    <td>结果返回码，200代表请求成功执行。 </td>
   </tr>
 </table>
+
+**注意**: 网关下同时在线的子设备数目不能超过200，超过后，新的子设备上线请求将被拒绝。

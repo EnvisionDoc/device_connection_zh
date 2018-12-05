@@ -2,6 +2,7 @@
 
 设备端删除设备属性的请求，云端根据上报的请求，删除对应的属性值。
 
+上行
 - Request TOPIC: /sys/{productKey}/{deviceKey}/thing/attribute/delete
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/attribute/delete_reply
@@ -74,12 +75,12 @@
     <td>code</td>
     <td>Integer</td>
     <td>必需 </td>
-    <td>结果返回码，200 代表请求成功执行。 </td>
+    <td>结果返回码，200代表请求成功执行。 </td>
   </tr>
   <tr>
     <td>data</td>
     <td>String</td>
     <td>可选 </td>
-    <td>返回的详细信息 。JSON 格式 </td>
+    <td>返回的详细信息 。JSON格式 </td>
   </tr>
 </table>

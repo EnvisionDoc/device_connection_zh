@@ -1,7 +1,8 @@
-# 设备测点信息上报
+# 上报测点信息
 
 **注意**：根据物模型中的输入参数和输出参数来配置下列的参数。
 
+上行
 - Request TOPIC: /sys/{productKey}/{deviceKey}/thing/measurepoint/post
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/measurepoint/post_reply

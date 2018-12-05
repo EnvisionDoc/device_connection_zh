@@ -2,6 +2,7 @@
 
 如果使用非透传模式，设备需要按照EnOS Cloud中定义的标准格式(当前为JSON)生成数据，然后上报数据。
 
+上行
 - TOPIC: /sys/{productKey}/{deviceKey}/thing/event/{tsl.event.identifier}/post
 
 - REPLY TOPIC: /sys/{productKey}/{deviceKey}/thing/event/{tsl.event.identifier}/post_reply
@@ -119,12 +120,12 @@
     <td>code</td>
     <td>Integer</td>
     <td>必需 </td>
-    <td>结果返回码，200 代表请求成功执行。 </td>
+    <td>结果返回码，200代表请求成功执行。 </td>
   </tr>
   <tr>
     <td>data</td>
     <td>String</td>
     <td>可选 </td>
-    <td>返回的详细信息 。JSON 格式 </td>
+    <td>返回的详细信息 。JSON格式 </td>
   </tr>
 </table>

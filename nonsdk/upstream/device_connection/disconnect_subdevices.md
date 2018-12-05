@@ -1,5 +1,6 @@
-# 子设备下线
+# 下线子设备
 
+上行
 - Request TOPIC: /ext/session/{productKey}/{deviceKey}/combine/logout
 
 - Reply TOPIC: /ext/session/{productKey}/{deviceKey}/combine/logout_reply
@@ -28,7 +29,7 @@
       "productKey": "xxxxx",
       "deviceKey": "xxxxx"
   }
-
+}
 ```
 
 ## 参数说明
@@ -68,7 +69,7 @@
     <td>code</td>
     <td>Integer</td>
     <td>必需 </td>
-    <td>结果返回码，200 代表请求成功执行。 </td>
+    <td>结果返回码，200代表请求成功执行。 </td>
   </tr>
   <tr>
     <td>message</td>
@@ -80,6 +81,6 @@
     <td>data</td>
     <td>String</td>
     <td>可选 </td>
-    <td>返回的详细信息 。JSON 格式 </td>
+    <td>返回的详细信息。JSON格式 </td>
   </tr>
 </table>

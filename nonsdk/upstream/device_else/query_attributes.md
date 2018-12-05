@@ -1,5 +1,8 @@
-# 属性获取
+# 获取属性信息
 
+设备端从云端获取属性，云端根据需要查询的属性ID，返回对应的属性内容。当需要查询的属性内容为空时，云端返回设备的所有属性。
+
+上行
 - Request TOPIC: /sys/{productKey}/{deviceKey}/thing/attribute/query
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/attribute/query_reply
@@ -29,7 +32,7 @@
        "value2": "9"
      },
    "attr2": 1.02,
-   "attr3": ["1.02", "2.02", "7.93"]
+   "attr3": [1.02, 2.02, 7.93]
  }
 }
 ```
@@ -65,7 +68,7 @@
     <td>attributes</td>
     <td>Array</td>
     <td>可选 </td>
-    <td>属性的标识符，元素个数不超过200个。当查询的attributes数组为空时，表示查询所有属性。 </td>
+    <td>属性的标识符，元素个数不超过200个。若为空数组，云端会将该设备的所有属性返回。 </td>
   </tr>
   <tr>
     <td>method</td>
@@ -89,12 +92,12 @@
     <td>code</td>
     <td>Integer</td>
     <td>必需 </td>
-    <td>结果返回码，200 代表请求成功执行。 </td>
+    <td>结果返回码，200代表请求成功执行。 </td>
   </tr>
   <tr>
     <td>data</td>
     <td>String</td>
     <td>可选 </td>
-    <td>返回的详细信息 。JSON 格式 </td>
+    <td>返回的详细信息。JSON格式 </td>
   </tr>
 </table>

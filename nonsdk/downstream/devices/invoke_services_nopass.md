@@ -2,6 +2,7 @@
 
 设备端通过服务调用topic 响应设备服务调用请求，云端采用同步或异步的方式推送该消息，设备端可以利用reply topic响应该消息。
 
+下行
 - TOPIC: /sys/{productKey}/{deviceKey}/thing/service/{tsl.service.identifier}
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/service/{tsl.service.identifier}_reply
@@ -14,7 +15,7 @@
 	"version": "1.0",
 	"params": {
 		"Power": "on",
-		"WindState": "2"
+		"WindState": 2
 	},
 	"method": "thing.service.{tsl.service.identifier}"
 }
@@ -79,13 +80,13 @@
     <td>code</td>
     <td>Integer</td>
     <td>必需 </td>
-    <td>结果返回码，200 代表请求成功执行。 </td>
+    <td>返回设备端定义的错误码。200代表请求成功执行。 </td>
   </tr>
   <tr>
     <td>data</td>
     <td>String</td>
     <td>可选 </td>
-    <td>返回的详细信息 。JSON 格式 </td>
+    <td>返回的详细信息 。JSON格式 </td>
   </tr>
 </table>
 

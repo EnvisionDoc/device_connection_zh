@@ -1,7 +1,8 @@
-# 子设备拓扑关系的添加
+# 添加子设备拓扑关系
 
 Edge类型的设备， 可以通过该Topic上行请求添加它和子设备之间的拓扑关系。
 
+上行
 - Request TOPIC: /sys/{productKey}/{deviceKey}/thing/topo/add
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/topo/add_reply
@@ -107,7 +108,7 @@ Edge类型的设备， 可以通过该Topic上行请求添加它和子设备之�
     <td>code</td>
     <td>Integer</td>
     <td>必需 </td>
-    <td>结果返回码，200 代表请求成功执行。 </td>
+    <td>结果返回码，200代表请求成功执行。 </td>
   </tr>
 </table>
 

@@ -1,7 +1,8 @@
-# 属性上报
+# 上报属性信息
 
 设备端上报属性的新值，云端根据上报的请求，更新对应的属性内容。
 
+上行
 - Request TOPIC：/sys/{productKey}/{deviceKey}/thing/attribute/update
 
 - Reply TOPIC：/sys/{productKey}/{deviceKey}/thing/attribute/update_reply
@@ -92,12 +93,12 @@
     <td>code</td>
     <td>Integer</td>
     <td>必需 </td>
-    <td>结果返回码，200 代表请求成功执行。 </td>
+    <td>结果返回码，200代表请求成功执行。 </td>
   </tr>
   <tr>
     <td>data</td>
     <td>String</td>
     <td>可选 </td>
-    <td>返回的详细信息 。JSON 格式 </td>
+    <td>返回的详细信息。JSON格式 </td>
   </tr>
 </table>

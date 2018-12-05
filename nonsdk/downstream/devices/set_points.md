@@ -1,9 +1,10 @@
-# 设备测点设置
+# 设置测点
+
+设备接受到设置设备测点请求信息后会更新设备测点信息。
 
 **注意**：根据物模型中的输入参数和输出参数来配置下列的参数。
 
-         设备接受到设置设备测点请求信息后会更新设备测点信息。
-
+下行
 - TOPIC: /sys/{productKey}/{deviceKey}/thing/service/measurepoint/set
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/service/measurepoint/set_reply
@@ -15,7 +16,7 @@
 	"id": "123",
 	"version": "1.0",
 	"params": {
-		"temperature": "30.5"
+		"temperature": 30.5
 	},
 	"method": "thing.service.measurepoint.set"
 }
@@ -75,12 +76,12 @@
     <td>code</td>
     <td>Integer</td>
     <td>必需 </td>
-    <td>结果返回码，200 代表请求成功执行。 </td>
+    <td>返回设备端定义的错误码。200代表请求成功执行。 </td>
   </tr>
   <tr>
     <td>data</td>
     <td>String</td>
     <td>可选 </td>
-    <td>返回的详细信息 。JSON 格式 </td>
+    <td>返回的详细信息 。JSON格式 </td>
   </tr>
 </table>

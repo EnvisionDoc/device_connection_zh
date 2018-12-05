@@ -1,7 +1,8 @@
 # 设备注册
 
-## 子设备身份注册
+## 注册子设备身份
 
+上行
 - Request TOPIC: /sys/{productKey}/{deviceKey}/thing/device/register
 
 - Reply TOPIC: /sys/{productKey}/{deivceKey}/thing/device/register_reply
@@ -130,12 +131,12 @@
     <td>code</td>
     <td>Integer</td>
     <td>必需 </td>
-    <td>结果返回码，200 代表请求成功执行。 </td>
+    <td>结果返回码，200代表请求成功执行。 </td>
   </tr>
   <tr>
     <td>data</td>
     <td>String</td>
     <td>可选 </td>
-    <td>返回的详细信息 。JSON 格式。 </td>
+    <td>返回的详细信息 。JSON格式。 </td>
   </tr>
 </table>

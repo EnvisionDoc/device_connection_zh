@@ -2,7 +2,7 @@
 
 用于通知网关下的子设备启用的通知消息，云端使用异步方式发送该消息到网关的topic，通知网关其下属的具体子设备被启用。
 
-
+下行
 - Topic: /ext/session/{productKey}/{deviceKey}/combine/enable
 
 - Reply topic: /ext/session/{productKey}/{deviceKey}/combine/enable_reply
@@ -18,19 +18,9 @@
           {
   "productKey": "xxx",
   "deviceKey": "xxx"
-},
-{
-  "productKey": "xxx",
-  "deviceKey": "xxx"
 }
-]
-"method": "thing.combine.enable"
-}
-
-{
-"id": "123",
-"code": 200,
-"data": {}
+]，
+"method": "combine.enable"
 }
 
 ```
@@ -95,12 +85,12 @@
     <td>code</td>
     <td>Integer</td>
     <td>必需 </td>
-    <td>结果返回码，200 代表请求成功执行。 </td>
+    <td>返回设备端定义的错误码。200代表请求成功执行。 </td>
   </tr>
   <tr>
     <td>data</td>
     <td>String</td>
     <td>可选 </td>
-    <td>返回的详细信息 。JSON 格式 </td>
+    <td>返回的详细信息 。JSON格式 </td>
   </tr>
 </table>

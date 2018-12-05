@@ -1,5 +1,6 @@
-# 标签信息查询
+# 获取标签信息
 
+上行
 - Request TOPIC: /sys/{productKey}/{deviceKey}/thing/tag/query
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/tag/query_reply
@@ -76,6 +77,6 @@
     <td>code</td>
     <td>Integer</td>
     <td>必需</td>
-    <td>结果返回码，200 代表请求成功执行。</td>
+    <td>结果返回码，200代表请求成功执行。</td>
   </tr>
 </table>

@@ -1,9 +1,10 @@
-# 测点信息获取
-
-**注意**：根据物模型中的输入参数和输出参数来配置下列的参数。
+# 获取测点信息
 
 设备收到获取设备测点获取指令之后，通过reply消息向云端返回获取的测点信息。可以通过数据流转获取返回的测点信息。
 
+**注意**：根据物模型中的输入参数和输出参数来配置下列的参数。
+
+下行
 - TOPIC: /sys/{productKey}/{deviceKey}/thing/service/measurepoint/get
 
 - Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/service/measurepoint/get_reply
@@ -83,12 +84,12 @@
     <td>code</td>
     <td>Integer</td>
     <td>必需 </td>
-    <td>结果返回码，200 代表请求成功执行。 </td>
+    <td>返回设备端定义的错误码，200代表请求成功执行。</td>
   </tr>
   <tr>
     <td>data</td>
     <td>String</td>
     <td>可选 </td>
-    <td>返回的详细信息 。JSON 格式 </td>
+    <td>返回的详细信息 。JSON格式 </td>
   </tr>
 </table>
