@@ -2,7 +2,7 @@
 
 为保证设备与传输的安全，设备接入EnOS IoT Hub之前，需要经过鉴权。EnOS支持**基于密钥的单向认证**和**基于证书的双向认证**两种认证模式。
 
-## 基于密钥的单向认证（Secret-based Authentication）
+## 基于密钥的单向认证<"secretbase">
 
 讨论基于密钥的单向认证机制之前，你需要了解以下概念：
 - **组织**（Organization）：Organization Unit，简称OU，是EnOS平台上的客户组织。OU的标识（即orgId）在EnOS Cloud全局唯一。
@@ -16,7 +16,9 @@
 
 基于密钥的认证机制是系统默认执行的。更多信息，参考[基于密钥的认证](secretbased_authentication)。
 
-## 基于证书的双向认证（Certificate-based Authentication）
+
+## 基于证书的双向认证<Certificatebase>
+
 
 基于密钥的认证是使用设备三元组进行设备身份认证，是一种单向的认证机制，即IoT Hub校验设备是否可信，但设备并不校验对端接受数据的IoT Hub是否可信。如果要开启双向认证，则需要使用**基于证书的双向认证**机制。
 
