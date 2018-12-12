@@ -1,9 +1,9 @@
 # 下线子设备
 
 上行
-- Request TOPIC: /ext/session/{productKey}/{deviceKey}/combine/logout
+- 请求TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/logout`
 
-- Reply TOPIC: /ext/session/{productKey}/{deviceKey}/combine/logout_reply
+- 响应TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/logout_reply`
 
 ## 请求数据格式
 
@@ -36,10 +36,10 @@
 
 <table>
   <tr>
-    <td>参数 </td>
-    <td>类型 </td>
-    <td>是否必需 </td>
-    <td>描述 </td>
+    <th>参数 </th>
+    <th>类型 </th>
+    <th>是否必需 </th>
+    <th>描述 </th>
   </tr>
   <tr>
     <td>id</td>
@@ -68,7 +68,7 @@
   <tr>
     <td>code</td>
     <td>Integer</td>
-    <td>必需 </td>
+    <td>必需</td>
     <td>结果返回码，200代表请求成功执行。 </td>
   </tr>
   <tr>
@@ -79,7 +79,7 @@
   </tr>
   <tr>
     <td>data</td>
-    <td>String</td>
+    <td>JSON</td>
     <td>可选 </td>
     <td>返回的详细信息。JSON格式 </td>
   </tr>

@@ -1,9 +1,9 @@
 # 获取标签信息
 
 上行
-- Request TOPIC: /sys/{productKey}/{deviceKey}/thing/tag/query
+- 请求TOPIC: `/sys/{productKey}/{deviceKey}/thing/tag/query`
 
-- Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/tag/query_reply
+- 响应TOPIC: `/sys/{productKey}/{deviceKey}/thing/tag/query_reply`
 
 ## 请求数据格式
 
@@ -38,10 +38,10 @@
 
 <table>
   <tr>
-    <td>参数</td>
-    <td>类型</td>
-    <td>是否必需</td>
-    <td>描述</td>
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必需</th>
+    <th>描述</th>
   </tr>
   <tr>
     <td>id</td>
@@ -59,13 +59,13 @@
     <td>params</td>
     <td>Object</td>
     <td>必需</td>
-    <td>标签信息上报的阐述。Params   元素不能超过200个。</td>
+    <td>查询标签信息所需的参数。一次最多可查询200个标签。</td>
   </tr>
   <tr>
     <td>tags</td>
     <td>List</td>
     <td>必需</td>
-    <td>请求的tags列表，当tags为空时，表示请求设备所有的tag</td>
+    <td>查询的标签列表。当值为空时，将返回所有的设备标签。</td>
   </tr>
   <tr>
     <td>method</td>

@@ -3,9 +3,9 @@
 在子设备上线前，需要确保子设备身份已经在EnOS Cloud中注册，并在Edge中添加拓扑关系。云端需要根据拓扑关系对子设备进行身份校验，以确定子设备具有使用网关通道的能力，才会上线该子设备。
 
 上行
-- Request TOPIC: /ext/session/{productKey}/{deviceKey}/combine/login
+- 请求TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/login`
 
-- Reply TOPIC: /ext/session/{productKey}/{deviceKey}/combine/login_reply
+- 响应TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/login_reply`
 
 ## 请求数据格式
 
@@ -40,39 +40,38 @@
 
 ```
 
-所有发往EnOS Cloud 的参数都会被加密，除了sign 和signmethod之外。 EnOS Cloud会将参数按照字母顺序排序，然后将参数和值依次拼接（无拼接符号）。对加签内容，需使用signMethod指定的加签算法进行加签。
+所有发往EnOS Cloud的参数都会被加密，除了sign和signmethod之外。EnOS Cloud会将参数按照字母顺序排序，然后将参数和值依次拼接（无拼接符号）。对加签内容，需使用signMethod指定的加签算法进行加签。
 
-例如，在如下request请求中，对 params中的参数按照字母顺序依次拼接后进行加签。
-
-sign= uppercase(hmac_sha1(deviceSecret, cleanSessiontrueclientId123deviceNametestproductKey123timestamp123))
+例如，在如下request请求中，对params中的参数按照字母顺序依次拼接后进行加签。
+`sign=uppercase(hmacsha1( cleanSessiontrueclientId123deviceNametestproductKey123timestamp123{deviceSecret}))`
 
 
 ## 参数说明
 
 <table>
   <tr>
-    <td>参数 </td>
-    <td>类型 </td>
-    <td>是否必需 </td>
-    <td>描述 </td>
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必需</th>
+    <th>描述</th>
   </tr>
   <tr>
     <td>id</td>
     <td>Long</td>
     <td>可选 </td>
-    <td>消息ID号，保留值 </td>
+    <td>消息ID号，保留值</td>
   </tr>
   <tr>
     <td>params</td>
     <td>List</td>
-    <td>必需 </td>
-    <td>Parameters used for connecting sub-device   to EnOS Cloud.</td>
+    <td>必需</td>
+    <td>子设备上线的参数</td>
   </tr>
   <tr>
     <td>deviceKey</td>
     <td>String</td>
     <td>必需 </td>
-    <td>子设备的deviceKey </td>
+    <td>子设备的deviceKey</td>
   </tr>
   <tr>
     <td>productKey</td>
@@ -90,13 +89,13 @@ sign= uppercase(hmac_sha1(deviceSecret, cleanSessiontrueclientId123deviceNametes
     <td>signmethod</td>
     <td>String</td>
     <td>必需 </td>
-    <td>签名方法，支持hmacSha1/td>
+    <td>签名方法，支持hmacSha1</td>
   </tr>
   <tr>
     <td>timestamp</td>
     <td>String</td>
     <td>必需 </td>
-    <td>时间戳 </td>
+    <td>时间戳</td>
   </tr>
   <tr>
     <td>clientId</td>
@@ -117,16 +116,16 @@ sign= uppercase(hmac_sha1(deviceSecret, cleanSessiontrueclientId123deviceNametes
     <td>结果返回信息 </td>
   </tr>
   <tr>
-    <td>data</td>
-    <td>String </td>
-    <td>可选 </td>
-    <td>返回的详细信息。JSON格式 </td>
-  </tr>
-  <tr>
     <td>code</td>
     <td>Integer</td>
     <td>必需 </td>
     <td>结果返回码，200代表请求成功执行。 </td>
+  </tr>
+  <tr>
+    <td>data</td>
+    <td>JSON</td>
+    <td>可选</td>
+    <td>返回的详细信息。JSON格式 </td>
   </tr>
 </table>
 

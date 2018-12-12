@@ -3,9 +3,9 @@
 ## 注册子设备身份
 
 上行
-- Request TOPIC: /sys/{productKey}/{deviceKey}/thing/device/register
+- 请求TOPIC: `/sys/{productKey}/{deviceKey}/thing/device/register`
 
-- Reply TOPIC: /sys/{productKey}/{deivceKey}/thing/device/register_reply
+- 响应TOPIC: `/sys/{productKey}/{deivceKey}/thing/device/register_reply`
 
 ### 请求数据格式
 
@@ -113,7 +113,7 @@
     <td>assetId</td>
     <td>String</td>
     <td>必需 </td>
-    <td>设备的唯一标识Id</td>
+    <td>设备的唯一标识符</td>
   </tr>
   <tr>
     <td>deviceSecret</td>
@@ -135,8 +135,8 @@
   </tr>
   <tr>
     <td>data</td>
-    <td>String</td>
+    <td>JSON</td>
     <td>可选 </td>
-    <td>返回的详细信息 。JSON格式。 </td>
+    <td>返回的详细信息。JSON格式。 </td>
   </tr>
 </table>

@@ -1,9 +1,9 @@
 # 上报标签信息
 
 上行
-- Request TOPIC: /sys/{productKey}/{deviceKey}/thing/tag/update
+- 请求TOPIC: `/sys/{productKey}/{deviceKey}/thing/tag/update`
 
-- Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/tag/update_reply
+- 响应TOPIC: `/sys/{productKey}/{deviceKey}/thing/tag/update_reply`
 
 ## 请求数据格式
 
@@ -36,10 +36,10 @@
 
 <table>
   <tr>
-    <td>参数 </td>
-    <td>类型 </td>
-    <td>是否必需 </td>
-    <td>描述 </td>
+    <th>参数 </th>
+    <th>类型 </th>
+    <th>是否必需 </th>
+    <th>描述 </th>
   </tr>
   <tr>
     <td>id</td>
@@ -57,7 +57,7 @@
     <td>params</td>
     <td>Object</td>
     <td>必需 </td>
-    <td>标签信息上报的阐述。Params   元素不能超过200个。 </td>
+    <td>上报标签信息所需的参数。一次最多可上报200个标签。 </td>
   </tr>
   <tr>
     <td>method</td>
@@ -78,7 +78,7 @@
     <td>tagValue</td>
     <td>String</td>
     <td>必需 </td>
-    <td>标签的值 </td>
+    <td>标签的值</td>
   </tr>
   <tr>
     <td>code</td>
@@ -88,7 +88,7 @@
   </tr>
   <tr>
     <td>data </td>
-    <td>String </td>
+    <td>JSON</td>
     <td>可选 </td>
     <td>返回的详细信息 。JSON格式 </td>
   </tr>

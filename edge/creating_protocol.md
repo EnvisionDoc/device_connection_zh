@@ -1,18 +1,14 @@
-## Creating a protocol
+## 创建协议<creation>
 
-EnOS Edge supports various communication protocols. This article instructs how to develop your own protocol and upload the package that defines the protocol.
+EnOS Edge支持不同的通信协议。本文描述了如何开发客制协议。
 
-### Procedure
+## 步骤<procedure>
 
-1. Click **Edge Gateway > Edge Management** in the navigation menu.
-2. Click **Create Protocol** and provide the following settings:
+1. 在控制面板中选择**Edge网关>Edge管理**。
+2. 点击**新建协议**并提供以下配置信息（所有信息都是必填项）：
+   - **名称**：名称的规范为_协议类型-角色–名称_。对于一个标准的协议，可使用默认_Std_为名称。例如，如果协议类型为Modbus TCP，角色为Client, 姓名为Std。你只需要在本框中输入 _Std_，系统会自动组装出完整的协议名称_Modbus TCP-Client-Std_。
 
-  - **Name** (required): A complete protocol name takes the format of `Protocol Type - Role – Name`. For a standard protocol, please use the default Std as the name. For example, if the protocol type is Modbus TCP, the role is Client, and the name is Std, the user only needs to fill in Std, and the system will splice the complete protocol name "Modbus TCP-Client-Std". The developer names the protocol according to the naming convention.
-
-  - **Type** (required): Click the drop-down menu for protocol types, which displays some common protocol types that are predefined, such as Modbus RTU, Modbus TCP, DL645/97, DL645/07, IEC104, etc. The developer selects the type as needed based on the new protocol to be created.
-
-  - **Version** (required): Click the drop-down menu for protocol types, which displays some common protocol types that are predefined, such as Modbus RTU, Modbus TCP, DL645/97, DL645/07, IEC104, etc. The developer selects the type as needed based on the new protocol to be created.
-
-  - **Jar package** (required): A jar package of the protocol program running on the platform, that is, the jar package running on EnOS™ Edge. The developer can click "Upload" to upload the protocol jar package.
-
-  - **Description** (required): The developer may fill in the description dialog with a description of the applicable scenario, version,etc. of the protocol.
+   - **类型**： 从下拉菜单中选择协议的类型。
+   - **版本**：该协议的版本
+   - **Jar包**：点击**上传**来上传你为该协议创建的Jar包，将会在EnOS Edge上运行。
+   - **描述**：对该协议的描述，例如该协议支持的场景。

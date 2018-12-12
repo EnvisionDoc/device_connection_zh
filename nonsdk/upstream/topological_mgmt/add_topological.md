@@ -3,11 +3,11 @@
 Edge类型的设备， 可以通过该Topic上行请求添加它和子设备之间的拓扑关系。
 
 上行
-- Request TOPIC: /sys/{productKey}/{deviceKey}/thing/topo/add
+- 请求TOPIC: `/sys/{productKey}/{deviceKey}/thing/topo/add`
 
-- Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/topo/add_reply
+- 响应TOPIC: `/sys/{productKey}/{deviceKey}/thing/topo/add_reply`
 
-**注意**: TOPIC中的 productKey和 deviceKey为网关的验证码。
+**注意**: TOPIC中的 productKey和 deviceKey为网关的三元组。
 
 
 ## 请求数据格式
@@ -45,10 +45,10 @@ Edge类型的设备， 可以通过该Topic上行请求添加它和子设备之�
 
 <table>
   <tr>
-    <td>参数 </td>
-    <td>类型 </td>
-    <td>是否必需 </td>
-    <td>描述 </td>
+    <th>参数 </th>
+    <th>类型 </th>
+    <th>是否必需 </th>
+    <th>描述 </th>
   </tr>
   <tr>
     <td>id</td>
@@ -90,7 +90,7 @@ Edge类型的设备， 可以通过该Topic上行请求添加它和子设备之�
     <td>signmethod</td>
     <td>String</td>
     <td>必需 </td>
-    <td>签名方法，支持hmacSha1，hmacSha256，hmacMd5，Sha256。 </td>
+    <td>签名方法，支持hmacSha1。 </td>
   </tr>
   <tr>
     <td>timestamp</td>
@@ -112,8 +112,8 @@ Edge类型的设备， 可以通过该Topic上行请求添加它和子设备之�
   </tr>
 </table>
 
-所有发往EnOS Cloud 的参数都会被加密，除了sign 和signmethod之外。 EnOS Cloud会将参数按照字母顺序排序，然后将参数和值依次拼接（无拼接符号）。对加签内容，需使用signMethod指定的加签算法进行加签。
+所有发往EnOS Cloud 的参数都会被加密，除了sign和signmethod之外。EnOS Cloud会将参数按照字母顺序排序，然后将参数和值依次拼接（无拼接符号）。对加签内容，需使用signMethod指定的加签算法进行加签。
 
-例如，在如下request请求中，对 params中的参数按照字母顺序依次拼接后进行加签。
+例如，在如下request请求中，对params中的参数按照字母顺序依次拼接后进行加签。
 
-sign= uppercase(hmacsha1(deviceSecret, clientId123deviceKeytestproductKey123timestamp1524448722000))
+sign=uppercase(hmacsha1( clientId123deviceKeytestproductKey123timestamp1524448722000{deviceSecret}))

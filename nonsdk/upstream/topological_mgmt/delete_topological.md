@@ -5,8 +5,8 @@ Edge类型的设备， 可以通过该Topic上行请求删除它和子设备之�
 删除拓扑关系后，子设备利用该网关再次上线时，系统将提示拓扑关系不存在，认证不通过。
 
 上行
-- TOPIC: /sys/{productKey}/{deviceKey}/thing/topo/delete
-- Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/topo/delete_reply
+- 请求TOPIC: `/sys/{productKey}/{deviceKey}/thing/topo/delete`
+- 响应TOPIC: `/sys/{productKey}/{deviceKey}/thing/topo/delete_reply`
 
 **注意**: TOPIC中的 productKey和 deviceKey为网关的验证码。
 

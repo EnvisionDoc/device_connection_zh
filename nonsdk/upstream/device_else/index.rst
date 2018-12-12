@@ -1,4 +1,4 @@
-设备属性、测点、事件、服务
+设备属性、测点和事件（上行）
 =======================
 
 详情请参见以下章节。
@@ -6,7 +6,7 @@
 .. toctree::
   :maxdepth: 1
 
-  query_attributes
+  get_attributes
   report_attributes
   delete_attributes
   report_points

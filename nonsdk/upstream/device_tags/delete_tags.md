@@ -1,9 +1,9 @@
 # 删除标签信息
 
 上行
-- Request TOPIC /sys/{productKey}/{deviceName}/thing/tag/delete
+- 请求TOPIC：`/sys/{productKey}/{deviceName}/thing/tag/delete`
 
-- Reply TOPIC /sys/{productKey}/{deviceName}/thing/tag/delete_reply
+- 响应TOPIC：`/sys/{productKey}/{deviceName}/thing/tag/delete_reply`
 
 ## 请求数据格式
 
@@ -33,10 +33,10 @@
 
 <table>
   <tr>
-    <td>参数 </td>
-    <td>类型 </td>
-    <td>是否必需 </td>
-    <td>描述 </td>
+    <th>参数 </th>
+    <th>类型 </th>
+    <th>是否必需 </th>
+    <th>描述 </th>
   </tr>
   <tr>
     <td>id</td>
@@ -54,13 +54,13 @@
     <td>params</td>
     <td>List</td>
     <td>必需 </td>
-    <td>删除标签信息的参数 </td>
+    <td>删除标签信息所需参数 </td>
   </tr>
   <tr>
     <td>tags</td>
     <td>List</td>
     <td>必需 </td>
-    <td>标签标识符。如为空值，则不做任何操作。 </td>
+    <td>标签标识符。如值为空，则不删除任何标签。 </td>
   </tr>
   <tr>
     <td>method</td>
@@ -76,8 +76,8 @@
   </tr>
   <tr>
     <td>data</td>
-    <td>String</td>
+    <td>JSON</td>
     <td>可选 </td>
-    <td>返回的详细信息 。JSON格式 </td>
+    <td>返回的详细信息。JSON格式 </td>
   </tr>
 </table>

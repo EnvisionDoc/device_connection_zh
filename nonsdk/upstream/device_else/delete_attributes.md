@@ -3,9 +3,9 @@
 设备端删除设备属性的请求，云端根据上报的请求，删除对应的属性值。
 
 上行
-- Request TOPIC: /sys/{productKey}/{deviceKey}/thing/attribute/delete
+- 请求TOPIC: `/sys/{productKey}/{deviceKey}/thing/attribute/delete`
 
-- Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/attribute/delete_reply
+- 响应TOPIC: `/sys/{productKey}/{deviceKey}/thing/attribute/delete_reply`
 
 ## 请求数据格式
 
@@ -35,10 +35,10 @@
 
 <table>
   <tr>
-    <td>参数</td>
-    <td>类型</td>
-    <td>是否必需</td>
-    <td>描述</td>
+    <th>参数</th>
+    <th>类型</th>
+    <th>是否必需</th>
+    <th>描述</th>
   </tr>
   <tr>
     <td>id</td>
@@ -56,14 +56,13 @@
     <td>params</td>
     <td>Object</td>
     <td>必需 </td>
-    <td>
-      请求参数 </td>
+    <td>删除属性所需的参数 </td>
   </tr>
   <tr>
     <td>attributes</td>
     <td>Array</td>
     <td>可选 </td>
-    <td>属性的标识符，需要删除的属性列表。如果为空，则不做任何操作。 </td>
+    <td>需要删除的属性的标识符的列表。一次最多可删除200个属性。如果为空，则不会删除任何属性。</td>
   </tr>
   <tr>
     <td>method</td>
@@ -79,8 +78,8 @@
   </tr>
   <tr>
     <td>data</td>
-    <td>String</td>
-    <td>可选 </td>
-    <td>返回的详细信息 。JSON格式 </td>
+    <td>JSON</td>
+    <td>可选</td>
+    <td>返回的详细信息。JSON格式 </td>
   </tr>
 </table>

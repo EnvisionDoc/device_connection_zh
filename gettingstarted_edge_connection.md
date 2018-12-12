@@ -3,11 +3,11 @@
 该文章帮助你快速入门将子设备与edge预配至EnOS Cloud，使子设备通过edge连接并发送数据至EnOS Cloud，并从EnOS Cloud查看设备与edge的通信信息。
 
 
-## 场景描述
+## 场景描述<scenario>
 接入场景参考[设备接入方案](connection_scenarios)当中提到的“场景1.2”。
 
 
-## 任务描述
+## 任务描述<description>
 
 本示例以逆变器通过edge接入EnOS Cloud为例进行说明，edge采集逆变器数据，edge代理逆变器将数据发送至EnOS Cloud。整体接入场景如下图所示：
 
@@ -30,17 +30,17 @@
 6. 查看设备数据
 
 
-## 前提条件
+## 前提条件<prerequisites>
 
-本示例的前提是你已经完成[直连设备连接快速入门](gettingstarted_device_connection)。
-在本示例当中，只创建网关设备的模型、产品、设备。逆变器设备的相关配置复用**直连设备连接快速入门**。
+本示例的前提是你已经完成子设备注册（逆变器，如[直连设备连接快速入门](gettingstarted_device_connection)中所述）。
+在本示例当中，只创建网关设备的模型、产品、设备。
 
 
-## 步骤1：创建设备模型
+## 步骤1：创建设备模型<createmodel>
 
 在该步骤中假设没有可复用的edge模型，我们创建一个名为**Edge_Model**的edge设备模型。
 
-1. 在EnOS控制台中选择**接入管理 > 模型管理**。
+1. 在EnOS控制台中选择**模型管理**。
 2. 点击在页面右上方**创建模型**, 并在**创建模型**窗口提供以下配置信息：
   - **模型标识符**： Edge_Model
   - **模型名称**：Edge_Model
@@ -64,12 +64,12 @@
 有关设备模型设置的详细信息，参见[创建模型](creating_model)。
 
 
-## 步骤2：创建产品
+## 步骤2：创建产品<createproduct>
 
-在该步骤中，我们创建一个名为**Edge_Product**的产品，该产品型号的edge设备通过JSON格式上送数据至EnOS云端。
+在该步骤中，我们创建一个名为**Edge_Product**的产品。我们假设该型号的edge设备通过JSON格式上送数据且数据传输不使用CA证书加密。
 
-1. 在EnOS控制台中选择 **接入管理 > 产品管理**。
-2. 点击在页面右上方 **创建产品** ，可配置信息如下。
+1. 在EnOS控制台中选择**接入管理>产品管理**。
+2. 点击在页面右上方**创建产品**，可配置信息如下。
   - **产品名称**：Edge_Product
   - **节点类型**：网关
   - **设备模型**：Edge_Product
@@ -77,17 +77,17 @@
   - **证书双向认证**：禁用
   - **产品描述**：Edge Product
 
-3. 点击 **确定** 完成操作。
+3. 点击**确定**完成操作。
 
-有关产品设置的详细信息，参见[创建产品](creating_products)。
+有关产品设置的详细信息，参见[创建产品](cloud/creating_product)。
 
 
-## 步骤3：注册网关
+## 步骤3：注册网关<registergateway>
 
 在该步骤中，我们创建一个名为**Edge01**的edge设备，该设备属于在上一步骤中创建的**Edge_Product**产品型号。
 
-1. 在EnOS控制台中选择 **接入管理>设备管理**。
-2. 点击在页面右上方 **添加设备**，在弹出窗口配置如下信息：
+1. 在EnOS控制台中选择**接入管理>设备管理**。
+2. 点击在页面右上方**添加设备**，在弹出窗口配置如下信息：
   - **产品**：Edge_Product
   - **Device Name**：Edge01
   - **版本**：选填，默认为空
@@ -96,28 +96,29 @@
 ![](media/register_edge.png)
 
 
-## 步骤4：网关配置
+## 步骤4：通过Java SDK模拟网关代理设备发送数据<edgegateway>
 
-### 使用EnOS Edge接入数据
->注：该步骤只针对使用远景提供的EnOS Edge的场景，如果使用其他厂家的网关产品，请参考对应的网关配置指导
+### 使用EnOS Edge接入数据<access>
 
-1. 向远景的项目管理人员申请一个Edge网关设备，申请后你将会获得一个Edge网关的SN
-2. 接入Edge网关配置页面，添加Edge网关设备（填入获得的SN）
-3. 在Edge网关中完成子设备与Edge网关的连接配置
-4. 发布配置到Edge网关。
+该步骤只针对使用远景提供的EnOS Edge的场景，如果使用其他厂家的网关产品，请参考对应的网关配置指导。
 
-更多关于EnOS Edge网关配置相关内容，参考[Edge网关配置](https://docs.envisioniot.com/docs/enos-edge/zh_CN/latest/edge_overview.html)
+1. 向远景智能客户经理或支持申请一个edge网关设备，申请后你将会获得一个edge网关的SN。
+2. 进入**Edge网关>Edge管理**配置页面，填入获得的SN用以激活edge网关设备。
+3. 在edge网关中完成edge网关与子设备的连接配置。
+4. 发布配置到edge网关。
+
+更多关于EnOS Edge网关配置相关内容，参考[添加EnOS Edge网关](edge/managing_edge)
 
 
+### 通过设备端SDK模拟网关代理子设备发送数据<DeviceSDK>
 
-### 通过设备端SDK模拟网关代理子设备发送数据
 在该步骤中，我们通过设备端SDK模拟发送逆变器有功功率至云端。
 
 1. 获取[设备端SDK](https://github.com/EnvisionIot/enos-mqtt-java-sdk)。更多信息，参考该SDK的GitHub readme文件。
-2. 配置EnOS Cloud连接地址。
-3. 将注网关和子设备的三元组（`ProductKey`,`DeviceKey`,`DeviceSecret`）配置到sample连接程序当中。
-4. 修改**postSubMeasurepoint**方法，配置发送数据测点名称，这里发送逆变器有功功率点，设置点名**INV.GenActivePW**，以及对应的点值。
-5. 调用示例方法：
+2. 根据readme中的步骤配置EnOS Cloud连接。
+3. 将网关和子设备的三元组（`ProductKey`,`DeviceKey`,`DeviceSecret`）配置到示例连接程序当中。设备三元组为注册设备步骤中获得。
+4. 修改**postSubMeasurepoint**方法，配置发送数据测点名称，本例中为发送逆变器有功功率点，设置点名**INV.GenActivePW**，以及对应的点值。
+5. 调用如下示例方法：
   - 网关上线
   - 网关添加子设备拓扑
   - 网关代理子设备上线
@@ -126,11 +127,12 @@
 SDK具体使用参考[SDK设备端连接](using_sdk)。
 
 
-## 步骤5：查看设备状态
+## 步骤5：查看设备状态<checkdevice>
 
 进入控制台，选择**接入管理>设备管理**，查看Edge01和INV001设备的状态，确认设备处于在线状态。
 
 
-## 步骤6：查看设备数据
+## 步骤6：查看设备数据<checkdata>
 
-进入控制台，选择**接入管理>设备管理**，进入**设备详情**，打开**测点**tab页面，选择一个测点，点击**查看数据**，可以查看历史数据记录。
+1. 在**设备**页面，找到此设备并点击**查看**进入设备详情页面。
+2. 点击**测点**标签，选择测点**INV.GenActivePW**，点击**查看数据**查看历史数据记录。

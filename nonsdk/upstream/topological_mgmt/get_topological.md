@@ -3,11 +3,11 @@
 Edge类型的设备， 可以通过该Topic获取该设备和关联的子设备拓扑关系。
 
 上行
-- Request TOPIC: /sys/{productKey}/{deviceKey}/thing/topo/get
+- 请求TOPIC: `/sys/{productKey}/{deviceKey}/thing/topo/get`
 
-- Reply TOPIC: /sys/{productKey}/{deviceKey}/thing/topo/get_reply
+- 响应TOPIC: `/sys/{productKey}/{deviceKey}/thing/topo/get_reply`
 
-**注意**: TOPIC中的 productKey和 deviceKey为网关的验证码。
+**注意**: TOPIC中的productKey和deviceKey为网关的三元组。
 
 ## 请求数据格式
 
@@ -41,10 +41,10 @@ Edge类型的设备， 可以通过该Topic获取该设备和关联的子设备�
 
 <table>
   <tr>
-    <td>参数 </td>
-    <td>类型 </td>
-    <td>是否必需 </td>
-    <td>描述 </td>
+    <th>参数 </th>
+    <th>类型 </th>
+    <th>是否必需 </th>
+    <th>描述 </th>
   </tr>
   <tr>
     <td>id</td>
@@ -90,8 +90,8 @@ Edge类型的设备， 可以通过该Topic获取该设备和关联的子设备�
   </tr>
   <tr>
     <td>data </td>
-    <td>String </td>
+    <td>JSON</td>
     <td>可选 </td>
-    <td>返回的详细信息 。JSON格式。 </td>
+    <td>返回的详细信息。JSON格式。 </td>
   </tr>
 </table>
