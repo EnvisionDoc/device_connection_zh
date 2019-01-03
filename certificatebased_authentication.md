@@ -1,6 +1,6 @@
 # 基于证书的双向认证
 
-安全性是IoT系统中至关重要的一点。在产品配置中启用证书身份验证后，EnOS会强制执行以下安全方案用以保护EnOS edge和EnOS IoT Hub之间的连接：
+安全是IoT系统中至关重要的一点。在产品配置中启用证书身份验证后，EnOS会强制执行以下安全方案用以保护EnOS edge和EnOS IoT Hub之间的连接：
 
  - EnOS edge和EnOS IoT Hub之间的通信强制使用基于证书的双向认证。
  - 支持使用RSA算法验证签名，强制使用RSA 2048位的密钥类型。
@@ -23,7 +23,7 @@
 
 ![image](media/certificate_service_secure_communication_02.png)
 
-2a. Edge设备出厂预烧录了产品证书（`ProductKey`，`ProductSecret`）和 edge设备序列号（SN）。设备上电联网以后，上报产品证书以及序列号至云端去动态激活。如果云端鉴权认证通过，会返回`DeviceSecret`至edge。
+2a. Edge设备出厂预烧录了产品证书（`ProductKey`，`ProductSecret`）和edge设备序列号（SN）。设备上电联网以后，上报产品证书以及序列号至云端去动态激活。如果云端鉴权认证通过，会返回`DeviceSecret`至edge。
 
 2b. 在IoT Hub上，使用edge的设备序列号作为`DeviceKey`预注册edge设备，可以在EnOS控制台注册设备，也可以通过调用REST API接口注册设备。
 
@@ -86,3 +86,7 @@
 - 当你的edge在操作系统上运行时，确保你的操作系统上有安全机制。例如，防火墙。
 - 确保你有方法来升级根CA根证书与CRL。
 - 确保edge上的时钟不被篡改。
+
+## 相关信息<relatedinformation>
+
+- [实现基于证书的双向认证快速入门 (Java)](gettingstarted_java_ssl_connection)

@@ -23,7 +23,7 @@
 
 import sys
 reload(sys)
-sys.setdefaultencoding('utf8') 
+sys.setdefaultencoding('utf8')
 
 # -- General configuration ------------------------------------------------
 

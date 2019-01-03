@@ -4,7 +4,7 @@
 
 ## 开始前准备<beforestart>
 
-该产品对应的模型已经被创建。有关如何创建，参见[创建模型](creating_model)。
+该产品对应的模型已经被创建。有关如何创建，参见[创建模型](../model/creating_model)。
 
 ## 步骤1：创建产品<createproduct>
 1. 在EnOS控制台中选择**设备管理>产品管理**。
@@ -41,5 +41,5 @@
 
 ## 相关信息<relatedinformation>
 
-- [创建模型](creating_model)
+- [创建模型](../model/creating_model)
 - [创建设备](creating_device)

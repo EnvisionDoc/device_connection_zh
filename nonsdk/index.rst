@@ -50,7 +50,7 @@ EnOS Cloud为设备端开发提供了SDK，这些SDK已封装了设备端与云�
 
 设备端协议从消息的收发角度可以分为上行请求和下行指令。
 
-`使用MQTT协议与EnOS Cloud建立连接<nonsdk_login>`__
+`使用MQTT协议与EnOS Cloud建立连接 <nonsdk_login>`__
 
 .. toctree::
   :maxdepth: 1

@@ -36,4 +36,4 @@
      sign=uppercase(hmacsha1(clientId123deviceKeytestproductKey123timestamp1524448722000aaabbbcc123))
      ```
 
-     **NOTE**: The value of `timestamp`的值必须和**mqttClientId**部分的`timestamp`保持一致。
+     **NOTE**: `timestamp`的值必须和**mqttClientId**部分的`timestamp`保持一致。

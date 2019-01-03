@@ -3,7 +3,7 @@
 模型是对产品功能的抽象，模型定义了产品是什么、能做什么、可以对外提供哪些服务。该文章描述了如何创建模型。
 
 ## 开始前准备<beforestart>
-已设计好该模型所需要的功能。有关如何进行模型的功能设计，参见[物模型概述](../model_overview)。
+已设计好该模型所需要的功能。有关如何进行模型的功能设计，参见[物模型概述](model_overview)。
 
 ## 任务描述<description>
 
@@ -136,5 +136,5 @@
 
 ## 相关信息<relatedinformation>
 
-- [模型概述](../model_overview)
-- [创建产品](creating_product)
+- [模型概述](model_overview)
+- [创建产品](../cloud/creating_product)

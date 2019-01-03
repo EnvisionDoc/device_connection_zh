@@ -102,23 +102,23 @@ EnOS IoT Hub支持的安全认证方式有两种：
 
 1. Edge开发者通过EnOS Console在EnOS Cloud注册一个edge应用，并获得该应用的服务账号（SA），即`accessKey`和`accessSecret`。
 
-2. IoT实施人员登录到EnOS Console，在客户Organization中进行如下配置：
-  - 创建edge产品，并注册edge设备实例，来获得edge设备三元组。
-  - 为待接入edge的子设备创建产品，获得`productkey`。
+2. 物联网实施人员登录到EnOS Console，在客户Organization中进行如下配置：
+    - 创建edge产品，并注册edge设备实例，来获得edge设备三元组。
+    - 为待接入edge的子设备创建产品，获得`productkey`。
 
 3. 在edge制造阶段，需要烧录以下凭据信息：
-  - Edge应用的SA，将用于获得调用EnOS API的权限。
-  - 由EnOS Cloud颁发的edge设备三元组。
-  - 待接入edge的子设备所属的产品`productkey`，以及设备所属Organization的标识，即`orgId`。
+    - Edge应用的SA，将用于获得调用EnOS API的权限。
+    - 由EnOS Cloud颁发的edge设备三元组。
+    - 待接入edge的子设备所属的产品`productkey`，以及设备所属Organization的标识，即`orgId`。
 
 4. EnOS Cloud对edge调用Restful接口进行如下鉴权：
-  - Edge携带SA来获得调用EnOS API的权限。如果服务账号不对，则无法调用EnOS API，鉴权将失败。
-  - EnOS Cloud基于IAM中定义的访问权限，校验edge连接请求中携带的orgId和SA参数，并验证orgId所对应的Organization是否注册了edge应用。如果没有注册edge应用，鉴权将失败。
-  - EnOS Cloud校验请求参数`orgId`与`productkey`的归属关系。如果`productkey`对应的产品不属于`orgId`对应的Organization，校验将不通过。
+    - Edge携带SA来获得调用EnOS API的权限。如果服务账号不对，则无法调用EnOS API，鉴权将失败。
+    - EnOS Cloud基于IAM中定义的访问权限，校验edge连接请求中携带的orgId和SA参数，并验证orgId所对应的Organization是否注册了edge应用。如果没有注册edge应用，鉴权将失败。
+    - EnOS Cloud校验请求参数`orgId`与`productkey`的归属关系。如果`productkey`对应的产品不属于`orgId`对应的Organization，校验将不通过。
 
 5. EnOS Cloud对edge设备进行身份认证
-  - Edge默认启用基于密钥的单向认证，edge携带三元组连接云端，云端对edge三元组进行认证，认证通过后，edge设备被允许登录。
-  - Edge的首次登录会同时激活edge设备，设备状态将从**未激活**更新为**在线**。
+    - Edge默认启用基于密钥的单向认证，edge携带三元组连接云端，云端对edge三元组进行认证，认证通过后，edge设备被允许登录。
+    - Edge的首次登录会同时激活edge设备，设备状态将从**未激活**更新为**在线**。
 
 6. 如果启用了基于证书的双向认证，证书的生成与分发过程如下（以EnOS Edge为例）：
     - EnOS Edge向EnOS IoT Hub发起证书请求，请求中携带证书请求文件（CSR文件）。
@@ -126,14 +126,14 @@ EnOS IoT Hub支持的安全认证方式有两种：
     - Certificate Service产生证书，并返回给IoT Hub。
     - IoT Hub记录下edge关联的证书，并将edge证书返回给edge。
 
-7. IoT实施人员配置需要通过edge接入EnOS Cloud的子设备（如逆变器，风机，储能设备等），子设备注册有以下两种方式：
-    - 动态注册：在edge配置中心直接创建要接入的子设备，配置中心会调用IoT Hub的REST API在EnOS Cloud中创建设备。
-    - 静态注册：在EnOS Console中创建要接入的子设备，然后在edge配置中心进行绑定。由edge代理子设备连接至EnOS Cloud。
+7. 物联网实施人员配置需要通过edge接入EnOS Cloud的子设备（如逆变器，风机，储能设备等）连接，子设备注册有以下两种方式：
+    - 动态注册：在edge配置中心直接创建要接入的设备，配置中心调用IoT Hub的REST API在EnOS Cloud中创建设备。<!--Temporarily not supported, but coming soon-->
+    - 静态注册：在EnOS Console中创建要接入设备，然后在edge配置中心进行绑定。由edge代理子设备连接至EnOS Cloud。
 
 8. 设备数据传输
-  - Edge与IoT Hub直接连接，子设备由edge代理连接至EnOS IoT Hub。
-  - Edge与与IoT Hub之间的数据传输，使用MQTT协议。
-  - 如果启用基于证书的双向认证机制，edge与IoT Hub之间的数据传输内容将被证书加密。
+    - Edge与IoT Hub直接连接，子设备由edge代理连接至EnOS IoT Hub。
+    - Edge与与IoT Hub之间的数据传输，使用MQTT协议。
+    - 如果启用基于证书的双向认证机制，edge与IoT Hub之间的数据传输内容将被证书加密。
 
 #### 场景1.2：接入子设备已注册，设备三元组已保存在Edge<scenario1.2>
 
@@ -159,14 +159,14 @@ EnOS IoT Hub支持的安全认证方式有两种：
 2. 采集棒开发者在开发者OU下创建采集棒应用，并获得采集棒应用的SA，`accesskey`和`accesssecret`。
 
 3. 采集棒开发者对采集棒进行出厂配置，烧录以下凭证信息：
-  - 烧录采集棒应用的SA
-  - 烧录逆变器的`productKey`
-  - `productKey`所属的`orgId`
+    - 烧录采集棒应用的SA
+    - 烧录逆变器的`productKey`
+    - `productKey`所属的`orgId`
 
-4. IoT实施人员进行现场施工安装，将采集棒安装在逆变器上，将设备上电和联网。设备联网后将进行下列动作：
-  - 采集棒采集逆变器序列号，将序列号作为`deviceKey`，凭借SA调用REST API接口，通过`productKey`，`deviceKey`(序列号)，`orgId`动态创建设备，并获取设备的`deviceSecret`。
-  - 采集棒记录`deviceSecret`，自动烧录到设备的固件当中。
-  - 采集棒采集逆变器数据，使用`productKey`，`deviceKey`，`deviceSecret`去连接云端，鉴权通过，设备上线，然后发送数据。
+4. 物联网实施人员进行现场施工安装，将采集棒安装在逆变器上，将设备上电和联网。设备联网后将进行下列动作：
+   - 采集棒采集逆变器序列号，将序列号作为`deviceKey`，凭借SA调用REST API接口，通过`productKey`，`deviceKey`(序列号)，`orgId`动态创建设备，并获取设备的`deviceSecret`。
+   - 采集棒记录`deviceSecret`，自动烧录到设备的固件当中。
+   - 采集棒采集逆变器数据，使用`productKey`，`deviceKey`，`deviceSecret`去连接云端，鉴权通过，设备上线，然后发送数据。
 
 ### 场景2.2：接入设备已注册，设备出厂烧录自身的三元组<scenario2.2>
 该场景要求设备出厂的时已烧录在云端注册设备后得到的设备三元组，这种场景对于烧录要求较高，安全性最高，但是可操作性较低。

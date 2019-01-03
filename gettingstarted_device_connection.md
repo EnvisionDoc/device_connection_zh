@@ -1,6 +1,6 @@
 # 直连设备连接快速入门
 
-该文章帮助你快速入门将直连设备预配至EnOS Cloud，从设备发送数据至EnOS Cloud，并从EnOS Cloud查看设备通信信息。
+该文章帮助你快速入门将直连设备预配至EnOS Cloud，从设备发送数据至EnOS Cloud，并从EnOS Console查看设备通信信息。
 
 ## 场景描述<scenario>
 
@@ -75,13 +75,13 @@
 
 1. 在EnOS控制台中选择**模型管理**。
 2. 点击在页面右上方**创建模型**, 并在**创建模型**窗口提供以下配置信息：
-  - **模型标识符**： Inverter_Demo
-  - **模型名称**：Inverter_Demo
-  - **模型名称(英文)**：Inverter_Demo
-  - **分类**：无
-  - **模型关系**：无
-  - **模型模板**：无
-  - **模型描述**：Inverter model for demo project
+   - **模型标识符**： Inverter_Demo
+   - **模型名称**：Inverter_Demo
+   - **模型名称(英文)**：Inverter_Demo
+   - **分类**：无
+   - **模型关系**：无
+   - **模型模板**：无
+   - **模型描述**：Inverter model for demo project
 
 3. 点击**确定**完成操作。
 
@@ -89,48 +89,48 @@
 
 4. 点击**查看**，在模型详细信息界面中点击**功能定义**标签。
 5. 点击**新增**，并在**添加功能**窗口提供以下配置信息：
-  - **属性1**
-    - **名称**：逆变器类型/Inverter_Type
-    - **标识符**：invType
-    - **数据类型**：enum
-    - **枚举项**：
-      - 参数值：0；参数描述：Central
-      - 参数值：1；参数描述：String
-    - **是否必填**：是
-  - **属性2**
+   - **属性1**
+      - **名称**：逆变器类型/Inverter_Type
+      - **标识符**：invType
+      - **数据类型**：enum
+      - **枚举项**：
+        - 参数值：0；参数描述：Central
+        - 参数值：1；参数描述：String
+      - **是否必填**：是
+   - **属性2**
       - **名称**：组件容量/Inverter_Capacity
       - **标识符**：capacity
       - **数据类型**：float
       - **单位**：kWp
       - **是否必填**：是
-  - **测点**
-    - **名称**：有功功率/Active_Power
-    - **标识符**：INV.GenActivePW
-    - **数据类型**：float
-    - **测点类型**：AI
-    - **单位**：kW
-  - **服务**
-    - **名称**：控制/Control
-    - **标识符**：INV.Control
-    - **调用方式**：异步
-    - **输入参数**：
-      - 参数名称：control
-      - 标识符：control
-      - 数据类型：enum
-      - 枚举项：
-        - 参数值：0；参数描述：Stop
+   - **测点**
+      - **名称**：有功功率/Active_Power
+      - **标识符**：INV.GenActivePW
+      - **数据类型**：float
+      - **测点类型**：AI
+      - **单位**：kW
+   - **服务**
+      - **名称**：控制/Control
+      - **标识符**：INV.Control
+      - **调用方式**：异步
+      - **输入参数**：
+        - 参数名称：control
+        - 标识符：control
+        - 数据类型：enum
+        - 枚举项：
+          - 参数值：0；参数描述：Stop
         - 参数值：1；参数描述：Start
-    - **输出参数**：
-      - 参数名称：execResult
-      - 标识符：execResult
-      - 数据类型：enum
-      - 枚举项：
-        - 参数值：0；参数描述：Failure
-        - 参数值：1；参数描述：Success
-  - **事件**
-    - **名称**：故障信息/Error
-    - **标识符**：Error
-    - **事件类型**：故障
+      - **输出参数**：
+        - 参数名称：execResult
+        - 标识符：execResult
+        - 数据类型：enum
+        - 枚举项：
+          - 参数值：0；参数描述：Failure
+          - 参数值：1；参数描述：Success
+   - **事件**
+      - **名称**：故障信息/Error
+      - **标识符**：Error
+      - **事件类型**：故障
 
 有关设备模型设置的详细信息，参见[创建模型](creating_model)。
 
@@ -149,7 +149,8 @@
   - **产品描述**：Inverter product for demo
 
 3. 点击**确定**完成操作。
-  ![](media/create_product.png)
+
+   ![](media/create_product.png)
 
 
 有关产品设置的详细信息，参见[创建产品](creating_products)。
@@ -161,11 +162,11 @@
 
 1. 在EnOS控制台中选择 **接入管理>设备管理**。
 2. 点击在页面右上方 **添加设备** ，在弹出窗口配置如下信息：
-  - **产品**：Inverter_Product
-  - **Device Name**：INV001
-  - **逆变器类型**：0:Central，表示集中式逆变器
-  - **组件容量**：5.0
-  - **Device Key**：选填，系统自动生产
+   - **产品**：Inverter_Product
+   - **Device Name**：INV001
+   - **逆变器类型**：0:Central，表示集中式逆变器
+   - **组件容量**：5.0
+   - **Device Key**：选填，系统自动生产
 
   ![](media/register_device.png)
 
@@ -181,10 +182,10 @@
 
 1. 获取[设备端SDK](https://github.com/EnvisionIot/enos-mqtt-java-sdk)。更多信息，参考该SDK的GitHub readme文件。
 2. 配置EnOS Cloud连接地址。
-3. 将注册设备获取的设备三元组（`ProductKey`,`DeviceKey`,`DeviceSecret`）配置到示例连接程序当中。设备三元组为注册设备步骤中获得。
-4. 修改**postSubMeasurepoint**方法，配置发送数据测点名称。本例中为发送逆变器有功功率点，设置点名**INV.GenActivePW**，以及对应的点值。
+3. 将注册设备获取的设备三元组（`ProductKey`,`DeviceKey`,`DeviceSecret`）配置至sample连接程序当中。设备三元组为注册设备步骤中获得。
+4. 修改`postSubMeasurepoint`方法，配置发送数据测点名称，这里发送逆变器有功功率点，设置点名**INV.GenActivePW**，以及对应的点值。
 
-SDK具体使用参考[SDK设备端连接](using_sdk)。
+SDK具体使用参考[SDK设备端连接](device/using_java_sdk)。
 
 ## 步骤5：查看设备连接状态<checkconnection>
 
