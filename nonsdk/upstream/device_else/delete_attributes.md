@@ -13,9 +13,9 @@
 {
  "id": "123",
  "version": "1.0",
- "params": [
+ "params": {
    "attributes": ["attr1", "attr2", "attr3"]
- ],
+ },
  "method": "thing.attribute.delete"
 }
 ```

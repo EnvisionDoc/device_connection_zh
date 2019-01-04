@@ -5,6 +5,6 @@
 请求和响应的格式可参考 [调用设备服务 (非透传)](invoke_services_nopass)。
 
 下行
-- 请求TOPIC: `/sys/{productKey}/{deviceKey}/thing/service/down_raw`
+- 请求TOPIC: `/sys/{productKey}/{deviceKey}/thing/model/down_raw`
 
-- 响应TOPIC: `/sys/{productKey}/{deviceKey}/thing/service/down_raw_reply`
+- 响应TOPIC: `/sys/{productKey}/{deviceKey}/thing/model/down_raw_reply`

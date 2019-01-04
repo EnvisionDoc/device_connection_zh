@@ -23,11 +23,10 @@
 			"branchCurr": [
 				"1.02", "2.02", "7.93"
 			]
-		}
+		},
 		"time": 123456
-	}
-},
-"method": "thing.measurepoint.post"
+	},
+	"method": "thing.measurepoint.post"
 }
 ```
 

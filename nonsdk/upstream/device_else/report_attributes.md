@@ -13,7 +13,7 @@
 {
  "id": "123",
  "version": "1.0",
- "params": [
+ "params": {
  "attributes": {
  "attr1": {
      "value": 1.0,
@@ -22,7 +22,7 @@
  "attr2": 1.02,
  "attr3": [1.02, 2.02, 7.93]
  }
- ],
+ },
  "method": "thing.attribute.update"
 }
 ```
