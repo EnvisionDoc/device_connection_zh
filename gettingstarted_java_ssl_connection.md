@@ -6,8 +6,8 @@
 
 前期准备整体流程如下图所示：
 
-![](media/certificate_preparation.png)
-
+.. image:: media/certificate_preparation.png
+   :width: 780px
 
 ### 步骤0:创建模型、产品、设备<prerequisites>
 
@@ -17,19 +17,19 @@
 
 本步骤大部分与上述两个快速入门示例相似，差异点在创建网关产品时需要创建开启**证书双向认证机制**的产品。如下图所示：
 
-![](media/edge_ssl.png)
+.. image:: media/edge_ssl.png
+   :width: 700px
 
-
-逆变器产品不需要开启**证书双向认证机制**，因为逆变器是作为子设备由网关代理连接EnOS Cloud，只需要edge与cloud进行基于证书的双向认证即可。
+逆变器产品不需要开启 **证书双向认证机制**，因为逆变器是作为子设备由网关代理连接EnOS Cloud，只需要edge与cloud进行基于证书的双向认证即可。
 
 **创建网关设备**
 
 基于以上产品创建网关类型设备Edge01_Certificate。如下图所示：
 
-![](media/edge01_certificate.png)
+.. image:: media/edge01_certificate.png
+   :width: 780px
 
-
-记下**Edge01_Certificate**的设备三元组，将用于创建证书请求文件。以下设备三元组供您参考，您需要使用使用自己的三元组。
+记下 **Edge01_Certificate** 的设备三元组，将用于创建证书请求文件。以下设备三元组供您参考，您需要使用使用自己的三元组。
 
 - Product Key:Et***YP6
 - Device Key:UB***rOhJD
@@ -39,7 +39,8 @@
 
 逆变器设备参照[直连设备连接快速入门](gettingstarted_device_connection)进行创建。如下图所示：
 
-![](media/INV002.png)
+.. image:: media/INV002.png
+   :width: 780px
 
 ### 步骤1：获取根证书<rootcert>
 
@@ -49,7 +50,7 @@
 
 ### 步骤2：创建证书请求文件和私钥<createcsr>
 
-使用openssl命令创建证书请求文件**edge.csr**和私钥**edge.key**，示例命令如下：
+使用openssl命令创建证书请求文件 **edge.csr** 和私钥 **edge.key**，示例命令如下：
 
 ```shell
 openssl req -new -newkey rsa:2048 -out edge.csr -keyout edge.key -subj /C=CN/ST=Shanghai/L=Shanghai/O=EnOS/OU="Edge Service"/CN="UB***rOhJD" -passout pass:123456  -sha256 -batch
@@ -64,7 +65,8 @@ openssl req -new -newkey rsa:2048 -out edge.csr -keyout edge.key -subj /C=CN/ST=
 
 在生成`edge.csr`以后，调用EnOS Cloud的REST API申请证书。创建**Edge01_Certificate**网关设备时获得了设备三元组，此处可调用`applyCertificateByDeviceKey`接口获取证书。
 
-![](media/postman_getcertificate.png)
+.. image:: media/postman_getcertificate.png
+   :width: 780px
 
 获取到证书以后，将其保存为`edge.pem`。
 
@@ -226,6 +228,7 @@ public static void initSSLConnection() {
 ```
 
 ### 步骤6：启动示例程序<startprogram>
+
 启动示例程序，查看日志。
 
 ## 连接验证<verification>
@@ -234,9 +237,8 @@ public static void initSSLConnection() {
 
 在运行示例程序以后，edge上线，并添加子设备作为拓扑，代理子设备连接云端。设备连接状态如下图所示：
 
-![](media/device_list.png)
-
+.. image:: media/device_list.png
 
 ### 步骤8：查看设备数据<verifydata>
 
-进入控制台，选择**接入管理>设备管理**，进入**设备详情**，打开**测点**tab页面，选择一个测点，点击**查看数据**，可以查看历史数据记录。
+进入控制台，选择 **接入管理 > 设备管理**，进入 **设备详情**，打开 **测点** tab页面，选择一个测点，点击 **查看数据**，可以查看历史数据记录。

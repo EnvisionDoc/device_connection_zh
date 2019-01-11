@@ -48,95 +48,69 @@
 
 ### 参数说明
 
-<table>
-  <tr>
-    <td>参数 </td>
-    <td>类型 </td>
-    <td>是否必需 </td>
-    <td>说明 </td>
-  </tr>
-  <tr>
-    <td>id</td>
-    <td>Long</td>
-    <td>可选 </td>
-    <td>消息ID号，保留值 </td>
-  </tr>
-  <tr>
-    <td>version</td>
-    <td>String</td>
-    <td>必需 </td>
-    <td>协议版本号，目前协议版本1.0</td>
-  </tr>
-  <tr>
-    <td>params</td>
-    <td>List</td>
-    <td>必需 </td>
-    <td>设备动态注册的参数 </td>
-  </tr>
-  <tr>
-    <td>deviceAttributes</td>
-    <td>String</td>
-    <td>可选 </td>
-    <td>设备的属性列 </td>
-  </tr>
-  <tr>
-    <td>color</td>
-    <td>String</td>
-    <td>可选 </td>
-    <td>设备的属性 </td>
-  </tr>
-  <tr>
-    <td>deviceKey</td>
-    <td>String</td>
-    <td>可选 </td>
-    <td>子设备的deviceKey</td>
-  </tr>
-  <tr>
-    <td>deviceName</td>
-    <td>String</td>
-    <td>可选 </td>
-    <td>子设备的名字 </td>
-  </tr>
-  <tr>
-    <td>deviceDesc</td>
-    <td>String</td>
-    <td>可选 </td>
-    <td>子设备的描述 </td>
-  </tr>
-  <tr>
-    <td>productKey</td>
-    <td>String</td>
-    <td>必需 </td>
-    <td>子设备的productKey</td>
-  </tr>
-  <tr>
-    <td>assetId</td>
-    <td>String</td>
-    <td>必需 </td>
-    <td>设备的唯一标识符</td>
-  </tr>
-  <tr>
-    <td>deviceSecret</td>
-    <td>String </td>
-    <td>必需 </td>
-    <td>子设备的deviceSecret</td>
-  </tr>
-  <tr>
-    <td>method</td>
-    <td>String</td>
-    <td>必需 </td>
-    <td>请求方法 </td>
-  </tr>
-  <tr>
-    <td>code</td>
-    <td>Integer</td>
-    <td>必需 </td>
-    <td>结果返回码，200代表请求成功执行。 </td>
-  </tr>
-  <tr>
-    <td>data</td>
-    <td>JSON</td>
-    <td>可选 </td>
-    <td>返回的详细信息。JSON格式。 </td>
-  </tr>
-</table>
+.. list-table::
+   :widths: auto
+
+   * - 参数
+     - 类型
+     - 是否必需
+     - 说明
+   * - id
+     - Long
+     - 可选
+     - 消息ID号，保留值
+   * - version
+     - String
+     - 必需
+     - 协议版本号，目前协议版本1.0
+   * - params
+     - List
+     - 必需
+     - 设备动态注册的参数
+   * - deviceAttributes
+     - String
+     - 可选
+     - 设备的属性列
+   * - color
+     - String
+     - 可选
+     - 设备的属性
+   * - deviceKey
+     - String
+     - 可选
+     - 子设备的deviceKey
+   * - deviceName
+     - String
+     - 可选
+     - 子设备的名字
+   * - deviceDesc
+     - String
+     - 可选
+     - 子设备的描述
+   * - productKey
+     - String
+     - 必需
+     - 子设备的productKey
+   * - assetId
+     - String
+     - 必需
+     - 设备的唯一标识符
+   * - deviceSecret
+     - String
+     - 必需
+     - 子设备的deviceSecret
+   * - method
+     - String
+     - 必需
+     - 请求方法
+   * - code
+     - Integer
+     - 必需
+     - 结果返回码，200代表请求成功执行。
+   * - data
+     - JSON
+     - 可选
+     - 返回的详细信息。JSON格式。
+
+
+<!--end-->

@@ -48,85 +48,62 @@
 
 ## 参数说明
 
-<table>
-  <tr>
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必需</th>
-    <th>描述</th>
-  </tr>
-  <tr>
-    <td>id</td>
-    <td>Long</td>
-    <td>可选 </td>
-    <td>消息ID号，保留值</td>
-  </tr>
-  <tr>
-    <td>params</td>
-    <td>List</td>
-    <td>必需</td>
-    <td>子设备上线的参数</td>
-  </tr>
-  <tr>
-    <td>deviceKey</td>
-    <td>String</td>
-    <td>必需 </td>
-    <td>子设备的deviceKey</td>
-  </tr>
-  <tr>
-    <td>productKey</td>
-    <td>String</td>
-    <td>必需 </td>
-    <td>子设备的productKey</td>
-  </tr>
-  <tr>
-    <td>sign</td>
-    <td>String</td>
-    <td>必需 </td>
-    <td>子设备签名，规则与网关相同 </td>
-  </tr>
-  <tr>
-    <td>signmethod</td>
-    <td>String</td>
-    <td>必需 </td>
-    <td>签名方法，支持hmacSha1</td>
-  </tr>
-  <tr>
-    <td>timestamp</td>
-    <td>String</td>
-    <td>必需 </td>
-    <td>时间戳</td>
-  </tr>
-  <tr>
-    <td>clientId</td>
-    <td>String</td>
-    <td>必需 </td>
-    <td>设备端标识，可以为productKey或deviceName。 </td>
-  </tr>
-  <tr>
-    <td>cleanSession </td>
-    <td>String </td>
-    <td>必需 </td>
-    <td>值为true，true代表清理所有子设备离线消息，即QoS1的所有未接收内容 </td>
-  </tr>
-  <tr>
-    <td>message </td>
-    <td>String</td>
-    <td>必需 </td>
-    <td>结果返回信息 </td>
-  </tr>
-  <tr>
-    <td>code</td>
-    <td>Integer</td>
-    <td>必需 </td>
-    <td>结果返回码，200代表请求成功执行。 </td>
-  </tr>
-  <tr>
-    <td>data</td>
-    <td>JSON</td>
-    <td>可选</td>
-    <td>返回的详细信息。JSON格式 </td>
-  </tr>
-</table>
+.. list-table::
+   :widths: auto
 
-**注意**: 网关下同时在线的子设备数目不能超过200，超过后，新的子设备上线请求将被拒绝。
+   * - 参数
+     - 类型
+     - 是否必需
+     - 描述
+   * - id
+     - Long
+     - 可选
+     - 消息ID号，保留值
+   * - params
+     - List
+     - 必需
+     - 子设备上线的参数
+   * - deviceKey
+     - String
+     - 必需
+     - 子设备的deviceKey
+   * - productKey
+     - String
+     - 必需
+     - 子设备的productKey
+   * - sign
+     - String
+     - 必需
+     - 子设备签名，规则与网关相同
+   * - signmethod
+     - String
+     - 必需
+     - 签名方法，支持hmacSha1
+   * - timestamp
+     - String
+     - 必需
+     - 时间戳
+   * - clientId
+     - String
+     - 必需
+     - 设备端标识，可以为productKey或deviceName。
+   * - cleanSession
+     - String
+     - 必需
+     - 值为true，true代表清理所有子设备离线消息，即QoS1的所有未接收内容
+   * - message
+     - String
+     - 必需
+     - 结果返回信息
+   * - code
+     - Integer
+     - 必需
+     - 结果返回码，200代表请求成功执行。
+   * - data
+     - JSON
+     - 可选
+     - 返回的详细信息。JSON格式
+
+.. note:: 网关下同时在线的子设备数目不能超过200，超过后，新的子设备上线请求将被拒绝。
+
+<!--end-->

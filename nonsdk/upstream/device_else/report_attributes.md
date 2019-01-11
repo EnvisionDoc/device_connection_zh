@@ -40,65 +40,50 @@
 
 ## 参数说明
 
-<table>
-  <tr>
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必需</th>
-    <th>描述</th>
-  </tr>
-  <tr>
-    <td>id</td>
-    <td>Long</td>
-    <td>可选 </td>
-    <td>消息ID号，保留值 </td>
-  </tr>
-  <tr>
-    <td>version</td>
-    <td>String</td>
-    <td>必需 </td>
-    <td>协议版本号，目前协议版本1.0</td>
-  </tr>
-  <tr>
-    <td>params</td>
-    <td>Object</td>
-    <td>必需 </td>
-    <td>上报属性所需的参数</td>
-  </tr>
-  <tr>
-    <td>attributes</td>
-    <td>Array</td>
-    <td>可选</td>
-    <td>需上报的属性的标识符的列表。一次最多可上报200个属性。如果为空，则无上报的属性。</td>
-  </tr>
-  <tr>
-    <td>method</td>
-    <td>String</td>
-    <td>必需 </td>
-    <td>请求方法 </td>
-  </tr>
-  <tr>
-    <td>attr1</td>
-    <td>struct</td>
-    <td>必需 </td>
-    <td>要上报的属性的标识符，在此示例中为属性<strong>attr1</strong>的标识符。此处设置的格式必须与服务的数据类型匹配。例如，当此参数的数据类型在模型中设置为struct时，此处的格式必须与模型中保持一致，为<strong>value</strong>和<strong>value2</strong>。</td>
-  </tr>
-  <tr>
-    <td>value</td>
-    <td>String</td>
-    <td>必需 </td>
-    <td>该属性中的参数名。在本例中，为<strong>value</strong>。此处设置的值必须与服务的数据类型匹配。例如，当此参数的数据类型在模型中设置为integer时，那么值必须为integer。</td>
-  </tr>
-  <tr>
-    <td>code</td>
-    <td>Integer</td>
-    <td>必需</td>
-    <td>结果返回码，200代表请求成功执行。 </td>
-  </tr>
-  <tr>
-    <td>data</td>
-    <td>JSON</td>
-    <td>可选 </td>
-    <td>返回的详细信息。JSON格式 </td>
-  </tr>
-</table>
+.. list-table::
+   :widths: auto
+
+   * - 参数
+     - 类型
+     - 是否必需
+     - 描述
+   * - id
+     - Long
+     - 可选
+     - 消息ID号，保留值
+   * - version
+     - String
+     - 必需
+     - 协议版本号，目前协议版本1.0
+   * - params
+     - Object
+     - 必需
+     - 上报属性所需的参数
+   * - attributes
+     - Array
+     - 可选
+     - 需上报的属性的标识符的列表。一次最多可上报200个属性。如果为空，则无上报的属性。
+   * - method
+     - String
+     - 必需
+     - 请求方法
+   * - attr1
+     - struct
+     - 必需
+     - 要上报的属性的标识符，在此示例中为属性 **attr1** 的标识符。此处设置的格式必须与服务的数据类型匹配。例如，当此参数的数据类型在模型中设置为struct时，此处的格式必须与模型中保持一致，为 **value** 和 **value2** 。
+   * - value
+     - String
+     - 必需
+     - 该属性中的参数名。在本例中，为 **value** 。此处设置的值必须与服务的数据类型匹配。例如，当此参数的数据类型在模型中设置为integer时，那么值必须为integer。
+   * - code
+     - Integer
+     - 必需
+     - 结果返回码，200代表请求成功执行。
+   * - data
+     - JSON
+     - 可选
+     - 返回的详细信息。JSON格式
+
+
+
+<!--end-->

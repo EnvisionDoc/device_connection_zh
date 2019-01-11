@@ -34,7 +34,8 @@ sys.setdefaultencoding('utf8')
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autodoc',
+extensions = [
+    'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
@@ -42,7 +43,8 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
-    'sphinx.ext.githubpages']
+    'sphinx.ext.githubpages',
+    'm2r']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -51,10 +53,6 @@ templates_path = ['_templates']
 # You can specify multiple suffix as a list of string:
 #
 
-source_parsers = {
-   '.md': 'recommonmark.parser.CommonMarkParser',
-}
-
 # source_suffix = ['.rst', '.md']
 source_suffix = ['.rst', '.md']
 
@@ -62,9 +60,9 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # General information about the project.
-project = 'Device connnection 2.0'
-copyright = '2018, EnOS™'
-author = 'Envision Digital'
+project = u'Device connnection 2.0'
+copyright = u'2018, EnOS™'
+author = u'Envision Digital'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -144,7 +142,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'EnOS™DocumentationCenterdoc'
+htmlhelp_basename = u'EnOS™DocumentationCenterdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -152,44 +150,27 @@ htmlhelp_basename = 'EnOS™DocumentationCenterdoc'
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
-    # 'papersize': 'a4paper',
+    'papersize': 'a4paper',
 
     # The font size ('10pt', '11pt' or '12pt').
     #
-    # 'pointsize': '10pt',
+    'pointsize': '10pt',
 
     # Additional stuff for the LaTeX preamble.
     #
-      'preamble': r'''
-    #     \geometry{a4paper,left=3cm,right=3cm,top=2cm,bottom=2cm}',
-          \hypersetup{unicode=true}
-          \usepackage{CJKutf8}
-          \DeclareUnicodeCharacter{00A0}{\nobreakspace}
-          \DeclareUnicodeCharacter{2203}{\ensuremath{\exists}}
-          \DeclareUnicodeCharacter{2200}{\ensuremath{\forall}}
-          \DeclareUnicodeCharacter{2286}{\ensuremath{\subseteq}}
-          \DeclareUnicodeCharacter{2713}{x}
-          \DeclareUnicodeCharacter{27FA}{\ensuremath{\Longleftrightarrow}}
-          \DeclareUnicodeCharacter{221A}{\ensuremath{\sqrt{}}}
-          \DeclareUnicodeCharacter{221B}{\ensuremath{\sqrt[3]{}}}
-          \DeclareUnicodeCharacter{2295}{\ensuremath{\oplus}}
-          \DeclareUnicodeCharacter{2297}{\ensuremath{\otimes}}
-          \begin{CJK}{UTF8}{gbsn}
-          \AtEndDocument{\end{CJK}}
-      '''
-
+    'preamble': '\geometry{a4paper,left=3cm,right=3cm,top=2cm,bottom=2cm}',
 
     # Latex figure (float) alignment
     #
-    # 'figure_align': 'htbp',
+    'figure_align': 'htbp',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'EnOS™DocumentationCenter.tex', 'EnOS™ Device Connection 2.0',
-     'Envision Digital', 'manual'),
+    (master_doc, u'EnOS™DocumentationCenter.tex', u'EnOS™ Device Connection 2.0',
+     u'Envision Digital', u'manual'),
 ]
 
 
@@ -198,7 +179,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'EnOS™documentationcenter', 'EnOS™ Device Connection 2.0',
+    (master_doc, u'EnOS™documentationcenter', u'EnOS™ Device Connection 2.0',
      [author], 1)
 ]
 

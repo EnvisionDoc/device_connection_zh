@@ -36,47 +36,37 @@
 
 ## 参数说明
 
-<table>
-  <tr>
-    <th>参数</th>
-    <th>类型</th>
-    <th>是否必需</th>
-    <th>描述</th>
-  </tr>
-  <tr>
-    <td>id</td>
-    <td>Long</td>
-    <td>可选</td>
-    <td>消息ID号，保留值</td>
-  </tr>
-  <tr>
-    <td>version</td>
-    <td>String</td>
-    <td>必需</td>
-    <td>协议版本号，目前协议版本1.0</td>
-  </tr>
-  <tr>
-    <td>params</td>
-    <td>Object</td>
-    <td>必需</td>
-    <td>查询标签信息所需的参数。一次最多可查询200个标签。</td>
-  </tr>
-  <tr>
-    <td>tags</td>
-    <td>List</td>
-    <td>必需</td>
-    <td>查询的标签列表。当值为空时，将返回所有的设备标签。</td>
-  </tr>
-  <tr>
-    <td>method</td>
-    <td>String</td>
-    <td>必需</td>
-    <td>请求方法</td>
-  </tr>
-  <tr>
-    <td>code</td>
-    <td>Integer</td>
-    <td>必需</td>
-    <td>结果返回码，200代表请求成功执行。</td>
-  </tr>
-</table>
+.. list-table::
+   :widths: auto
+
+   * - 参数
+     - 类型
+     - 是否必需
+     - 描述
+   * - id
+     - Long
+     - 可选
+     - 消息ID号，保留值
+   * - version
+     - String
+     - 必需
+     - 协议版本号，目前协议版本1.0
+   * - params
+     - Object
+     - 必需
+     - 查询标签信息所需的参数。一次最多可查询200个标签。
+   * - tags
+     - List
+     - 必需
+     - 查询的标签列表。当值为空时，将返回所有的设备标签。
+   * - method
+     - String
+     - 必需
+     - 请求方法
+   * - code
+     - Integer
+     - 必需
+     - 结果返回码，200代表请求成功执行。
+
+
+<!--end-->

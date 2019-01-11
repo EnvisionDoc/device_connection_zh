@@ -7,6 +7,7 @@ EnOS设备预配功能帮助物联网开发人员进行设备全生命周期管�
 EnOS接入服务提供以下主要功能：
 
 ### 设备接入<deviceconnection>
+
 提供设备端SDK让普通设备或edge接入IoT Hub。
 - 提基于MQTT协议的设备SDK，帮助你开发运行在设备或edge上的MQTT Client应用。
 - 提供设备直连和网关代理连接等接入方案，为企业异构网络的设备接入的多种场景提供解决方案。
@@ -39,7 +40,9 @@ EnOS接入服务提供以下主要功能：
 - 数据基于TOPIC的订阅与发布
 - RRPC
 
-![MQTT-Based Device Connection Message Flow](media/device_connection_message_flow.png)
+.. image:: media/device_connection_message_flow.png
+   :alt: MQTT-Based Device Connection Message Flow
+   :width: 800px
 
 数据通过IoT Hub上送至EnOS Cloud中会由规则引擎分发至不同存储中用于以下用途：
 - 时序数据库
@@ -71,7 +74,8 @@ Topic是消息的主题。一个topic的信息占用一个连接通道，设备�
 
 基于edge网关是否以及在何处使用连接，支持以下的连接方案：
 
-![Device Connection Architecture](media/device_connection_methods.png)
+.. image:: media/device_connection_methods.png
+   :width: 780px
 
 **场景1：设备通过MQTT协议直连至IoT Hub**
 

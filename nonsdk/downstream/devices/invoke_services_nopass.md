@@ -7,7 +7,7 @@
 
 - 响应TOPIC: `/sys/{productKey}/{deviceKey}/thing/service/{tsl.service.identifier}_reply`
 
-**注意**：``tsl.service.identifier ``为TSL模板中事件的描述符。
+.. note:: ``tsl.service.identifier ``为TSL模板中事件的描述符。
 
 
 ## 请求数据格式
@@ -36,59 +36,45 @@
 
 ## 参数说明​
 
-<table>
-  <tr>
-    <th>参数 </th>
-    <th>类型​</th>
-    <th>是否必需 </th>
-    <th>描述 </th>
-  </tr>
-  <tr>
-    <td>Id</td>
-    <td>Long</td>
-    <td>可选 </td>
-    <td>消息ID号，保留值 </td>
-  </tr>
-  <tr>
-    <td>version</td>
-    <td>String</td>
-    <td>必需 </td>
-    <td>协议版本号，目前协议版本1.0</td>
-  </tr>
-  <tr>
-    <td>params</td>
-    <td>List</td>
-    <td>必需 </td>
-    <td>调用设备服务的参数 </td>
-  </tr>
-  <tr>
-    <td>method</td>
-    <td>String</td>
-    <td>必需 </td>
-    <td>请求方法 </td>
-  </tr>
-  <tr>
-    <td>Power</td>
-    <td>String</td>
-    <td>可选 </td>
-    <td>要调用的服务的标识符，在此示例中为服务<strong>Power</strong>的标识符。此处设置的值必须与服务的数据类型匹配。例如，当此参数的数据类型在模型中设置为string时，此处的值必须为string。 </td>
-  </tr>
-  <tr>
-    <td>WindState</td>
-    <td>integer</td>
-    <td>可选 </td>
-    <td>要调用的服务的标识符，在此示例中为服务<strong>Windstate</strong>的标识符。如上，此处设置的值必须与服务的数据类型匹配。</td>
-  </tr>
-  <tr>
-    <td>code</td>
-    <td>Integer</td>
-    <td>必需 </td>
-    <td>200或设备端定义的错误码。200代表请求成功执行。</td>
-  </tr>
-  <tr>
-    <td>data</td>
-    <td>JSON</td>
-    <td>可选 </td>
-    <td>返回的详细信息。JSON格式 </td>
-  </tr>
-</table>
+.. list-table::
+   :widths: auto
+
+   * - 参数
+     - 类型​
+     - 是否必需
+     - 描述
+   * - Id
+     - Long
+     - 可选
+     - 消息ID号，保留值
+   * - version
+     - String
+     - 必需
+     - 协议版本号，目前协议版本1.0
+   * - params
+     - List
+     - 必需
+     - 调用设备服务的参数
+   * - method
+     - String
+     - 必需
+     - 请求方法
+   * - Power
+     - String
+     - 可选
+     - 要调用的服务的标识符，在此示例中为服务 **Power** 的标识符。此处设置的值必须与服务的数据类型匹配。例如，当此参数的数据类型在模型中设置为string时，此处的值必须为string。
+   * - WindState
+     - integer
+     - 可选
+     - 要调用的服务的标识符，在此示例中为服务 **Windstate** 的标识符。如上，此处设置的值必须与服务的数据类型匹配。
+   * - code
+     - Integer
+     - 必需
+     - 200或设备端定义的错误码。200代表请求成功执行。
+   * - data
+     - JSON
+     - 可选
+     - 返回的详细信息。JSON格式
+
+
+<!--end-->
