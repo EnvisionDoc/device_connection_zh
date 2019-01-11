@@ -7,7 +7,7 @@
 
 - 响应TOPIC: `/sys/{productKey}/{deviceKey}/thing/service/{tsl.service.identifier}_reply`
 
-.. note:: ``tsl.service.identifier ``为TSL模板中事件的描述符。
+.. note:: `tsl.service.identifier` 为TSL模板中事件的描述符。
 
 
 ## 请求数据格式

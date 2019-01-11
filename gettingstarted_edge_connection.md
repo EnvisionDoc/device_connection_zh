@@ -12,7 +12,7 @@
 本示例以逆变器通过edge接入EnOS Cloud为例进行说明，edge采集逆变器数据，edge代理逆变器将数据发送至EnOS Cloud。整体接入场景如下图所示：
 
 .. image:: media/edge_connection_task_description.png
-   :width: 850px
+   :width: 700px
 
 基于上述接入流程图，本示例主要有以下任务：
 

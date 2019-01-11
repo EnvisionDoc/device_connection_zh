@@ -7,7 +7,7 @@
 前期准备整体流程如下图所示：
 
 .. image:: media/certificate_preparation.png
-   :width: 780px
+   :width: 700px
 
 ### 步骤0:创建模型、产品、设备<prerequisites>
 
@@ -18,7 +18,7 @@
 本步骤大部分与上述两个快速入门示例相似，差异点在创建网关产品时需要创建开启**证书双向认证机制**的产品。如下图所示：
 
 .. image:: media/edge_ssl.png
-   :width: 700px
+   :width: 450px
 
 逆变器产品不需要开启 **证书双向认证机制**，因为逆变器是作为子设备由网关代理连接EnOS Cloud，只需要edge与cloud进行基于证书的双向认证即可。
 
@@ -27,7 +27,7 @@
 基于以上产品创建网关类型设备Edge01_Certificate。如下图所示：
 
 .. image:: media/edge01_certificate.png
-   :width: 780px
+   :width: 700px
 
 记下 **Edge01_Certificate** 的设备三元组，将用于创建证书请求文件。以下设备三元组供您参考，您需要使用使用自己的三元组。
 
@@ -40,7 +40,7 @@
 逆变器设备参照[直连设备连接快速入门](gettingstarted_device_connection)进行创建。如下图所示：
 
 .. image:: media/INV002.png
-   :width: 780px
+   :width: 700px
 
 ### 步骤1：获取根证书<rootcert>
 

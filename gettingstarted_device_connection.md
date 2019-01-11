@@ -11,7 +11,7 @@
 
 本示例以户用光伏逆变器接入为例进行说明，逆变器采集器出厂烧录逆变器设备三元组。逆变器上电、联网以后，基于设备三元组认证直连云端IoT Hub。整体流程如下图所示：
 
-.. image:: edia/device_connection_task_description.png
+.. image:: media/device_connection_task_description.png
    :width: 750px
 
 基于上述接入流程图，本示例主要有以下任务：
@@ -83,7 +83,7 @@
 3. 点击 **确定** 完成操作。
 
    .. image:: media/model_inverter.png
-      :width: 600px
+      :width: 400px
 
 4. 点击 **查看**，在模型详细信息界面中点击 **功能定义** 标签。
 
@@ -152,7 +152,7 @@
 3. 点击 **确定** 完成操作。
 
    .. image:: media/create_product.png
-      :width: 600px
+      :width: 400px
 
 有关产品设置的详细信息，参见[创建产品](creating_products)。
 

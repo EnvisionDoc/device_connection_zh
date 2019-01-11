@@ -3,7 +3,7 @@
 本文章介绍设备管理涉及的主要概念。
 
 .. image:: media/device_management_concepts.png
-   :width: 700px
+   :width: 650px
 
 **模型**
 

@@ -31,12 +31,12 @@ EnOS主要提供以下接入方案：
 - 分布式逆变器：网关直采多台逆变器的数据，并将数据发送至云端。
 
   .. image:: media/inverter_gateway.png
-     :width: 700px
+     :width: 780px
 
 - 数据采集与监控系统（SCADA）：SCADA与风机直连，并采集风机数据，网关与SCADA连接，并采集SCADA数据，然后将数据发送至云端。
 
   .. image:: media/turbine_scada_gateway.png
-     :width: 700px
+     :width: 800px
 
 ## 安全认证机制<authentication>
 
@@ -75,7 +75,6 @@ EnOS IoT Hub支持的安全认证方式有两种：
      - 直连
      - 使用产品密钥的动态激活
      - 否
-
 
 
 下列章节描述了不同接入方式和激活方式选择方案的信息流。
