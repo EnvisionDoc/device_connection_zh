@@ -41,11 +41,11 @@ Edge开发者可根据EnOS定义的设备端协议进行edge端MQTT Client应用
 
 **流式计算服务**
 
-该服务提供对组织内资产计算逻辑的定义，订阅资产数据，基于预定义的计算逻辑进行数据计算，例如计算测点的5分钟平均、10分钟平均等。[了解更多 >>](https://docs.envisioniot.com/docs/online-data/zh_CN/latest/streaming_overview.html)
+该服务提供对组织内资产计算逻辑的定义，订阅资产数据，基于预定义的计算逻辑进行数据计算，例如计算测点的5分钟平均、10分钟平均等。[了解更多 >>](https://docs.eniot.io/docs/online-data/zh_CN/latest/streaming_overview.html)
 
 **告警服务**
 
-该服务提供对组织内资产异常状态的告警定义，接收资产告警上报和处理，以及针对资产数据定义告警触发触发条件，满足对资产的实时状态监控和故障分析等业务需求。[了解更多 >>](https://docs.envisioniot.com/docs/event-management/zh_CN/latest/alert_overview.html)
+该服务提供对组织内资产异常状态的告警定义，接收资产告警上报和处理，以及针对资产数据定义告警触发触发条件，满足对资产的实时状态监控和故障分析等业务需求。[了解更多 >>](https://docs.eniot.io/docs/event-management/zh_CN/latest/alert_overview.html)
 
 ## 后续操作
 

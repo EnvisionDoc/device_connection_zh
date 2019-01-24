@@ -2,13 +2,6 @@
 =========
 
 .. toctree::
-   :maxdepth: 1
-   :hidden:
-   :caption: 返回
-
-   EnOS™ 智能物联网操作系统 <https://docs.envisioniot.com/docs/enos/zh_CN/latest/overview/enos_introduction.html>
-
-.. toctree::
     :maxdepth: 1
     :caption: 概述
 
@@ -27,6 +20,7 @@
     secretbased_authentication
     certificatebased_authentication
     connection_scenarios
+    3rdcloudtoenoscloud
 
 .. toctree::
     :maxdepth: 1
@@ -56,6 +50,6 @@ Downloads
 """"""""
 
 pdf_ htmlzip_ epub_
-.. _pdf: https://docs.envisioniot.com/projects/device-connection/downloads/pdf/latest/
-.. _htmlzip: https://docs.envisioniot.com/projects/device-connection/downloads/htmlzip/latest/
-.. _epub: https://docs.envisioniot.com/projects/device-connection/downloads/epub/latest/
+.. _pdf: https://docs.eniot.io/projects/device-connection/downloads/pdf/latest/
+.. _htmlzip: https://docs.eniot.io/projects/device-connection/downloads/htmlzip/latest/
+.. _epub: https://docs.eniot.io/projects/device-connection/downloads/epub/latest/
