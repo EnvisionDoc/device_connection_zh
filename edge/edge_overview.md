@@ -17,6 +17,6 @@
 
 ### 通讯协议<communication>
 
-通信协议是能源工业中的一个常用术语。EnOS Edge提供了丰富的能源和电力行业的通用协议库，如modbus，IEC104，OPCDA，OPCUA和OPC-XML-DA。此外，EnOS还支持业界主要设备制造商。更多信息，参考[数据采集](https://docs.eniot.io/docs/enos-edge/zh_CN/latest/edge_specification/data_ingestion.html).
+通信协议是能源工业中的一个常用术语。EnOS Edge提供了丰富的能源和电力行业的通用协议库，如modbus，IEC104，OPCDA，OPCUA和OPC-XML-DA。此外，EnOS还支持业界主要设备制造商。更多信息，参考[数据采集](https://www.envisioniot.com/docs/enos-edge/zh_CN/latest/edge_specification/data_ingestion.html).
 
 你可以在设备模板中查看和选择你需要的模板, 并进行相应的改动，用以避免开发或整合这些协议。

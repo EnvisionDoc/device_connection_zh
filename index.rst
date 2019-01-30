@@ -50,6 +50,6 @@ Downloads
 """"""""
 
 pdf_ htmlzip_ epub_
-.. _pdf: https://docs.eniot.io/projects/device-connection/downloads/pdf/latest/
-.. _htmlzip: https://docs.eniot.io/projects/device-connection/downloads/htmlzip/latest/
-.. _epub: https://docs.eniot.io/projects/device-connection/downloads/epub/latest/
+.. _pdf: https://www.envisioniot.com/projects/device-connection/downloads/pdf/latest/
+.. _htmlzip: https://www.envisioniot.com/projects/device-connection/downloads/htmlzip/latest/
+.. _epub: https://www.envisioniot.com/projects/device-connection/downloads/epub/latest/

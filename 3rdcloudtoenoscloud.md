@@ -25,12 +25,12 @@
 1. 创建模型参考：[创建模型](model/creating_model)
 2. 创建产品参考：[创建产品](cloud/creating_product)
 3. 创建设备参考：[创建设备](cloud/creating_device)
-5. 创建应用参考：[管理应用](https://docs.eniot.io/docs/app-development/zh_CN/latest/managing_apps.html)。创建应用以后，平台为应用分配`accessKey`和`secretKey`，凭借`accessKey`和`secretKey`可以调用EnOS API接口。
+5. 创建应用参考：[管理应用](https://www.envisioniot.com/docs/app-development/zh_CN/latest/managing_apps.html)。创建应用以后，平台为应用分配`accessKey`和`secretKey`，凭借`accessKey`和`secretKey`可以调用EnOS API接口。
 6. 测点数据上报主要涉及两个接口：
   - 获取设备信息：主要基于deviceKey获取assetId，对应接口getDeviceByDeviceKey
   - 发送测点数据：对应接口uploadDeviceMeasurepoints
 7. 创建设备：对应接口registerDevices
-8. 接口调用参考：[EnOS REST API 快速入门](https://docs.eniot.io/docs/app-development/zh_CN/latest/gettingstarted_api.html)
+8. 接口调用参考：[EnOS REST API 快速入门](https://www.envisioniot.com/docs/app-development/zh_CN/latest/gettingstarted_api.html)
 9. 维护第三方云设备主数据与EnOS Cloud主数据映射。在第三方云上整理设备主数据id，可以将设备主数据id作为EnOS Cloud的deviceKey，并且每个设备必须关联其在EnOS Cloud上对应的product。assetId可以基于getDeviceByDeviceKey接口动态查询获得，整体映射表如下表所示：
 
 
