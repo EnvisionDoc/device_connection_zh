@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# EnOS™ Documentation Center documentation build configuration file, created by
+# EnOS Documentation Center documentation build configuration file, created by
 # sphinx-quickstart on Fri Aug 17 15:19:38 2018.
 #
 # This file is execfile()d with the current directory set to its
@@ -61,7 +61,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Device connnection 2.0'
-copyright = u'2018, EnOS™'
+copyright = u'2018, EnOS'
 author = u'Envision Digital'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -142,7 +142,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = u'EnOS™DocumentationCenterdoc'
+htmlhelp_basename = u'EnOSDocumentationCenterdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -169,7 +169,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, u'EnOS™DocumentationCenter.tex', u'EnOS™ Device Connection 2.0',
+    (master_doc, u'EnOSDocumentationCenter.tex', u'EnOS Device Connection 2.0',
      u'Envision Digital', u'manual'),
 ]
 
@@ -179,7 +179,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, u'EnOS™documentationcenter', u'EnOS™ Device Connection 2.0',
+    (master_doc, u'EnOSdocumentationcenter', u'EnOS Device Connection 2.0',
      [author], 1)
 ]
 
@@ -190,8 +190,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'EnOS™DocumentationCenter', 'EnOS™ Device Connection 2.0',
-     author, 'EnOS™DocumentationCenter', 'One line description of project.',
+    (master_doc, 'EnOSDocumentationCenter', 'EnOS Device Connection 2.0',
+     author, 'EnOSDocumentationCenter', 'One line description of project.',
      'Miscellaneous'),
 ]
 
@@ -221,5 +221,3 @@ epub_exclude_files = ['search.html']
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'https://docs.python.org/': None}
-
-

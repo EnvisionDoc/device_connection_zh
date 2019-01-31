@@ -67,7 +67,7 @@ EnOS Edge是一款基于软件的edge产品，支持数据采集，多种通信�
 
 ### Topic
 
-Topic是消息的主题。一个topic的信息占用一个连接通道，设备可发布或订阅某个topic的消息。在你进行设备预配时，你需要配置该设备对应的topic名称，当设备连接成功后将向该topic发布或订阅消息以实现与EnOS Cloud的通讯。
+Topic是消息的主题。一个topic的信息占用一个连接通道，设备可发布或订阅某个topic的消息。当设备连接成功后将向对应topic发布或订阅消息以实现与EnOS Cloud的通讯。
 
 
 ## 接入场景<scenarios>
