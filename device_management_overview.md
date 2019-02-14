@@ -29,7 +29,7 @@ Edge开发者可根据EnOS定义的设备端协议进行edge端MQTT Client应用
 
 设备模型使得成千上万来自不同制造商的设备统一于少量的通用模型，从而简化应用的处理。基于行业经验，EnOS模型库积累了大量可复用的模型。[了解更多 >>](model/model_overview)
 
-**设备预配**
+**设备管理**
 
 帮助实现设备全生命周期管理，建立设备与EnOS Cloud间的数据通道，并保障设备终端与EnOS Cloud间进行安全的双向通信。[了解更多 >>](deviceconnection_overview)
 

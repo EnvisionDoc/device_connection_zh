@@ -72,38 +72,46 @@ openssl req -new -newkey rsa:2048 -out edge.csr -keyout edge.key -subj /C=CN/ST=
 
 ### 步骤4：使用keytool生成JKS文件<generatejks>
 
-通过以下命令生产`edge.jks`文件。
+按照以下步骤生成`edge.jks`文件。
 
-```
-//查看文件
+#### a.查看文件
+```shell
 [root@DemoMachine cert]# ll
 total 12
 -rw-r--r-- 1 root root 1395 Nov 28 19:51 cacert.pem
 -rw-r--r-- 1 root root 1858 Nov 28 19:51 edge.key
 -rw-r--r-- 1 root root 1416 Nov 28 20:08 edge.pem
+```
 
-//将证书与私钥导出为.p12文件
+#### b.将证书与私钥导出为.p12文件
+```shell
 [root@DemoMachine cert]# openssl pkcs12 -export -in edge.pem -inkey edge.key -out edge.p12 -name edge -CAfile cacert.pem -caname cacert
 Enter pass phrase for edge.key:
 Enter Export Password:
 Verifying - Enter Export Password:
+```
 
-//查看生成的.p12文件
+#### c.查看生成的.p12文件
+```shell
 [root@DemoMachine cert]# ll
 total 16
 -rw-r--r-- 1 root root 1395 Nov 28 19:51 cacert.pem
 -rw-r--r-- 1 root root 1858 Nov 28 19:51 edge.key
 -rw-r--r-- 1 root root 2654 Nov 28 20:19 edge.p12
 -rw-r--r-- 1 root root 1416 Nov 28 20:08 edge.pem
+```
 
-//导入.p12文件至密钥库
+#### d.导入.p12文件至密钥库
+```shell
 [root@DemoMachine cert]# keytool -importkeystore -deststorepass 123456 -destkeypass 123456 -destkeystore edge.jks -srckeystore edge.p12 -srcstoretype PKCS12 -srcstorepass 123456 -alias edge
 Importing keystore edge.p12 to edge.jks...
 
 Warning:
 The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore edge.jks -destkeystore edge.jks -deststoretype pkcs12".
+```
 
-//查看jks文件
+#### e.查看jks文件
+```shell
 [root@DemoMachine cert]# ll
 total 20
 -rw-r--r-- 1 root root 1395 Nov 28 19:51 cacert.pem
@@ -111,8 +119,10 @@ total 20
 -rw-r--r-- 1 root root 1858 Nov 28 19:51 edge.key
 -rw-r--r-- 1 root root 2654 Nov 28 20:19 edge.p12
 -rw-r--r-- 1 root root 1416 Nov 28 20:08 edge.pem
+```
 
-//检查jks文件含有一个可信证书条目（trusted certificate entry）
+#### f.检查jks文件含有一个可信证书条目（trusted certificate entry）
+```shell
 [root@DemoMachine cert]# keytool -list --keystore edge.jks
 Enter keystore password:  
 Keystore type: jks
@@ -125,8 +135,10 @@ Certificate fingerprint (SHA1): 38:16:5A:1F:1D:68:44:44:FE:56:1A:84:36:31:85:CB:
 
 Warning:
 The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore edge.jks -destkeystore edge.jks -deststoretype pkcs12".
+```
 
-//导入cacert根证书至密钥库
+#### g.导入cacert根证书至密钥库
+```shell
 [root@DemoMachine cert]# keytool -import -trustcacerts -alias cacert -file cacert.pem -keystore edge.jks -storepass 123456
 Owner: EMAILADDRESS=ca@eniot.io, CN=EnOS CA, OU=EnOS CA, O=EnOS, L=Shanghai, ST=Shanghai, C=CN
 Issuer: EMAILADDRESS=ca@eniot.io, CN=EnOS CA, OU=EnOS CA, O=EnOS, L=Shanghai, ST=Shanghai, C=CN
@@ -169,8 +181,10 @@ Certificate was added to keystore
 
 Warning:
 The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore edge.jks -destkeystore edge.jks -deststoretype pkcs12".
+```
 
-//检查jks文件含有两个可信证书条目（trusted certificate entry）
+#### h.检查jks文件含有两个可信证书条目（trusted certificate entry）
+```shell
 [root@DemoMachine cert]# keytool -list --keystore edge.jks
 Enter keystore password:  
 Keystore type: jks
@@ -186,7 +200,6 @@ Certificate fingerprint (SHA1): 38:16:5A:1F:1D:68:44:44:FE:56:1A:84:36:31:85:CB:
 Warning:
 The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore edge.jks -destkeystore edge.jks -deststoretype pkcs12".
 [root@DemoMachine cert]#
-
 ```
 
 ## 使用Java SDK配置的证书<configcert>

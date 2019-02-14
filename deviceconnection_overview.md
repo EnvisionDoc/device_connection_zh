@@ -1,6 +1,6 @@
-# 设备预配
+# 设备管理
 
-EnOS设备预配功能帮助物联网开发人员进行设备全生命周期管理，该服务建立设备与EnOS Cloud间的数据通道，并保障设备终端与EnOS Cloud间进行安全的双向通信。
+EnOS设备管理功能帮助物联网开发人员进行设备全生命周期管理，该服务建立设备与EnOS Cloud间的数据通道，并保障设备终端与EnOS Cloud间进行安全的双向通信。
 
 ## 主要功能<functions>
 
@@ -12,7 +12,7 @@ EnOS接入服务提供以下主要功能：
 - 提基于MQTT协议的设备SDK，帮助你开发运行在设备或edge上的MQTT Client应用。
 - 提供设备直连和网关代理连接等接入方案，为企业异构网络的设备接入的多种场景提供解决方案。
 
-### 设备管理<devicemanagement>
+### 设备生命周期管理<devicemanagement>
 
 提供完整的设备生命周期管理功能，包括：
 - 设备注册
@@ -40,9 +40,8 @@ EnOS接入服务提供以下主要功能：
 - 数据基于TOPIC的订阅与发布
 - RRPC
 
-.. image:: media/device_connection_message_flow.png
-   :alt: MQTT-Based Device Connection Message Flow
-   :width: 800px
+.. image:: media/device_connection_methods.png
+   :width: 700px
 
 数据通过IoT Hub上送至EnOS Cloud中会由规则引擎分发至不同存储中用于以下用途：
 - 时序数据库
@@ -55,9 +54,10 @@ EnOS接入服务提供以下主要功能：
 
 IoT Hub是EnOS为设备连接提供的云代理服务。IoT Hub有以下功能：
  - 从设备到云端的安全可靠的大规模双向消息传输。
+ - 公开连接MQTT客户端的接口。
  - 将数据从客户端转发到EnOS上的相应订户。
  - 提供许可授权以及创建事物和策略。
- - 公开连接MQTT客户端的接口。
+
 
 ### Edge网关<edge>
 
@@ -79,7 +79,7 @@ Topic是消息的主题。一个topic的信息占用一个连接通道，设备�
 
 **场景1：设备通过MQTT协议直连至IoT Hub**
 
-此方法要求设备支持MQTT协议，适用于大多数新的IoT设备。
+此方法要求设备支持MQTT协议，适用于大多数智能IoT设备。
 
 **场景2：设备通过云端EnOS Edge连接**
 
@@ -87,7 +87,7 @@ Topic是消息的主题。一个topic的信息占用一个连接通道，设备�
 
 **场景3：设备通过现场EnoS Edge连接**
 
-该场景中，EnOS Edge与设备在现场一起部署。该方法主要适用于不支持MQTT协议的传统设备和系统。
+该场景中，EnOS Edge与设备在现场一起部署。该方法主要适用于不支持MQTT协议的传统设备和系统。对比场景2的云端Edge部署方式，现场Edge部署方式可帮助实现与云端网络连接断开情况下的端点续传。
 
 **场景4：设备通过私有协议连接至EnOS Cloud Edge群集**
 
