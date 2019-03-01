@@ -22,17 +22,16 @@
 	},
 	"method": "thing.service.measurepoint.set"
 }
-
 ```
 
 ## 响应数据格式
 
 ```
-"id": "123",
-"code": 200,
-"data": {}
+{
+	"id": "123",
+	"code": 200,
+	"data": {}
 }
-
 ```
 
 ## 参数说明

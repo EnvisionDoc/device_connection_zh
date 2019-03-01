@@ -1,4 +1,4 @@
-设备连接
+设备管理
 =========
 
 .. toctree::
@@ -6,7 +6,6 @@
    :caption: 概述
 
    device_management_overview
-
 
 .. toctree::
    :maxdepth: 1
@@ -20,6 +19,7 @@
    secretbased_authentication
    certificatebased_authentication
    connection_scenarios
+   ota_overview
 
 .. toctree::
    :maxdepth: 1
@@ -29,6 +29,7 @@
    gettingstarted_edge_connection
    gettingstarted_java_ssl_connection
    asset_tree/gettingstarted_assettree
+   gettingstarted_ota
 
 .. toctree::
    :maxdepth: 1
@@ -54,7 +55,7 @@
 Downloads
 """"""""
 
-pdf_ htmlzip_ epub_
+    pdf_ htmlzip_ epub_
 .. _pdf: https://www.envisioniot.com/projects/device-connection/downloads/pdf/latest/
 .. _htmlzip: https://www.envisioniot.com/projects/device-connection/downloads/htmlzip/latest/
 .. _epub: https://www.envisioniot.com/projects/device-connection/downloads/epub/latest/

@@ -1,11 +1,16 @@
-# 上报单个测点信息
+# 批量上报测点信息
 
-.. note:: 根据物模型中的输入参数和输出参数来配置下列的参数。
+批量上报测点适用于以下几种场景：
+- 网关设备代理子设备批量上报数据；
+- 直连设备批量上报不同时间戳的数据；
+- 兼有以上场景；
+
+.. note:: 根据物模型中的输入参数和输出参数来配置下列的参数。如果请求中部分数据发送失败，整个请求全部发送失败，返回第一个出现的错误码。
 
 上行
-- 请求TOPIC: `/sys/{productKey}/{deviceKey}/thing/measurepoint/post`
+- 请求TOPIC: `/sys/{productKey}/{deviceKey}/thing/measurepoint/post/batch`
 
-- 响应TOPIC: `/sys/{productKey}/{deviceKey}/thing/measurepoint/post_reply`
+- 响应TOPIC: `/sys/{productKey}/{deviceKey}/thing/measurepoint/post/batch_reply`
 
 ## 请求数据格式
 
@@ -13,20 +18,53 @@
 {
 	"id": "123",
 	"version": "1.0",
-	"params": {
-		"measurepoints": {
-			"Power": {
-				"value": 1.0,
-				"quality": 9
+	"params": [{
+			"productKey": "product1",
+			"deviceKey": "device1",
+			"measurepoints": {
+				"Power": {
+					"value": 1.0,
+					"quality": 9
+				},
+				"temp": 1.02,
+				"branchCurr": [
+					"1.02", "2.02", "7.93"
+				]
 			},
-			"temp": 1.02,
-			"branchCurr": [
-				"1.02", "2.02", "7.93"
-			]
+			"time": 123456
 		},
-		"time": 123456
-	},
-	"method": "thing.measurepoint.post"
+		{
+			"productKey": "product1",
+			"deviceKey": "device1",
+			"measurepoints": {
+				"Power": {
+					"value": 2.0,
+					"quality": 9
+				},
+				"temp": 2.02,
+				"branchCurr": [
+					"2.02", "3.02", "9.93"
+				]
+			},
+			"time": 123567
+		},
+		{
+			"productKey": "product2",
+			"deviceKey": "device2",
+			"measurepoints": {
+				"Power": {
+					"value": 1.0,
+					"quality": 9
+				},
+				"temp": 1.02,
+				"branchCurr": [
+					"1.02", "2.02", "7.93"
+				]
+			},
+			"time": 123456
+		}
+	],
+	"method": "thing.measurepoint.post.batch"
 }
 ```
 
@@ -62,6 +100,14 @@
      - Object
      - 必需
      - 上报测点所需的参数
+   * - productKey
+     - String
+     - 可选
+     - 设备的product key。如需上报具体子设备的数据，需要提供子设备的productKey和deviceKey；如不提供子设备的productKey和deviceKey，则默认使用网关设备topic的这两个参数。
+   * - deviceKey
+     - String
+     - 可选
+     - 设备的device key。如需上报具体子设备的数据，需要提供子设备的productKey和deviceKey；如不提供子设备的productKey和deviceKey，则默认使用网关设备topic的这两个参数。 
    * - method
      - String
      - 必需
@@ -102,6 +148,7 @@
      - JSON
      - 可选
      - 返回的详细信息。JSON格式
+
 
 
 <!--end-->

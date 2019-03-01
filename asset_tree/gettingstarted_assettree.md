@@ -93,11 +93,11 @@
 1. 选中资产树节点，点击鼠标右键，选择 **增加 > 添加叶子节点 > 添加已有资产**。
 
    .. image:: ../media/create_node_by_existing_asset.png
-      :width: 500px
+      
 
 2. 选择该资产对应的模型，并基于模型选择资产。点击 **确认** 以后，添加资产成功。
 
    .. image:: ../media/create_node_by_existing_asset_2.png
-      :width: 400px
+      
 
 <!--end-->

@@ -41,7 +41,7 @@ EnOS接入服务提供以下主要功能：
 - RRPC
 
 .. image:: media/device_connection_methods.png
-   :width: 700px
+   
 
 数据通过IoT Hub上送至EnOS Cloud中会由规则引擎分发至不同存储中用于以下用途：
 - 时序数据库
@@ -75,7 +75,7 @@ Topic是消息的主题。一个topic的信息占用一个连接通道，设备�
 基于edge网关是否以及在何处使用连接，支持以下的连接方案：
 
 .. image:: media/device_connection_methods.png
-   :width: 780px
+   
 
 **场景1：设备通过MQTT协议直连至IoT Hub**
 

@@ -7,7 +7,7 @@
 针对上述场景，可以将第三方云看成EnOS上的一个App，假定将其命名为`数据转发App`。这个App通过EnOS平台提供的`SA`账号，调用Restful接口，将测点数据上送至EnOS平台。整体流程如下图所示：
 
 .. image:: media/cloud2cloud.png
-   :width: 650px
+   
 
 
 

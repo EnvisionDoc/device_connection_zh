@@ -75,6 +75,6 @@
 具体流程图如下：
 
 .. image:: media/secret_communication.png
-   :width: 750px
+   
 
 <!--end-->

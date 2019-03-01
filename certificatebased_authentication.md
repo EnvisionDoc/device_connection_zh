@@ -12,7 +12,7 @@
 ### 1. IoT Hub获取X.509证书<iothubCertificate>
 
 .. image:: media/certificate_service_secure_communication_01.png
-   :width: 780px
+   
 
 1a. IoT Hub在本地创建密钥对和证书请求文件（CSR文件），使用X.509证书服务的API获取包含CSR的X.509证书。
 
@@ -23,7 +23,7 @@
 ### 2. Edge获取X.509证书<edgeCertificate>
 
 .. image:: media/certificate_service_secure_communication_02.png
-   :width: 780px
+   
 
 2a. Edge设备出厂预烧录了产品证书（`ProductKey`，`ProductSecret`）和edge设备序列号（SN）。设备上电联网以后，上报产品证书以及序列号至云端去动态激活。如果云端鉴权认证通过，会返回`DeviceSecret`至edge。
 
@@ -47,7 +47,7 @@
 ### 3. Edge与IoT Hub之间基于证书的双向认证的通信<edgecommunication>
 
 .. image:: media/certificate_service_secure_communication_03.png
-   :width: 780px
+   
 
 3a. Edge认证IoT Hub端的证书。
 
@@ -68,7 +68,7 @@
 ### 4. IoT Hub 撤销edge端的X.509证书<revokecertificate>
 
 .. image:: media/certificate_service_secure_communication_04.png
-   :width: 780px
+   
 
 4a. IoT Hub调用撤销API来撤销edge端的带序列号的X.509证书。
 

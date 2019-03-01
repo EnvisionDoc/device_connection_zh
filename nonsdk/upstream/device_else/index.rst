@@ -10,5 +10,6 @@
   report_attributes
   delete_attributes
   report_points
+  report_points_batch
   report_event_nopass
   report_event_pass

@@ -23,7 +23,6 @@
 
 .. image:: ../media/asset_tree.png
    :alt: 图：资产树、资产、节点示意图
-   :width: 680px
 
 ## 相关信息<relatedinformation>
 
