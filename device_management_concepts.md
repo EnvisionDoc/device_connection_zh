@@ -4,11 +4,11 @@
 
 ## 模型
 
-模型是对接入物联网的对象的功能的抽象。模型定义了对象的属性，测点，服务，和事件四个维度的功能。更多信息，参考[模型概述](model/model_overview)。一个模型可被关联至多个_产品_。
+模型是对接入物联网的对象的功能的抽象。模型定义了对象的属性，测点，服务，和事件四个维度的功能。更多信息，参考[模型概述](howto/model/model_overview)。一个模型可被关联至多个 _产品_。
 
 ## 产品
 
-产品，是一组具有相同功能的设备的集合。The product enables you to manage collection of devices that derive from the same model while differ in terms of deployment. 在模型的基础上，产品进一步定义了_设备_与物联网通信相关的属性，如安全认证方式，数据格式等。For example, collection A and collection B might be deployed in different network environment, therefore, requires the device telemetry to be transmitted in different format. Binary data can save up to 75% bandwidth than JSON.
+产品，是一组具有相同功能的设备的集合。. 在模型的基础上，产品进一步定义了_设备_与物联网通信相关的属性，如安全认证方式，数据格式等。For example, collection A and collection B might be deployed in different network environment, therefore, requires the device telemetry to be transmitted in different format. Binary data can save up to 75% bandwidth than JSON.
 
 ## 设备
 
@@ -21,4 +21,4 @@
 - 一个设备，如：1#逆变器
 - 一组设备，如：场站，场站模型当中定义了全场有功功率、全场累计发电量这两个测点，但通常这两个测点的数据并不是通过接入获得，而是通过该场站下所有设备的功率、发电量聚合计算获得。所以场站不需要关联产品，也没有用于设备连接的通讯类属性。
 
-综上，设备是资产的一种，但资产不一定是设备。
+综上，设备是资产的一种，但资产不一定是设备。参见[资产树](howto/asset_tree/assettree_overview)。

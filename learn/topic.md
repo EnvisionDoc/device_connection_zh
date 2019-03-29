@@ -1,0 +1,3 @@
+#Topic
+
+Topic是消息的主题。一个topic的信息占用一个连接通道，设备可发布或订阅某个topic的消息。当设备连接成功后将向对应topic发布或订阅消息以实现与EnOS Cloud的通讯。
