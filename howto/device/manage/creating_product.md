@@ -4,9 +4,9 @@
 
 ## 开始前准备<beforestart>
 
-该产品对应的模型已经被创建。有关如何创建，参见[创建模型](../../model/creating_model)。
+- 你需要有设备管理操作权限，如果没有需联系组织管理员添加。有关EnOS内的用户权限，参见[策略，角色，与权限](/docs/iam/zh_CN/dev/access_policy)。
+- 该产品对应的模型已经被创建。有关如何创建，参见[创建模型](../../model/creating_model)。
 
-你需要有设备管理操作权限，如果没有需联系组织管理员添加。有关EnOS内的用户权限，参见[策略，角色，与权限](/docs/iam/zh_CN/dev/access_policy)。
 
 ## 步骤1：创建产品<createproduct>
 

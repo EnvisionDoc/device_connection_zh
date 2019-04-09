@@ -4,9 +4,8 @@
 
 ## 开始前准备<beforestart>
 
-该设备所属的产品已经被创建。有关如何创建，参见[创建产品](creating_product)。
-
-你需要有设备管理操作权限，如果没有请联系组织管理员添加，参见[策略，角色，与权限](/docs/iam/zh_CN/dev/access_policy)。
+- 该设备所属的产品已经被创建。有关如何创建，参见[创建产品](creating_product)。
+- 你需要有设备管理操作权限，如果没有请联系组织管理员添加，参见[策略，角色，与权限](/docs/iam/zh_CN/dev/access_policy)。
 
 ## 步骤1：创建设备<createdevice>
 

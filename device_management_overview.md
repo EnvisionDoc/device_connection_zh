@@ -1,16 +1,20 @@
 # 有关EnOS设备管理
 
-EnOS™设备管理服务帮助你快速将物理设备安全连接至EnOS云端并开始数据传输，管理设备周期，及将物理世界的资产结构映射至数字世界。
+EnOS™设备管理产品帮助你快速将物理设备安全连接至EnOS云端并开始数据传输，管理设备周期，及将物理世界的资产结构映射至数字世界。
 
 ## 设备接入<deviceconnectivity>
 
-EnOS设备管理功能帮助物联网开发人员进行设备全生命周期管理，该服务建立设备与EnOS Cloud间的数据通道，并保障设备终端与EnOS Cloud间进行安全的双向通信。
+支持设备和云端之间的双向通信：
+- 将数据从设备摄入到云端
+- 从云端到设备的远程控制
 
-提供设备端SDK让普通设备或edge接入IoT Hub。
+提供设备端SDK，以支持设备向EnOS IoT Hub传输消息。
 
-- 提基于MQTT协议的设备SDK，帮助你开发运行在设备或edge上的MQTT Client应用。
+- 提供基于MQTT协议的设备SDK，以满足长距离连接的实时需求。
+- 提供基于CoAP协议的设备SDK，以满足短距离连接的低功率需求。
+- 支持面向Java、C和Python编程语言的SDK。
 
-提供设备直连和网关代理连接等接入方案，为企业异构网络的设备接入的多种场景提供解决方案，参见[设备接入](learn/connection_scenarios)。
+支持各种接入方案并提供相应解决方案，以满足企业异构网络的多种场景需求。有关更多信息，参见[设备接入](learn/connection_scenarios)。
 
 ## 设备生命周期管理<devicelifecyclemanagement>
 
@@ -22,21 +26,17 @@ EnOS设备管理功能帮助物联网开发人员进行设备全生命周期管�
 - 实时监测
 - 设备注销
 
-参见[设备生命周期管理](learn/device_lifecycle_management)。
+有关更多信息，参见[设备生命周期管理](learn/device_lifecycle_management)。
 
 ## 保护设备与云端的安全<deviceandcloudsecurity>
 
-### 鉴权
+- 支持_secret-per-device_ authentication机制，有助于降低设备可能遭遇的安全风险。该机制适于以批量方式将预分配的设备密钥烧入到每个芯片中的设备。每个设备在出厂时都载有一个密钥对。
 
-- 提供基于设备秘钥的设备认证机制，降低设备被攻破的安全风险，适合有能力批量烧入预分配设备密钥到每个芯片的设备。
-- 提供基于产品秘钥的设备预烧，认证时动态获取三元组，适合批量生产时无法将三元组烧入每个设备的情况。
+- 支持_secret-per-product_机制，在该机制中，相同产品型号的设备会预烧入密钥对(_product key-secret pair_)。设备能够在认证过程中以动态的方式获取设备密钥。该机制适合批量生产时无法将独特的密钥对烧入每个设备的情况。
 
-更多信息，参考[设备认证机制概述](learn/deviceconnection_authentication)。
+- 支持-certificate-based-authenticate机制，在该机制中，通过CA证书机制对数据进行加密和解密，保证设备与云端通信的安全。
 
-### 通信和数据安全
-
-- 通过CA证书机制对数据进行加密和解密，保证设备与云端通信的安全。
-- 通过TOPIC对通信资源进行隔离，避免设备访问未经授权的数据。
+有关更多信息，参见[保护设备与云端的安全](learn/deviceconnection_authentication)。
 
 ## 相关角色
 
@@ -44,33 +44,32 @@ EnOS设备管理服务主要服务于以下角色：
 
 ### 物联网实施人员
 
-物联网实施人员进行现场安装实施，包括安装Edge，铺设Edge到接入设备的通讯线缆；通过设备预配功能进行设备的接入调试，包括创建云端配置和调试通信。
+物联网实施人员进行现场安装实施，包括安装Edge网关设备，铺设Edge网关到接入设备的通讯线缆，设置设备接入，调试设备与云端之间的通信。
 
 ### Edge开发者
 
-Edge开发者可根据EnOS定义的设备端协议进行edge端MQTT Client应用开发，将edge设备收集的数据按照EnOS支持的协议及格式发送至平台。
+Edge开发者负责按照EnOS标准设备协议开发Edge的MQTT客户端应用。此类应用的目标是收集Edge的遥测数据，并通过支持的协议采用支持的格式将数据传输到EnOS云端。
 
 ### 资产管理员
 
-根据业务案例创建资产层次结构（资产树）并管理资产。
+资产管理员根据业务案例场景创建资产层次结构（资产树）并管理资产。
 
 ### 应用开发者
 
-基于EnOS提供的API、SDK获取设备数据或配置信息，以进行业务应用开发。
+应用开发者基于EnOS提供的API、SDK获取设备遥测信息和配置信息，以满足特定业务案例场景的需求。
 
+## EnOS设备管理的相关产品及服务
 
-## EnOS设备管理的相关服务
+### 数据资产管理
 
-### 流式计算服务
-
-该服务提供对组织内资产计算逻辑的定义，订阅资产数据，基于预定义的计算逻辑进行数据计算，例如计算测点的5分钟平均、10分钟平均等。[了解更多 >>](https://www.envisioniot.com/docs/online-data/zh_CN/latest/streaming_overview.html)
+EnOS数据资产管理产品提供实时数据流处理、数据订阅、自定义数据存储策略等服务。[了解更多信息 >>](/docs/data-asset/zh_CN/latest/data_asset_overview)
 
 ## 后续操作
 
-学习如何快速将一个典型的智能设备接入EnOS物联网平台并模拟收发数据:
+学习如何快速在EnOS云端配备典型智能IoT设备并开始在设备和云端之间发送遥测数据:
 
-- [快速入门直连设备至EnOS Cloud](quickstart/gettingstarted_device_connection)
+- [快速入门接入智能设备](quickstart/gettingstarted_device_connection)
 
-学习如何快速将一个典型的传统工业设备通过edge网关接入EnOS物联网平台并模拟收发数据：
+学习如何配备通过Edge网关接入的传统工业设备：
 
-- [快速入门子设备通过edge连接至EnOS Cloud](quickstart/gettingstarted_edge_connection)
+- [快速入门接入非智能设备](quickstart/gettingstarted_edge_connection)

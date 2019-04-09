@@ -1,6 +1,6 @@
 # 基于MQTT协议的消息流及相关概念<messageflow>
 
-如下图所示, 设备可以直连或通过edge连接至EnOS IoT Hub。EnOS IoT Hub接受直连设备或edge通过MQTT协议进行通信。
+如下图所示, 设备可以直连或通过edge连接至EnOS™ IoT Hub。EnOS IoT Hub接受直连设备或edge通过MQTT协议进行通信。
 
 - MQTT是一种轻量级基于TCP/IP的开源物联网协议。EnOS的MQTT协议支持以下功能：
   - 数据基于TOPIC的订阅与发布
@@ -9,11 +9,16 @@
 .. image:: ../media/device_connection_methods.png
 
 
-数据通过IoT Hub上送至EnOS Cloud中会由规则引擎分发至不同存储中用于以下用途：
+数据通过IoT Hub上送至EnOS Cloud中会由规则引擎分发至不同组件中用于以下用途：
 
-- 时序数据库
-- 告警引擎
-- 流式计算引擎
+- 实时数据库redis，时序数据库，及归档数据库。
+  - redis数据库存放所有最新时间点的设备数据
+  - 时序数据库根据存储策略的定义存储访问频次较高的用户指定测点的数据，存储时间为用户指定时长，如1个月，6个月，1年，的设备数据。EnOS默认只通过redis存储最新的设备数据，你必须配置存储策略才能将一段时间内的数据存至时序数据库，并通过时序数据库对应的API访问数据。[了解更多信息>>](/docs/data-asset/zh_CN/latest/learn/storage_policy_overview)
+  - 归档数据库根据存储策略的定义访问访问频次较低的历史相对更加久远的数据
+
+- 告警引擎，根据配置的触发条件生成告警记录。
+
+- 流式计算引擎，根据配置的流式计算处理逻辑对实时数据进行处理并返回给数据中心以供其他服务模块使用或API获取。EnOS提供了简单易用的图形界面的流式分析IDE以帮助提升流数据分析处理的效率。[了解更多信息>>](/docs/data-asset/zh_CN/latest/learn/index)
 
 设备接入数据流中涉及以下功能模块及概念：
 

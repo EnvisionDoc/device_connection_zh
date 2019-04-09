@@ -4,7 +4,8 @@
 
 ## 开始前准备<beforestart>
 
-了解设备的激活运行状态，参考[基于密钥的单向认证](../../../learn/deviceconnection_authentication)。
+- 你需要有设备管理操作权限，如果没有请联系组织管理员添加，参见[策略，角色，与权限](/docs/iam/zh_CN/dev/access_policy)。
+- 了解设备的激活运行状态，参考[基于密钥的单向认证](../../../learn/deviceconnection_authentication)。
 
 ## 查看激活状态<checkstatus>
 
