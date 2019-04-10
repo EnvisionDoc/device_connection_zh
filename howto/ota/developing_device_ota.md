@@ -63,8 +63,7 @@ EnOS云端提供的固件升级的消息topic，升级请求支持使用MQTT进�
 
    - 通过云端服务SDK
      - [Java SDK](https://github.com/EnvisionIot/enos-api-sdk-java)
-     - [python SDK](https://github.com/EnvisionIot/enos-api-sdk-python)
-
+    
 ## 示例代码
 
 以下为通过Java SDK进行设备端OTA能力开发的示例代码：

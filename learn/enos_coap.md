@@ -18,9 +18,9 @@
 
 ## EnOS CoAP约定
 
-EnOS CoAP接入支持可确认请求（CON），响应会以Piggybacked形式在ACK消息中返回。
+支持可确认请求（CON），响应会以Piggybacked形式在ACK消息中返回。
 
-EnOS CoAP接入实现了RFC 7252协议规定的CoAP缓存功能，因此要求设备对于每一个新的请求，使用不同CoAP Message ID和Token。
+实现了RFC 7252协议规定的CoAP缓存功能，因此要求设备对于每一个新的请求，使用不同CoAP Message ID和Token。
 
 EnOS支持CoAP协议中的Block-wise传输功能，具体参考：[RFC 7959](https://tools.ietf.org/html/rfc7959)。
 

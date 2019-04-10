@@ -1,21 +1,22 @@
 # CoAP连接通信
 
-物联网平台支持CoAP协议连接通信。CoAP协议适用在资源受限的低功耗设备上，尤其是NB-IoT的设备使用。本文介绍基于CoAP协议进行设备接入的流程，及使用DTLS的自主接入流程。
+EnOS支持CoAP协议连接通信。CoAP协议适用在资源受限的低功耗设备上，尤其是NB-IoT的设备使用。本文介绍基于CoAP协议进行设备接入的流程，及使用DTLS的自主接入流程。
 
 ## 基础流程
-基于CoAP协议将NB-IoT设备接入物联网平台的流程如下图所示：
+
+基于CoAP协议将NB-IoT设备接入EnOS的流程如下图所示：
 
 .. image:: ../../media/coap_connection_process.png
 
 基础流程说明如下：
 
-1. 开发者在EnOS控制台创建产品、关联模型。
+1. 在设备端集成EnOS CoAP设备协议。用户在EnOS Cloud的控制台申请设备三元组（ProductKey，DeviceKey和DeviceSecret）并烧录到设备中，建议使用NB-IoT模组的IMEI作为DeviceKey。
 
-2. 开发者进行设备端开发，初始化SDK，通过AT指令读取模组IMEI号并设置CoAP服务器地址。
+2. NB-IoT设备通过运营商的蜂窝网络进行入网。
    
-3. 开发者将设备IMEI号作为devicekey预注册到EnOS，获得设备三元组（ProductKey，DeviceKey和DeviceSecret）。
+3.设备开发者可以通过CoAP/DTLS协议，将设备采集的实时数据上报到EnOS，借助EnOS，实现海量设备的安全连接和数据管理能力。
    
-4. 上线设备，通过运营商的蜂窝网络进行入网。需要联系当地运营商，确保设备所属地区已经覆盖NB-IoT网络，并已具备NB-IoT入网能力。
+4. EnOS提供相关的数据开放接口和消息推送服务，可将数据转发到业务服务器中，实现设备资产与实际应用的快速集成。
 
 ## 连接CoAP服务器
 

@@ -47,10 +47,7 @@ EnOS Cloud为开发者提供了以下功能：
 - 请求TOPIC: `/sys/{productKey}/{deviceKey}/thing/model/down_raw`
 - 响应TOPIC: `/sys/{productKey}/{deviceKey}/thing/model/down_raw_reply`
 
-
-
 脚本解析中定义的两个方法如下：
-
 
 ```js
     /**

@@ -116,7 +116,7 @@
   - 将设备CSR文件发送给CA。
   - CA证书签发并注册设备证书并在CA注册此设备证书。设备证书同时也会保存在设备端。
 
-EnOS提供CA证书服务，更多内容参考[X.509证书服务](https://docs.eniot.io/docs/enos/zh_CN/latest/security/x509_ca/index.html#)。
+EnOS提供CA证书服务，更多内容参考[X.509证书服务](https://www.envisioniot.com/docs/enos/zh_CN/latest/security/x509_ca/index.html#)。
 
 如果开启基于证书的双向认证方式，我们推荐以下最佳实践：
   - 建议为每个设备提供一个唯一的证书，以便进行精细的管理，如证书撤销。
