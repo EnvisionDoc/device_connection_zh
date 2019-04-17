@@ -12,11 +12,11 @@
    :maxdepth: 1
    :caption: 概念
 
-   learn/message_flow
-   learn/connection_protocols
    learn/connection_scenarios
+   learn/message_flow
+   learn/enos_coap   
    learn/device_lifecycle_management
-   learn/ingestion/index
+   learn/ingestion/index   
    learn/deviceconnection_authentication
 
 .. toctree::
@@ -44,5 +44,4 @@
    :caption: 参考信息
 
    reference/mqtt/index
-.. 
-reference/coap/index
+   reference/coap/index

@@ -39,12 +39,15 @@
 - **动态激活**：动态激活过程如下：
 
   1. 设备首次尝试连接时携带`ProductKey`，`ProductSecret`，`DeviceKey`来请求激活，鉴权通过以后，返回`DeviceSecret`给设备。
+      - 未激活的设备，使用`ProductKey`，`ProductSecret`，`DeviceKey`可以反复注册获取`DeviceSecret`，每次获取的`deviceSecret`不同。
+      - 已激活的设备，`deviceSecret`唯一。若需要重新激活该设备，请首先在云端删除设备，重新注册，使用新的`ProductKey`，`ProductSecret`，`DeviceKey`获取`DeviceSecret`。
 
   2. 设备通过`ProductKey`，`DeviceKey`，`DeviceSecret`来尝试登录。
 
   3. 设备成功登录后，设备状态从 **未激活** 变成 **在线** 状态。此时设备可以上送数据，如果一段时间内不上送数据，设备状态变成 **离线**。
 
-  如需采用动态激活方式，你需要在产品配置中开启 **动态激活**。
+  如需采用动态激活方式，你需要在产品管理配置中开启 **动态激活**，参见[开启动态激活](../howto/device/manage/managing_products)。
+
 
 - **静态激活**：静态激活的过程如下：
 

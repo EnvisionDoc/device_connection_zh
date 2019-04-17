@@ -526,7 +526,7 @@ public class OtaSample {
    * - fileUrl
      - String
      - 必需
-     - 固件签名算法
+     - 固件文件url
    * - fileSize
      - Long
      - 必需

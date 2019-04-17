@@ -1,4 +1,4 @@
-# 基于MQTT协议的消息流及相关概念<messageflow>
+# 基于MQTT协议的连接
 
 如下图所示, 设备可以直连或通过edge连接至EnOS™ IoT Hub。EnOS IoT Hub接受直连设备或edge通过MQTT协议进行通信。
 
