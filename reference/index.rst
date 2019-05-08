@@ -1,12 +1,13 @@
-EnOS Device Protocol Standard
+EnOS 设备接入协议
 ==============================
 
-EnOS provides device SDKs for you to configure devices. These device SDKs already encapsulate protocols for data exchange between devices and EnOS Cloud. 
+EnOS提供了设备SDK以接入设备。这些SDK包含了设备与云端数据交换所需的相关协议。 
 
-When the device SDKs provided by EnOS cannot meet your requirements, you can refer to the Device Protocol Standard to develop your own communication protocol based on the EnOS device protocol standard. You can connect your devices into EnOS as long as your data format conforms to the standard.
+如果设备端SDK不能满足需求，或者EnOS尚未提供相关设备端SDK时，你可以根据设备接入协议标准开发自己的设备接入协议。
 
 .. toctree::
    :maxdepth: 1
 
    mqtt/index
    coap/index
+ mqtt_offline/index

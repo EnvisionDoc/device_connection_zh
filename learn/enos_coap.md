@@ -47,4 +47,4 @@ EnOS CoAP接入目前不支持资源发现功能，不支持资源观察功能�
 
 ## 下一步
 
-参考[CoAP协议规范](/docs/device-connection/zh_CN/dev/reference/coap/index)将设备接入EnOS并复用MQTT topic与EnOS Cloud进行数据传输。
+参考[CoAP协议规范](../reference/coap/index)将设备接入EnOS并复用MQTT topic与EnOS Cloud进行数据传输。

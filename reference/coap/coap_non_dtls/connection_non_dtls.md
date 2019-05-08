@@ -60,12 +60,15 @@ CoAP服务器地址为40.73.26.27，端口为5683。
     "Sign", "用于验证设备身份的数字签名"
     
 
-  .. note:: 数字签名按照如下方法生成：
-     1. 按照下列格式，拼接请求中的字段：
+ 数字签名按照如下方法生成：
+
+   1. 按照下列格式，拼接请求中的字段：
       `deviceKey${DeviceKey}lifetime${Lifetime}productKey${ProductKey}secureMode${secureMode}`
-     2. 在该拼接字段结尾附上${DeviceSecret}，生成的字段如下：
+
+    2. 在该拼接字段结尾附上${DeviceSecret}，生成的字段如下：
      `deviceKey${DeviceKey}lifetime${Lifetime}productKey${ProductKey}secureMode${secureMode}${DeviceSecret}`
-     3. 使用SHA-256算法获得该拼接字段的摘要，并将其中的字母转换为大写。
+
+    3. 使用SHA-256算法获得该拼接字段的摘要，并将其中的字母转换为大写。
 
 2. 鉴权通过，EnOS在鉴权请求的相应中包含CoAP协议定义的返回码和一个token，用于后续session的鉴权。响应的格式如下：
    ```json
