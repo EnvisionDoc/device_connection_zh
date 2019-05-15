@@ -1,5 +1,5 @@
 基于MQTT协议的设备连接（实时数据）
-===========================
+=============================
 
 EnOS Cloud为设备端开发提供了SDK，这些SDK已封装了设备端与云端的交互协议，你可以直接使用设备端SDK来进行开发。
 
@@ -24,18 +24,18 @@ EnOS Cloud为设备端开发提供了SDK，这些SDK已封装了设备端与云�
 
 .. toctree::
    :caption: Upstream
-   :maxdepth: 1
+   :maxdepth: 2
 
-   upstream/device_registration
-   upstream/topological_mgmt/index
-   upstream/device_connection/index
-   upstream/device_tags/index
-   upstream/device_else/index
-
+   upstream/index
 
 .. toctree::
    :caption: Downstream
-   :maxdepth: 1
+   :maxdepth: 2
 
-   downstream/devices/index
-   downstream/subdevices/index
+   downstream/index
+
+.. toctree::
+   :maxdepth: 2
+   :caption: 拓扑管理
+
+   topology_manag/index

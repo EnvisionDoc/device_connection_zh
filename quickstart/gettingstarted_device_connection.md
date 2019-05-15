@@ -9,7 +9,7 @@
 
 ## 任务描述<description>
 
-本示例以户用光伏逆变器接入为例进行说明，逆变器采集器出厂烧录逆变器设备三元组。逆变器上电、联网以后，基于设备三元组认证直连云端IoT Hub。整体流程如下图所示：
+本示例以用户光伏逆变器接入为例进行说明，逆变器采集器出厂烧录逆变器设备三元组。逆变器上电、联网以后，基于设备三元组认证直连云端IoT Hub。整体流程如下图所示：
 
 .. image:: ../media/device_connection_task_description.png
 
@@ -53,7 +53,7 @@
    * - 测点
      - 有功功率    
      - INV.GenActivePW
-     - float  
+     - double
      - kW      
    * - 服务
      - 控制     
@@ -75,7 +75,6 @@
    - **模型标识符**： Inverter_Demo
    - **模型名称**：Inverter_Demo
    - **分类**：无
-   - **支持透传**：否
    - **模型关系**：无
    - **模型模板**：无
    - **模型描述**：Inverter model for demo project
@@ -85,7 +84,7 @@
    .. image:: ../media/model_inverter.png
 
 
-4. 点击 **查看**，在模型详细信息界面中点击 **功能定义** 标签。
+4. 点击 **修改**，在模型详细信息界面中点击 **功能定义** 标签。
 
 5. 点击 **新增**，并在 **添加功能** 窗口提供以下配置信息：
 
@@ -106,7 +105,7 @@
    - **测点**
       - **名称**：有功功率/Active_Power
       - **标识符**：INV.GenActivePW
-      - **数据类型**：float
+      - **数据类型**：double
       - **测点类型**：AI
       - **单位**：kW
    - **服务**
@@ -119,7 +118,7 @@
         - 数据类型：enum
         - 枚举项：
           - 参数值：0；参数描述：Stop
-        - 参数值：1；参数描述：Start
+          - 参数值：1；参数描述：Start
       - **输出参数**：
         - 参数名称：execResult
         - 标识符：execResult
@@ -166,12 +165,12 @@
 2. 点击在页面右上方 **添加设备** ，在弹出窗口配置如下信息：
 
    - **产品**：Inverter_Product
-   - **Device Name**：INV001
-   - **是否使用夏令时** ：否
-   - **时区**：UTC+14:00
+   - **Device Key**：选填，系统自动生产
+   - **设备名称**：INV001
+   - **时区/城市**：UTC+14:00
+   - **使用夏令时** ：否
    - **逆变器类型**：0:Central，表示集中式逆变器
    - **组件容量**：5.0
-   - **Device Key**：选填，系统自动生产
 
    .. image:: ../media/register_device.png
 
@@ -189,52 +188,93 @@
 
 3. 将Cloud端地址`environment_address`及注册设备获取的设备三元组（`ProductKey`,`DeviceKey`,`DeviceSecret`）配置至sample连接程序当中。设备三元组为注册设备步骤中获得。
 
+4. 修改`initWithCallback`方法，将设备与云端建立连接。
+
+5. 修改`postMeasurepoint()`方法，配置发送数据测点名称，这里发送逆变器有功功率点，设置点名 **INV.GenActivePW**，以及对应的点值。
+
+   连接设备并模拟设备发送数据的代码示例如下：
+
    ```java
+   import com.envisioniot.enos.iot_mqtt_sdk.core.IConnectCallback;
+   import com.envisioniot.enos.iot_mqtt_sdk.core.MqttClient;
+   import com.envisioniot.enos.iot_mqtt_sdk.core.exception.EnvisionException;
+   import com.envisioniot.enos.iot_mqtt_sdk.message.upstream.tsl.MeasurepointPostRequest;
+   import com.envisioniot.enos.iot_mqtt_sdk.sample.SimpleSendReceive;
+   
+   import java.util.Random;
+   
+   public class demo1 {
+       public static final String url = "tcp://{environment_address}";
+       public static final String productKey = "ProductKey";
+       public static final String deviceKey = "{DeviceKey}";
+       public static final String deviceSecret = "{DeviceSecret}";
+       private static MqttClient client;
+       private static volatile boolean subDeviceLogined = false;
+       private static Random random = new Random();
+       private static int idInc = 20;
+       private static final char[] HEX_CHAR = new char[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+   
+       public demo() {
+       }
+   
+       public static void main(String[] args) throws Exception {
+           initWithCallback();
+           postMeasurepoint();
+       }
+   
        public static void initWithCallback() {
-        System.out.println("start connect with callback ... ");
-
-        try {
-            client = new MqttClient(environment_address, productKey, deviceKey, deviceSecret);
-            client.getProfile().setConnectionTimeout(60).setAutoReconnect(false);
-            client.connect(new IConnectCallback() {
-                public void onConnectSuccess() {
-
-                    System.out.println("connect success");
-                }
-
-                public void onConnectLost() {
-                    System.out.println("onConnectLost");
-                }
-
-                public void onConnectFailed(int reasonCode) {
-                    System.out.println("onConnectFailed : " + reasonCode);
-                }
-            });
-        } catch (EnvisionException var1) {
-        }
-
-        System.out.println("connect result :" + client.isConnected());
-    }
-    ```
-
-4. 修改`postSubMeasurepoint()`方法，配置发送数据测点名称，这里发送逆变器有功功率点，设置点名 **INV.GenActivePW**，以及对应的点值。
-
-   ```java
-    public static void postMeasurepoint() {
+           System.out.println("start connect with callback ... ");
+   
+           try {
+               client = new MqttClient(url, productKey, deviceKey, deviceSecret);
+               client.getProfile().setConnectionTimeout(60).setAutoReconnect(false);
+               client.connect(new IConnectCallback() {
+                   public void onConnectSuccess() {
+                       SimpleSendReceive.subDeviceLogin();
+                       System.out.println("connect success");
+                   }
+   
+                   public void onConnectLost() {
+                       System.out.println("onConnectLost");
+                   }
+   
+                   public void onConnectFailed(int reasonCode) {
+                       System.out.println("onConnectFailed : " + reasonCode);
+                   }
+               });
+           } catch (EnvisionException var1) {
+           }
+   
+           System.out.println("connect result :" + client.isConnected());
+       }
+   
+       public static void postMeasurepoint() {
+           Random random = new Random();
+           System.out.println("start post measurepoint ...");
+           MeasurepointPostRequest request = (MeasurepointPostRequest)MeasurepointPostRequest.builder().addMeasurePoint("INV.GenActivePW", random.nextDouble()).build();
+   
+           try {
+               client.fastPublish(request);
+               System.out.println(" post measurepoint success...");
+           } catch (Exception var3) {
+               var3.printStackTrace();
+           }
+       }
+   	
+   } public static void postMeasurepoint() {
         Random random = new Random();
         System.out.println("start post measurepoint ...");
-        MeasurepointPostRequest request = (MeasurepointPostRequest)MeasurepointPostRequest.builder().addMeasurePoint("invGenActivePW", random.nextDouble()).build();
+        MeasurepointPostRequest request = (MeasurepointPostRequest)MeasurepointPostRequest.builder().addMeasurePoint("INV.GenActivePW", random.nextDouble()).build();
         try {
             client.fastPublish(request);
             System.out.println(" post measurepoint success...");
         } catch (Exception var3) {
             var3.printStackTrace();
         }
-
     }
-    ```
+   ```
 
-5. 使用`handleServiceInvocation()`方法相应云端的服务命令。
+6. 使用`handleServiceInvocation()`方法响应云端的服务命令。
 
    ```java
     public static void handleServiceInvocation() {
