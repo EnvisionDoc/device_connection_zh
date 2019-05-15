@@ -23,19 +23,19 @@ EnOS Cloud为设备端开发提供了SDK，这些SDK已封装了设备端与云�
    nonsdk_login
 
 .. toctree::
-   :caption: Upstream
+   :caption: 设备数据上报
    :maxdepth: 2
 
    upstream/index
 
 .. toctree::
-   :caption: Downstream
+   :caption: 云端控制指令下发
    :maxdepth: 2
 
    downstream/index
 
 .. toctree::
    :maxdepth: 2
-   :caption: 拓扑管理
+   :caption: 子设备管理
 
    topology_manag/index

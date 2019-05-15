@@ -1,4 +1,4 @@
-# 使用MQTT协议与EnOS Cloud建立连接
+# 与EnOS Cloud建立连接
 
 本文参数如何通过MQTT协议建立从设备到EnOS Cloud的连接。
 
