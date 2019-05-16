@@ -38,7 +38,7 @@ Customized Option 2101: ${Sign}
 
 2. 生成SignKey，方法是取`SHA_256 ( ${DeviceSecret} )`当中第9至24字节。SignKey的长度为16字节。
 
-3. 使用拼接的字段和SignKey计算出Sign，方法是`AES_128(${SignKey}, token${Token}sequence${Sequence})`
+3. 使用拼接的字段和SignKey计算出Sign，方法是`AES_128(${SignKey}, token${Token}sequence${Sequence})`，模式为CBC。
 
 4. 将得到的16进制字符串中的字母转换为大写
 

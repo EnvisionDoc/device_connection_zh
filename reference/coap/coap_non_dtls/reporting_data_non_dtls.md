@@ -34,9 +34,9 @@ Customized Option 2101 : ${Sign}
  ` token${Token}sequence${Sequence}`
  其中token为设备鉴权成功后被分配的token，sequence是一个为正的int类型数据，表示session中消息的顺序，第一条消息的sequence值为1，sequence值必须大于最近一次向云端发送的消息的sequence值。如果客户端丢失了最后一条消息的Sequence，则必须重新执行设备鉴权上线过程。<!--丢失最后一条消息的sequence，是指期待的sequence与ACK里包含的sequence不符吗？-->
 
-2. 生成SignKey，方法是取`SHA_256 ( ${DeviceSecret} )`当中第9至24字节。SignKey的长度为16字节。
+2. 生成SignKey，方法是取`SHA_256 (${DeviceSecret})`当中第9至24字节。SignKey的长度为16字节。
 
-3. 使用拼接的字段和SignKey计算出Sign，方法是`AES_128(${SignKey}, token${Token}sequence${Sequence})`
+3. 使用拼接的字段和SignKey计算出Sign，方法是`AES_128(${SignKey}, token${Token}sequence${Sequence})`,模式是CBC。
 
 4. 将得到的16进制字符串中的字母转换为大写
 
