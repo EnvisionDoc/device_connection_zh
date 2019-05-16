@@ -38,4 +38,4 @@ EnOS Cloud为设备端开发提供了SDK，这些SDK已封装了设备端与云�
    :maxdepth: 2
    :caption: 子设备管理
 
-   topology_manag/index
+   topology_management/index

@@ -10,4 +10,4 @@ EnOS提供了设备SDK以接入设备。这些SDK包含了设备与云端数据�
 
    mqtt/index
    coap/index
- mqtt_offline/index
+   mqtt_offline/index
