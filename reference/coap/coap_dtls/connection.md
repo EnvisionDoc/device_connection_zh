@@ -42,7 +42,7 @@ EnOS支持CoAP协议连接通信。CoAP协议适用在资源受限的低功耗�
 
 ## 连接CoAP服务器
 
-CoAP服务器地址为40.73.26.27，端口为5684。
+CoAP服务器地址为`coap-<hostname>`，其中 _hostname_ 是EnOS环境所在的服务器地址，例如EnOS所在环境的服务器地址为*abc.def.com*，则CoAP的服务器地址为*coap-abc.def.com*。
 
 ## 建立DTLS安全通道
 
