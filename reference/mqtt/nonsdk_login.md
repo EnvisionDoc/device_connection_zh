@@ -23,7 +23,7 @@
   - _securemode_: 必填项。表示所使用的安全模式。当前只支持`securemode=2`。
   - _signmethod_: 必填项。表示所使用的安全模式签名方法。当前只支持`signmethod=sha1`。
   - _timestamp_: 必填项。表示当前的时间毫秒值。
-  - 示例：123456|securemode=2,signmethod=hmacsha1,timestamp=1548753362502|
+  - 示例：123456|securemode=2,signmethod=sha1,timestamp=1548753362502|
 
 - **mqttUsername** 部分:
 
