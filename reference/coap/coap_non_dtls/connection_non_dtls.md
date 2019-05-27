@@ -32,7 +32,7 @@ EnOS支持CoAP协议连接通信。CoAP协议适用在资源受限的低功耗�
 
 ## 开始前准备
 
-- 逐一注册设备并获取设备的`productKey`，`deviceKey`和`deviceSecret`。有关如何注册设备，参见[注册设备](../../howto/device/manage/creating_device)。
+- 逐一注册设备并获取设备的`productKey`，`deviceKey`和`deviceSecret`。有关如何注册设备，参见[注册设备](../../../howto/device/manage/creating_device)。
 - 确保设备具有AES-128和SHA-256加密能力。
 
 ## 连接CoAP服务器

@@ -8,4 +8,4 @@
 
 - 响应TOPIC: `/sys/{productKey}/{deviceKey}/thing/model/down_raw_reply`
 
-有关配置数据解析脚本的更多信息，参见[创建数据解析脚本](../../../../howto/device/manage/creating_data_parsing_script)。
+有关配置数据解析脚本的更多信息，参见[创建数据解析脚本](../../../howto/device/manage/creating_data_parsing_script)。

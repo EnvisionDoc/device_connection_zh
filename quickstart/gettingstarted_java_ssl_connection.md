@@ -43,8 +43,9 @@
 
 ### 步骤1：获取根证书<rootcert>
 
-下载CA根证书`cacert.pem`，下载地址为：[Link](https://<cluster_name>.envisioniot.com/enos/CA/cacert)
-- 如果是公有云用户，<cluster_name>参考[EnOS Cloud集群信息]()。
+下载CA根证书`cacert.pem`，下载地址为：[Link](https://<cluster_name>.envisioniot.com/enos/CA/cacert) 。
+
+<!-- - 如果是公有云用户，<cluster_name>参考[EnOS Cloud集群信息]()。-->
 - 如果是私有云用户，<cluster_name>请咨询远景智能客户经理或支持。
 
 ### 步骤2：创建证书请求文件和私钥<createcsr>

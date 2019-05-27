@@ -43,7 +43,7 @@ EnOS云端提供的固件升级的消息topic，升级请求支持使用MQTT进�
 
 ## 开始前准备
 
-- 了解EnOS的OTA升级流程，参见[设备固件升级概述](ota_overview).
+- 了解EnOS的OTA升级流程，参见[设备固件升级概述](ota_overview)。
 
 ## 步骤1 安装Device SDK
 

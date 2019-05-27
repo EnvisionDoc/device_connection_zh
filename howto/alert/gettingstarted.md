@@ -10,11 +10,14 @@ Briefly mention what the user's learning goal is and include the following SEO k
 
 - 了解资产告警的主要概念及信息从测点采集至触发告警的流程，参考[资产告警概述](alert_overview)。
 - 将设备接入至EnOS平台，过程如下：
-  1. 完成设备建模
-  2. 完成设备在EnOS云端的身份注册
-  3. 完成设备端开发以使得设备可以通过EnOS的标准协议连接及发送数据，参考[设备端开发](../device/devlop/index)
+  
+  1. 完成设备建模。
+   
+  2. 完成设备在EnOS云端的身份注册。
+   
+  3. 完成设备端开发以使得设备可以通过EnOS的标准协议连接及发送数据，参考[设备端开发](../device/devlop/index) 。
 
-    该准备的过程，可参考[将智能设备连接至EnOS](../../quickstart/gettingstarted_device_connection).
+     该准备的过程，可参考[将智能设备连接至EnOS](../../quickstart/gettingstarted_device_connection) 。
 
 **步骤1. 配置告警级别**
 

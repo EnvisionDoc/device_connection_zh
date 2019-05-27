@@ -4,7 +4,7 @@
 
 .. image:: ../../../media/coap_downstream_flow_non_dtls.png 
 
-关于测点设置、服务调用的请求数据格式、相应数据格式、参数说明，参见[向设备发送指令（透传）](../mqtt/downstream/devices/invoke_services_pass)。
+关于测点设置、服务调用的请求数据格式、相应数据格式、参数说明，参见[向设备发送指令（透传）](../../mqtt/downstream/invoke_services_pass)。
 
 当应用对设备设置测点或调用服务后，EnOS Cloud会缓存这个请求，待设备发送上行数据时，在响应消息内通知设备，即EnOS会在响应中包含一个EnOS定义的Option（2100）。其格式如下：
 

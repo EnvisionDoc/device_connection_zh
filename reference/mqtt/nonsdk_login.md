@@ -43,6 +43,6 @@
     sign=uppercase(sha1(clientId123456deviceKeytPbZGCdmaEproductKeyKV315idWtimestamp1548753362502M3yy874uGY8INjEGddTR))
     ```
 
-.. note:: `timestamp`的值必须和**mqttClientId**部分的`timestamp`保持一致。
+.. note:: `timestamp`的值必须和 **mqttClientId** 部分的 `timestamp` 保持一致。
 
 <!--end-->

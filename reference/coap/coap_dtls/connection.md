@@ -35,10 +35,10 @@ EnOS支持CoAP协议连接通信。CoAP协议适用在资源受限的低功耗�
 ## 开始前准备
 
 根据选择的设备安全认证方式，你需要在EnOS Cloud完成相关配置并获取以下认证所需秘钥信息：
-- 如果选择一机一密的认证方式，则需逐一注册设备并获取设备的`productKey`，`deviceKey`和`deviceSecret`。有关如何注册设备，参见[注册设备](../../howto/device/manage/creating_device)。
-- 如果选择一型一密的认证方式，则需创建设备所属的产品，并获取产品的`productKey`及`productSecret`。有关如何创建产品，参见[创建产品](../../howto/device/manage/creating_device)。通过一型一密认证的设备需在云端从产品配置开启**动态激活**，参见[管理产品](../../howto/device/manage/managing_products)。
+- 如果选择一机一密的认证方式，则需逐一注册设备并获取设备的`productKey`，`deviceKey`和`deviceSecret`。有关如何注册设备，参见[注册设备](../../../howto/device/manage/creating_device)。
+- 如果选择一型一密的认证方式，则需创建设备所属的产品，并获取产品的`productKey`及`productSecret`。有关如何创建产品，参见[创建产品](../../../howto/device/manage/creating_device)。通过一型一密认证的设备需在云端从产品配置开启**动态激活**，参见[管理产品](../../../howto/device/manage/managing_products)。
 
-有关设备安全认证方式的详细信息，参见[安全认证机制](../../learn/deviceconnection_authentication)。
+有关设备安全认证方式的详细信息，参见[安全认证机制](../../../learn/deviceconnection_authentication)。
 
 ## 连接CoAP服务器
 

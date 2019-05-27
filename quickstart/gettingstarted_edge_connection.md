@@ -130,7 +130,7 @@
 
 4. 发布配置到edge网关。
 
-更多关于EnOS Edge网关配置相关内容，参考[添加EnOS Edge网关](../howto/edge/managing_edge)
+更多关于EnOS Edge网关配置相关内容，参考[添加EnOS Edge网关](../howto/edge/managing_edge) 。
 
 ## 步骤5：通过设备端SDK模拟网关代理子设备发送数据<DeviceSDK>
 
@@ -188,12 +188,12 @@
      }
      ```
    
-   - 网关代理子设备发送数据，该示例代码中向`invGenActivePW`测点发送随机生成的浮点数据。
+   - 网关代理子设备发送数据，该示例代码中向`INV.GenActivePW`测点发送随机生成的浮点数据。
      ```java
        public static void postSubMeasurepoint() {
         Random random = new Random();
         System.out.println("start post sub device measurepoint ...");
-        MeasurepointPostRequest request = (MeasurepointPostRequest)((MeasurepointPostRequest.Builder)((MeasurepointPostRequest.Builder)MeasurepointPostRequest.builder().setProductKey("sub_pk")).setDeviceKey("sub_dk")).addMeasurePoint("invGenActivePW", random.nextFloat()).build();
+        MeasurepointPostRequest request = (MeasurepointPostRequest)((MeasurepointPostRequest.Builder)((MeasurepointPostRequest.Builder)MeasurepointPostRequest.builder().setProductKey("sub_pk")).setDeviceKey("sub_dk")).addMeasurePoint("INV.GenActivePW", random.nextFloat()).build();
 
         try {
             MeasurepointPostResponse rsp = (MeasurepointPostResponse)client.publish(request);
@@ -214,5 +214,5 @@ SDK具体使用参考[Java SDK README](https://github.com/EnvisionIot/enos-mqtt-
 ## 步骤7：查看设备数据<checkdata>
 
 1. 在 **设备** 页面，找到此设备并点击 **查看** 进入设备详情页面。
-
-2. 点击 **测点** 标签，选择测点 **INV.GenActivePW**，点击 **查看数据** 查看历史数据记录。
+2. 点击 **测点** 标签，选择测点 **INV.GenActivePW**，点击 **查看数据**，打开 **时序洞察** 页面。
+3. 查看测点的最新数据。如果已为该测点配置存储策略，亦可在时序洞察页面生成该测点的历史数据图表。有关时序洞察的详细信息，参见[生成时序数据图表](/docs/data-asset/zh_CN/latest/howto/storage/generating_data_chart.html)。

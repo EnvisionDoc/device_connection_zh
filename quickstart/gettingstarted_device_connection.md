@@ -292,19 +292,19 @@ SDK具体使用参考[SDK设备端连接](../howto/device/develop/using_java_sdk
 
 ## 步骤5：查看设备连接状态<checkconnection>
 
-进入控制台，选择 **接入管理 > 设备管理**，查看INV001设备的状态，确认设备处于在线状态。
+在EnOS控制台中选择 **设备管理**，在设备列表中，查看 **INV001** 设备的状态，确认设备处于 **在线** 状态。
 
 .. image:: ../media/device_status.png
 
 ## 步骤6：查看设备数据<viewdata>
 
-1. 在 **设备** 页面，找到此设备并点击 **查看** 进入设备详情页面。
-
-2. 点击 **测点** 标签，选择测点 **INV.GenActivePW**，点击 **查看数据** 查看历史数据记录。
+1. 在设备列表中，找到 **INV001** 设备，并点击 **操作** 列中的 **查看** 图标，进入 **设备详情** 页面。
+2. 点击 **测点** 标签，找到测点 **INV.GenActivePW**，点击 **查看数据**，打开 **时序洞察** 页面。
+3. 查看测点的最新数据。如果已为该测点配置存储策略，亦可在时序洞察页面生成该测点的历史数据图表。有关时序洞察的详细信息，参见[生成时序数据图表](/docs/data-asset/zh_CN/latest/howto/storage/generating_data_chart.html)。
 
 ## 步骤7：通过在线调试工具调试测点置数
 
-1. 点击**设备管理 > 产品管理**，点击所需调试设备所属的产品操作栏的**查看**。
+1. 点击 **设备管理 > 产品管理**，点击所需调试设备所属的产品操作栏的 **查看**。
 
 2. 在产品详情页，点击**在线调试**。
 
@@ -314,10 +314,10 @@ SDK具体使用参考[SDK设备端连接](../howto/device/develop/using_java_sdk
 
    .. image:: media/debug_postmeasurepoint.png
 
-测点至数成功后，在Java开发环境中你会收到以下回应：
+测点置数成功后，在Java开发环境中你会收到以下回应：
 
 ```
-AnswerableMessageBody{id='21', method='thing.service.measurepoint.set', version='1.0', params={invGenActivePW=2.0}}
+AnswerableMessageBody{id='21', method='thing.service.measurepoint.set', version='1.0', params=IVN.GenActivePW=2.0}}
 ```
 
 <!--end-->

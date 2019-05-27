@@ -10,6 +10,8 @@
    creating_device
    creating_device_in_batch
    managing_devices
+   creating_device_simulator
+   managing_commands
    creating_data_parsing_script
    creating_offline_message_integration_channel
-   creating_device_simulator
+   using_device_simulator
