@@ -32,7 +32,7 @@
 
 - **mqttPassword** 部分:<!--是否在消息集成通道建立通道后自动获得？-->
 
-  - **mqttPassword** 可以由[password小工具](_static/enosmqttsign/index.html)生成，传入指定的参数可以自动生产。
+ <!-- - **mqttPassword** 可以由[password小工具](_static/enosmqttsign/index.html)生成，传入指定的参数可以自动生产。-->
   - _content_: 为_clientID_, _deviceKey_, _productKey_, _timestamp_,和他们值的串联组合。 将参数按照字母顺序排序，然后将参数和值依次拼接（无拼接符号）。
   - _deviceSecret_: 第三方系统_deviceSecret_的值，当设备完成预配后，可在EnOS Console上查看该值。该值紧跟_content_之后，无需空着和符号。
   - 示例：E42C1186C3BFFE98E1EA8AB320CD800D579212AA

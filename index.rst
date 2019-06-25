@@ -12,9 +12,11 @@
    :maxdepth: 1
    :caption: 概念
 
+   howto/model/model_overview
    learn/connection_scenarios
    learn/message_flow
    learn/enos_coap   
+   howto/asset_tree/assettree_overview
    learn/device_lifecycle_management
    learn/ingestion/index   
    learn/deviceconnection_authentication

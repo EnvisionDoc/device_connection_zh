@@ -26,4 +26,3 @@ EnOS™支持以下数据摄取方式：
    cloud2cloud_dataforwarding
    offline_message_integration
 
-   
