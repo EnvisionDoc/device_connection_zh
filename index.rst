@@ -1,4 +1,4 @@
-设备连接
+﻿设备连接
 ===================
 
 .. toctree::
@@ -28,6 +28,14 @@
    quickstart/gettingstarted_device_connection
    quickstart/gettingstarted_edge_connection
    quickstart/gettingstarted_java_ssl_connection
+
+.. toctree::
+   :maxdepth: 2
+   :caption: 教程
+
+   tutorial/connecting_device_simulated/index
+   tutorial/connecting_device_rasberrypi/index
+   tutorial/upgrading_firmware_ota/index
 
 .. toctree::
    :maxdepth: 1
