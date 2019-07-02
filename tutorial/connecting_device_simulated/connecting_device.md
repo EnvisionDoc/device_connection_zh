@@ -42,14 +42,14 @@ After the EnOS Device SDK for MQTT for Java is installed, take the following ste
 
    ```java
    public static final String uri = "tcp://{host}:{port}";
-   public static final String productKey = "cBwYbSIz";
-   public static final String deviceKey = "rcV2wQ6Xer";
-   public static final String deviceSecret = "BjyDrW8DMVfnxifQmaKo";
+   public static final String productKey = "product_key";
+   public static final String deviceKey = "customized_key";
+   public static final String deviceSecret = "device_secret";
    private static MqttClient client;
    ```
 
    - The `host` and `port` of the server vary with the cloud region and instance. For private cloud instances, contact your Envision project manager or support representative to get the host and port information.
-   - The `productKey`, `deviceKey`, and `deviceSecret` are generated when you register the device. You can obtain them from EnOS Console.
+   - The `productKey`, `deviceKey`, and `deviceSecret` are generated when you register the device in [Unit 1](registering_device).
 
 3. Declare the main function `initWithCallback()` for initializing device connection. See the following example:
 

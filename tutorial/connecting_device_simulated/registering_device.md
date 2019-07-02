@@ -17,7 +17,7 @@ This step assumes that there is no device model to be reused on EnOS. Take the f
    - **Identifier**: battery
    - **Model Name**: battery
    - **Category**: NA
-   - **Create From**: No
+   - **Created From**: No
    - **Source Model**: No
    - **Description**: Model for battery
 
@@ -55,9 +55,9 @@ In this step, create a product called **Battery_Product**. Assume that a device 
 
    - **Product Name**: Battery_Product
    - **Asset Type**: Device
-   - **Device Model**: battery
+   - **Model**: battery
    - **Data Type**: JSON
-   - **Certificate-based bi-directional authentication**: Disabled
+   - **Certificate-Based Authentication**: Disabled
    - **Description**: Computer Battery
 
 3. Click **OK** to save the configuration.
@@ -84,13 +84,13 @@ In this step, create a device named **battery1**, which belongs to the **Battery
    - **Device Key**: Optional (it can be generated automatically by the system)
    - **brand**: Enter the brand information of the battery (an attribute defined for the model)
 
-3. Click **Confirm** to save the configuration.
+3. Click **OK** to save the configuration.
 
    .. image:: media/register_device.png   
 
 For details about device settings, see [Registering a Device](/docs/device-connection/en/latest/howto/device/manage/creating_device.html).
 
-After you complete the device registration, find the registered device from the device list, and click the **View** icon in the **Operations** column to open the **Device Details** page. You can get the device triple properties: `Product Key`, `Device Key`, and `Device Secret`, which will be used in connecting the device to EnOS IoT hub.
+After you complete the device registration, find the registered device from the device list, and click the **View** icon in the **Operations** column to open the **Device Details** page. You can get the device triple properties: *Product Key*, *Device Key*, and *Device Secret*, which will be used in connecting the device to EnOS IoT hub.
 
 .. image:: media/device_properties.png   
 

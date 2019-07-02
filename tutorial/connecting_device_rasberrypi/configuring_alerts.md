@@ -54,7 +54,7 @@ In this tutorial, define alert rules with conditions that trigger the alerts.
 
 When the alert rule is saved, it will start running to monitor the temperature of the battery device. You can view active alerts and history alerts that reported against the device on the **Alert Record** page.
 
-You can also use the event service APIs to query alert records. For example, using the `listActiveAlerts` API to query active alerts by organization ID and other filtering conditions. For more information about EnOS API, see [About EnOS APIs](/docs/api/en/latest/overview.html).
+You can also use the event service APIs to query alert records. For example, using the *Search Active Alerts* API to query active alerts by organization ID and other filtering conditions. For more information about EnOS API, go to **EnOS Console > EnOS API**.
 
 ## Next Unit
 
