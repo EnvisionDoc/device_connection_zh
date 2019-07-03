@@ -5,7 +5,7 @@
 ## 开始前准备<beforestart>
 
 - 已设计好该模型所需要的功能。有关如何进行模型的功能设计，参见[物模型概述](model_overview)。
-- 你需要有设备管理操作权限，如果没有需联系组织管理员添加。有关EnOS内的用户权限，参见[策略，角色，与权限](/docs/iam/zh_CN/dev/access_policy)。
+- 你需要有设备管理操作权限，如果没有需联系组织管理员添加。有关EnOS内的用户权限，参见[策略，角色，与权限](/docs/iam/zh_CN/latest/access_policy)。
 
 ## 任务描述<description>
 
