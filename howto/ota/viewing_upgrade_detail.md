@@ -40,4 +40,4 @@
 
 ## 后续操作
 
-你可以再次[验证固件](verifying_firmware)并[批量升级固件](batch_upgrade_firmware)；对于不再需要的固件，你可以[删除固件](deleting_firmware) 。
+你可以再次[验证固件](verifying_firmware)并[批量升级固件](batch_upgrading_firmware)；对于不再需要的固件，你可以[删除固件](deleting_firmware) 。
