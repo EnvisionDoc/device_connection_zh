@@ -15,7 +15,7 @@ Briefly mention what the user's learning goal is and include the following SEO k
    
   2. 完成设备在EnOS云端的身份注册。
    
-  3. 完成设备端开发以使得设备可以通过EnOS的标准协议连接及发送数据，参考[设备端开发](../device/devlop/index) 。
+  3. 完成设备端开发以使得设备可以通过EnOS的标准协议连接及发送数据，参考[设备端开发](../device/devlop/index.rst) 。
 
      该准备的过程，可参考[将智能设备连接至EnOS](../../quickstart/gettingstarted_device_connection) 。
 
