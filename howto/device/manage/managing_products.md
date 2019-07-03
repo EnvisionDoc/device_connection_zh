@@ -4,7 +4,7 @@
 
 ## 开始前准备
 
-- 你需要有设备管理操作权限，如果没有请联系组织管理员添加，参见[策略，角色，与权限](/docs/iam/zh_CN/dev/access_policy)。
+- 你需要有设备管理操作权限，如果没有请联系组织管理员添加，参见[策略，角色，与权限](/docs/iam/zh_CN/latest/access_policy)。
 
 ## 开启动态注册<enable>
 

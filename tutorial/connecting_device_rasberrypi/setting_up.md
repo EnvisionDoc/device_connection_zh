@@ -1,10 +1,10 @@
 # Unit 1: Setting up the Raspberry Pi
 
-In this tutorial, set up a Raspberry Pi 3 Model B as the main device. The RPi can connect to a set of sensors and small plug-ins.
+In this tutorial, set up a Raspberry Pi 3 Model B as the main device. A set of sensors and small plug-ins can be connected to the RPi.
 
 ## Hardware Preparation
 
-To set up the RPi for this lab, the following hardwares are needed:
+To set up the RPi for this tutorial, the following hardware components are needed:
 
 - A Raspberry Pi 3 Model B (with power supply)
 - A 32GB TF card (with reader)
@@ -19,7 +19,7 @@ To set up the RPi for this lab, the following hardwares are needed:
 
 You can also choose other RPi plug-ins according to your needs.
 
-Now you can set up the RPi with the selected hardwares. For detailed steps, refer to the [Raspberry Pi User Guide](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up) documentation.
+Now you can set up the RPi with the selected hardware components. For detailed steps, refer to the [Raspberry Pi User Guide](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up) documentation.
 
 ## Setting Up Raspberry Pi
 
@@ -37,7 +37,7 @@ With the hardware set up, you can now start up the Raspberry Pi and take the fol
 
    .. image:: media/sensors.png
 
-After the hardware of the RPi is set up, you can then register the devices on EnOS Console.
+After the hardware of the RPi is set up, you can then register the RPi device on EnOS Console.
 
 ## Next Unit
 

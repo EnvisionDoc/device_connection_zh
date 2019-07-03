@@ -70,7 +70,7 @@ CoAP服务器地址为`coap-<hostname>`，其中 _hostname_ 是EnOS环境所在�
 
     3. 使用SHA-256算法获得该拼接字段的摘要，并将其中的字母转换为大写。
 
-2. 鉴权通过，EnOS在鉴权请求的相应中包含CoAP协议定义的返回码和一个token，用于后续session的鉴权。响应的格式如下：
+2. 鉴权通过，EnOS在鉴权请求的响应中包含CoAP协议定义的返回码和一个token，用于后续session的鉴权。响应的格式如下：
    ```json
    Code: CoAP返回码，参考CoAP协议说明
    Payload: 如果设备鉴权上线成功 { "token" : ${Token} }

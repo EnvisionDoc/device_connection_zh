@@ -2,7 +2,7 @@
 
 ## Scenario
 
-Use a Raspberry Pi (RPi for short) to ingest temperature and humidity data of the environment and control an LED light. When the RPi is connected, view the uploaded telemetry of the temperature and humidity sensors to EnOS Cloud, control the LED light, and monitor the device data with alarms.
+Use a Raspberry Pi (RPi for short) to ingest temperature and humidity data of the environment and control an LED light. When the RPi is connected, view the telemetry of the temperature and humidity sensors uploaded to EnOS Cloud, control the LED light, and monitor the device data with alarms.
 
 The scenario is depicted in the following chart:
 
@@ -11,9 +11,9 @@ The scenario is depicted in the following chart:
 This tutorial walks you through a typical path of connecting a Raspberry Pi into EnOS, which is:
 
 - Setting up the RPi with the necessary hardware devices
-- Modeling and registering the devices on EnOS Console
+- Modeling and registering the RPi device on EnOS Console
 - Configuring alert settings for monitoring the device data
-- Performing development on devices with EnOS device SDK
+- Performing device-end development with EnOS device SDK
 - Connecting the device into EnOS
 - Viewing device and data from EnOS
 - Managing device alerts
