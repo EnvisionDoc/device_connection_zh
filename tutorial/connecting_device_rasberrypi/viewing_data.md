@@ -5,8 +5,8 @@ After the device is connected and starts uploading data to EnOS Cloud, you can m
 ## Checking Device Status
 
 1. In the EnOS Console, click **Device Management > Device**。
-2. Locate the *smartdevice-NB-IoT* and *smartdevice* devices.
-3. Check the status of the devices. The status of the devices will change from *inactive* to *online*.
+2. Find the *RPi_Device* from the device list.
+3. Check the status of the device. The status of the devices will change from *Inactive* to *Online*.
 
 .. image:: media/device_status.png
 
@@ -16,13 +16,13 @@ The device data uploaded to EnOS Cloud can be viewed on the EnOS Console:
 
 1. Open the **Device Details** page, click **Measuring Points**.
 
-2. Locate the *Temperature* measuring point, click **View data**.
+2. Locate the *Temperature* measuring point, click **View Data**.
 
-3. Select a time range and view the device data in a chart or table. See the following example.
+3. View the measuring point real-time data on the **Data Insights** page. See the following example.
 
    .. image:: media/device_data.png
 
-With storage policy configured, the uploaded device data can be stored for further processing and analysis. For more information, see [Data Asset Management](/docs/data-asset/en/latest/data_asset_overview).
+With storage policy configured, the uploaded device data can be stored for further processing and analysis. For more information, see [Managing Time Series Data](/docs/data-asset/en/latest/howto/storage/index.html).
 
 ## Viewing Alert Records
 

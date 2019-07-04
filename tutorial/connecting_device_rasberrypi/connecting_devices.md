@@ -8,7 +8,7 @@ For detailed information about the EnOS Device SDK for MQTT for Python, refer to
 
 EnOS Device SDK for MQTT for Python requires Python 2.7.12 or higher version. Take the following steps to set up the development environment on RPi:
 
-1. Run the following commands to install the needed SDKs:
+1. Run the following commands in the Terminal to install the needed SDKs:
 
    ```
    sudo apt-get install libffi-dev
@@ -16,7 +16,11 @@ EnOS Device SDK for MQTT for Python requires Python 2.7.12 or higher version. Ta
    sudo apt-get install python-opencv
    ```
 
-2. Run `pip install enos-mqtt-sdk-python` in the Terminal to install the EnOS Device SDK.
+2. Run the following command in the Terminal to install the EnOS Device SDK:
+
+   ```
+   pip install enos-mqtt-sdk-python
+   ```
 
    .. image:: media/pip.png
 
@@ -26,11 +30,25 @@ After the EnOS Device SDK for MQTT for Python is installed, take the following s
 
 1. Develop a python program offline for connecting the RPi to EnOS. The program needs to include the following parts:
 
-   - The directory that contains the python program and log files in the RPi system.
-   - The host and port of the EnOS service. Contact your EnOS project manager for details if needed.
-   - The keys and secrets of the product and devices, which are generated when registering the devices on EnOS Console.
+   - The directory that contains the python program and log files in the RPi system. For example:
 
-   .. image:: media/code_sample_1.png
+     ```
+     cwd = '/home/pi/enos_device_demo/'
+     ```
+
+   - The host and port of the EnOS service. Contact your EnOS project manager for details if needed. For example:
+
+     ```
+     enos_mqtt_url = "tcp://mqtt-{service_host}:{port}"
+     ```
+
+   - The keys and secrets of the product and devices, which are generated when registering the RPi device on EnOS Console. For example:
+
+     ```
+     product_key = "49vZUaG8"
+     device_key = "CiwZTtAqRw"
+     device_secret = "y6OtEzmkRViXcw1qdMYA"
+     ```
 
 2. Make sure the keys and secrets of the product, device, and sub-device are correct, as well as asset ID.
 
@@ -45,7 +63,7 @@ from message.upstream.status.SubDeviceLoginRequest import SubDeviceLoginRequest
 from core.MqttClient import MqttClient
 from message.upstream.topo.TopoAddRequest import TopoAddRequest
 from message.upstream.topo.SubDeviceInfo import SubDeviceInfo
-from message.upstream.tsl.measuringpointPostRequest import MeasurepointPostRequest
+from message.upstream.tsl.MeasurepointPostRequest import MeasurepointPostRequest
 from message.upstream.topo.TopoGetRequest import TopoGetRequest
 from message.upstream.topo.TopoDeleteRequest import TopoDeleteRequest
 from led import set_light, get_light
@@ -56,7 +74,7 @@ import time
 
 cwd = '/home/pi/enos_device_demo/'
 
-enos_mqtt_url = "tcp://{HOST}:11883"
+enos_mqtt_url = "tcp://mqtt-{service_host}:{port}"
 
 # gateway parameters
 gateway_product_key = "NBXxeOUg"
@@ -197,7 +215,7 @@ Take the following steps to run the program:
 
    .. image:: media/run_program.png
 
-2. Check the running status of the program. The measure point data will start to be uploaded to the EnOS Cloud.
+2. Check the running status of the program. The measuring point data will start to be uploaded to the EnOS Cloud.
 
    .. image:: media/program_result.png
 
