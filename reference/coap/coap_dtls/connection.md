@@ -128,8 +128,9 @@ Payload: {
    "参数", "说明"
    "id", "标识消息的唯一ID"
    "assetId", "设备对应的资产ID"
-   
+
 获取`deviceSecret`后，设备连接EnOS时，通过设备的`productKey`，`deviceKey`和`deviceSecret`进行认证。
+
 
 
 

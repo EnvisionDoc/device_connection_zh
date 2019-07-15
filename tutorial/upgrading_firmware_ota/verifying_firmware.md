@@ -6,8 +6,8 @@ After the firmware file is uploaded to the cloud, you can push the new firmware 
 
 2. Find the uploaded firmware, click **Verify**, and provide the following information:
 
-   - Firmware Version: Select the current firmware version of the device to be upgraded from the drop-down list.
-   - Device Key: Select the device key of the RPi device.
+   - **Firmware Version**: Select the current firmware version of the device to be upgraded from the drop-down list.
+   - **Device Key**: Select the device key of the RPi device.
 
    .. image:: media/verify_firmware.png
 
@@ -21,7 +21,7 @@ Meanwhile, the firmware upgrading command will be sent to the RPi device. See th
 {id='2', method='ota.device.upgrade', version='1.0', params={fileSize=136, sign=ddd36e29b7e876b3cbb286c2f3d7d3d7, fileUrl=/upload/firmware/1559640389247/firmware_2.0.zip, version=2.0, signMethod=md5}}
 ```
 
-When receiving the command, the RPi device will start downloading the firmware file, decompressing the firmware file, and run the upgrade. After the upgrade is completed, the device will reply with the updated firmware version number. See the following example:
+Upon receiving the command, the RPi device will start downloading the firmware file, decompressing the firmware file, and run the upgrade. After the upgrade is completed, the device will reply with the updated firmware version number. See the following example:
 
 ```
 {id='null', method='ota.device.inform', version='null', params={version=2.0}}

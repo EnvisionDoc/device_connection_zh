@@ -1,6 +1,6 @@
 # Unit 1: Developing OTA Capabilities on the Raspberry Pi
 
-In [Unit 4 of Tutorial - Connecting Raspberry Pi into EnOS](/docs/device-connection/en/latest/tutorial/connecting_device_rasberrypi/connecting_devices.html), we have developed a program using the EnOS Device SDK for MQTT for Python to connect the RPi to EnOS.
+In [Unit 4](/docs/device-connection/en/latest/tutorial/connecting_device_rasberrypi/connecting_devices.html) of the *Connecting Raspberry Pi into EnOS* tutorial, we have developed a program using the EnOS Device SDK for MQTT for Python to connect the RPi to EnOS.
 
 In this unit, upgrade the program to develop the OTA capabilities on the RPi, including the following functions:
 
@@ -13,13 +13,13 @@ For detailed information about firmware OTA upgrade modes and process, see [Firm
 
 ## Prerequisites
 
-The python program developed in Tutorial 2 is running normally, and the LED light on the RPi can be controlled through the cloud.
+The python program developed in [Unit 4](/docs/device-connection/en/latest/tutorial/connecting_device_rasberrypi/connecting_devices.html) of the *Connecting Raspberry Pi into EnOS* tutorial is running normally, and the LED light on the RPi can be controlled through the cloud.
 
 ## Programming for OTA Capabilities
 
 Take the following steps to develop a program using the EnOS Device SDK for MQTT for Python, for empowering the RPi device with OTA capabilities:
 
-1. Export the python program developed in Tutorial 2 from the USB flash disk to a workstation.
+1. Export the python program developed in [Unit 4](/docs/device-connection/en/latest/tutorial/connecting_device_rasberrypi/connecting_devices.html) of the *Connecting Raspberry Pi into EnOS* tutorial from the USB flash disk to your workstation.
 
 2. Update the program with the following code snippet for the OTA service.
 
@@ -108,7 +108,7 @@ Take the following steps to develop a program using the EnOS Device SDK for MQTT
 
    cwd = '/home/pi/enos_device_demo/'
 
-   enos_mqtt_url = "tcp://{HOST}:11883"
+   enos_mqtt_url = "tcp://mqtt-{service_host}:{port}"
 
    # gateway parameters
    gateway_product_key = "NBXxeOUg"

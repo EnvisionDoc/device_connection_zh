@@ -4,13 +4,13 @@ In this unit, upload the prepared device firmware file on EnOS Console by take t
 
 1. Log into the EnOS Console, and select **Device Management > OTA**.
 
-2. Click **Add firmware** and provide the following information:
-   - Product: Select the *smartdevice-NB-IOT* product from the drop-down list.
-   - Firmware Name: Enter *Firmware_2.0* for the firmware to be uploaded.
-   - Firmware Version: Enter *2.0* as the firmware version.
-   - Signature Algorithm: By default, *MD5* is supported currently.
-   - Select Firmware: Click **Select File**, browse and upload the *firmware_2.0.zip* firmware file.
-   - Version Description: Enter a short description of the firmware.
+2. Click **Add Firmware** and provide the following information:
+   - **Product**: Select *RPi_Product* from the drop-down list.
+   - **Firmware Name**: Enter *Firmware_2.0* for the firmware file to be uploaded.
+   - **Firmware Version**: Enter *2.0* as the firmware version.
+   - **Signature Algorithm**: By default, *MD5* is supported currently.
+   - **Select Firmware**: Click **Select File**, browse and upload the *firmware_2.0.zip* firmware file.
+   - **Version Description**: Enter a short description of the firmware.
 
    .. image:: media/ota_add_firmware.png
 

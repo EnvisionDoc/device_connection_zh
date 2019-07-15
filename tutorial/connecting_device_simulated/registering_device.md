@@ -29,17 +29,33 @@ This step assumes that there is no device model to be reused on EnOS. Take the f
 
 5. Click **Add** and create the following features in the **Add Feature** window:
 
-   .. csv-table::
-      :widths: auto
+   - Adding an attribute
 
-      "Feature Type", "Name", "Identifier", "Data Type", "Description"
-      "Attribute", "brand", "brand", "String", "Brand information of the device"
-      "Measuring Point", "temperature", "temperature", "Double", "Point to ingest the device temperature data"
-      "Service", "start_charging", "start_charging", "--", "Service that controls the charging status of the device"
+     .. csv-table::
+        :widths: auto
 
-See the following screen capture of the created features of the model:
+        "Feature Type", "Name", "Identifier", "Data Type", "String Length", "Description"
+        "Attribute", "brand", "brand", "string", "64 Bytes", "Brand information of the device"
 
-.. image:: media/model_features.png
+   - Adding a measuring point
+
+     .. csv-table::
+        :widths: auto
+
+        "Feature Type", "Name", "Identifier", "Point Type", "Data Type", "Description"
+        "Measuring Point", "temperature", "temperature", "AI", "double", "Point to ingest the device temperature data"
+
+   - Adding a service
+
+     .. csv-table::
+        :widths: auto
+
+        "Feature Type", "Name", "Identifier", "Invoke Method", "Description"
+        "Service", "start_charging", "start_charging", "Asynchronous", "Service that controls the charging status of the device"
+
+   See the following screen capture of the created features of the model:
+
+   .. image:: media/model_features.png
 
 For details about device model settings, see [Creating a Model](/docs/device-connection/en/latest/howto/model/creating_model.html).
 
