@@ -18,6 +18,7 @@
 本步骤大部分与上述两个快速入门示例相似，差异点在创建网关产品时需要创建开启 **证书双向认证机制** 的产品。如下图所示：
 
 .. image:: ../media/edge_ssl.png
+   :width: 400px
 
 逆变器产品不需要开启 **证书双向认证机制**，因为逆变器是作为子设备由网关代理连接EnOS Cloud，只需要edge与cloud进行基于证书的双向认证即可。
 
@@ -43,7 +44,7 @@
 
 ### 步骤1：获取根证书<rootcert>
 
-下载CA根证书`cacert.pem`，下载地址为：[Link](https://<cluster_name>.envisioniot.com/enos/CA/cacert) 。
+下载CA根证书 `cacert.pem` ，下载地址为：`Link <https://<cluster_name>.envisioniot.com/enos/CA/cacert>`__ 。
 
 <!-- - 如果是公有云用户，<cluster_name>参考[EnOS Cloud集群信息]()。-->
 - 如果是私有云用户，<cluster_name>请咨询远景智能客户经理或支持。

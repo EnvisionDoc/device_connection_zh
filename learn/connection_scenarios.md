@@ -14,6 +14,7 @@
 
 .. image:: ../media/device_types.png
 
+
 ## 智能设备接入<smartdeviceconnection>
 
 此类设备可直接与云端连接。一些常见设备包括：
@@ -27,10 +28,12 @@
 - 分布式逆变器：网关直采多台逆变器的数据，并将数据发送至云端。
 
   .. image:: ../media/inverter_gateway.png
+     :width: 400px
 
 - SCADA：SCADA与风机直连，并采集风机数据；网关与SCADA连接，并采集SCADA数据，然后将数据发送至云端。
 
   .. image:: ../media/turbine_scada_gateway.png
+     :width: 400px
 
 ## 安全认证选项<authentication>
 

@@ -64,6 +64,7 @@
    - **模型描述**：Edge Model
 
    .. image:: ../media/model_edge.png
+      :width: 400px
 
 3. 点击 **确定** 完成操作。
 

@@ -1,42 +1,44 @@
-# Managing Models
+# 管理模型
 
-In **Model**, click **Edit** for the model you select. Go to **Feature Definition** , use the **Export Model** , **Import Model** buttons to manage your existing model, such as editing existing model elements (attributes, measuring points, events, services) or creating new model elements.
+选择**模型**，在需要编辑的模型的**操作**栏点击**修改**，选择**功能定义** 标签页，使用**导入模型**和**导出模型**按钮即可管理现有模型。例如导出现有模型信息，编辑后再导入，即可完成模型的修改。
 
-## About This Task
+## 任务描述
 
-After creating a model, you may have to change its elements or add new elements as required. This task helps you manage existing models by using EnOS-defined JSON files.
+创建模型后，你可以变更现有模型信息或为模型创建新的要素。本文帮助你通过EnOS定义的JSON格式文件或Excel文件，管理现有模型。
 
-## Before You Start
+## 开始前准备
 
-You need to have proper authority to view and manage models. Contact your OU administrator for access. For more information, see [Policy, Role, and Access](/docs/iam/en/latest/access_policy).
+你需要获得编辑模型的权限。如果你没有该权限，联系你的OU管理员以获取。更多信息，参见[策略、角色与权限](/docs/iam/zh_CN/latest/access_policy).
 
-## Procedure
+## 步骤
 
-To edit your existing model in a JSON file, export the model first, then edit the downloaded JSON file and import it into the existing model. You can also import the JSON file into a new model to fast create elements.
+为编辑现有模型的模型文件，首先导出模型。然后编辑下载好的模型文件，再导入模型文件。
 
-### Exporting 
+### 导出模型 
 
-1. Go to **Model**, click **Edit** for the model you select.
+1. 选择**模型**，在需要编辑的模型的**操作**一栏，点击**修改**
 
-2. Go to **Feature Definition**, click **Export Model**.
+2. 选择**功能定义**标签页，点击**导出模型**，选择需要下载的模型文件格式：JSON格式文件或Excel文件
 
-3. Click **Export Model** to download the model file in JSON.
+3. 根据需要编辑下载的模型文件
 
-  The downloaded JSON file is named model_Modelname_Timestamp.json, where `Modelname` is inherited from the **Model Name** field from EnOS, and `Timestamp` is the time you download this JSON file in *hhmmssSS*, SS indicating millisecond.
+  JSON文件的命名模式为“model_Modelname_Timestamp.json”，其中`Modelname`是**模型名称**；`Timestamp` 是你下载该JSON文件的具体时间，格式为*hhmmssSS*，SS为毫秒。
 
-  Edit the JSON file to modify existing model elements or add new elements.
+  Excel文件的命名模式为“ThingModel_Modelname.xlsx”，其中`Modelname`是**模型名称**。
 
-### Importing
+  你可以修改现有模型要素，也可以增加新的要素
 
-1. On **Feature Definition**, click ** Import Model**.
+### 导入模型
 
-2. In the pop-up, click **Upload**. Select the local JSON file.
+1. 在**功能定义**标签页，点击**导入模型**
 
-3. Click **Import** if your uploaded file passes format verification.
+2. 在弹窗中，点击**上传**，选择本地需要导入的模型文件并确定
+
+3. EnOS会对待上传文件格式进行校验。如果格式没有问题，点击**导入**，完成模型导入
  
- You may have to correct format issues if there are format issues. Refer to the error messages prompted after you have uploaded the JSON file.
+ 如果格式有问题，按照弹出的错误信息提示，进行修正后，再次上传，进行校验。
 
-## Results
+## 结果
 
-The model you selected has been edited as the changes you made to the JSON file.
+你编辑了现有模型的信息，并上传了编辑后的模型信息文件，完成了模型信息的更新。
 
