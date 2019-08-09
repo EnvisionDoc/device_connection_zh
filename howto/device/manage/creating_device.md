@@ -40,7 +40,7 @@
 
 ## 后续操作<followup>
 
-新创建的设备在未上线的情况显示为未激活。如需激活设备，你需要通过设备端SDK发起连接。更多信息，参考[EnOS SDK 快速入门](https://www.envisioniot.com/docs/app-development/zh_CN/latest/gettingstarted_sdk.html)
+新创建的设备在未上线的情况显示为未激活。如需激活设备，你需要通过设备端SDK发起连接。更多信息，参考[EnOS SDK 快速入门](https://docs.eniot.io/docs/app-development/zh_CN/latest/gettingstarted_sdk.html)
 
 ## 相关信息<information>
 

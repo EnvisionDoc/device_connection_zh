@@ -34,7 +34,7 @@ IoT Hub是EnOS为设备连接提供的云代理服务。IoT Hub有以下功能�
 
 Edge位于Envision EnOS IoT平台的前端，采集现场设备数据或连接到第三方系统，并传输数据到EnOS Cloud。EnOS物联网操作系统支持EnOS Edge和符合EnOS设备数据传输协议的第三方edge产品。
 
-EnOS Edge是一款基于软件的edge产品，支持数据采集，多种通信约定，本地缓存和断点续建。它可以部署在云计算机中，也可以部署在指定品牌型号的现场硬件上。Edge必须含有由Envision分配的合法序列号（SN）才能被EnOS Cloud识别。更多信息，参考[EnOS Edge概述](https://www.envisioniot.com/docs/enos-edge/zh_CN/latest/edge_overview.html)。
+EnOS Edge是一款基于软件的edge产品，支持数据采集，多种通信约定，本地缓存和断点续建。它可以部署在云计算机中，也可以部署在指定品牌型号的现场硬件上。Edge必须含有由Envision分配的合法序列号（SN）才能被EnOS Cloud识别。更多信息，参考[EnOS Edge概述](https://docs.eniot.io/docs/enos-edge/zh_CN/latest/edge_overview.html)。
 
 ## 接入场景<scenarios>
 

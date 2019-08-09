@@ -1,6 +1,6 @@
-# 批量上报测点信息
+# 批量上报离线测点信息
 
-批量上报测点适用于以下几种场景：
+批量上报离线测点适用于以下几种场景：
 - 网关设备代理子设备批量上报数据；
 - 直连设备批量上报不同时间戳的数据；
 - 兼有以上场景；
@@ -8,8 +8,8 @@
 .. note:: 根据物模型中的输入参数和输出参数来配置下列的参数。如果请求中部分数据发送失败，整个请求全部发送失败，返回第一个出现的错误码。
 
 上行
-- 请求TOPIC: `/sys/{productKey}/{deviceKey}/thing/measurepoint/post/batch`
-- 响应TOPIC: `/sys/{productKey}/{deviceKey}/thing/measurepoint/post/batch_reply`
+- 请求TOPIC: `/sys/{productKey}/{deviceKey}/thing/measurepoint/resume/batch`
+- 响应TOPIC: `/sys/{productKey}/{deviceKey}/thing/measurepoint/resume/batch_reply`
 
 ## 请求数据格式
 
@@ -72,7 +72,7 @@
             "time":123456
         }
     ],
-    "method":"thing.measurepoint.post.batch"
+    "method":"thing.measurepoint.resume.batch"
 }
 ```
 

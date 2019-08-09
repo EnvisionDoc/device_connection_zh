@@ -1,10 +1,10 @@
-# 上报单个测点信息
+# 上报单个离线测点信息
 
 .. note:: 根据物模型中的输入参数和输出参数来配置下列的参数。
 
 上行
-- 请求TOPIC: `/sys/{productKey}/{deviceKey}/thing/measurepoint/post`
-- 响应TOPIC: `/sys/{productKey}/{deviceKey}/thing/measurepoint/post_reply`
+- 请求TOPIC: `/sys/{productKey}/{deviceKey}/thing/measurepoint/resume`
+- 响应TOPIC: `/sys/{productKey}/{deviceKey}/thing/measurepoint/resume_reply`
 
 ## 请求数据格式
 
@@ -27,7 +27,7 @@
         },
         "time":123456
     },
-    "method":"thing.measurepoint.post"
+    "method":"thing.measurepoint.resume"
 }
 ```
 

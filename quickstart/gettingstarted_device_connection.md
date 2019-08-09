@@ -4,7 +4,7 @@
 
 ## 场景描述<scenario>
 
-接入场景参考[设备接入方案](../learn/connection_scenarios)当中提到的“场景1.1”。
+接入场景参考 [设备接入方案](../learn/connection_scenarios) 当中提到的“场景1.1”。
 
 
 ## 任务描述<description>
@@ -133,7 +133,7 @@
       - **标识符**：Error
       - **事件类型**：故障
 
-有关设备模型设置的详细信息，参见[创建模型](../howto/model/creating_model)。
+有关设备模型设置的详细信息，参见 [创建模型](../howto/model/creating_model)。
 
 ## 步骤2：创建产品<createproduct>
 
@@ -156,7 +156,7 @@
       :width: 400px
 
 
-有关产品设置的详细信息，参见[创建产品](../howto/device/manage/creating_product)。
+有关产品设置的详细信息，参见 [创建产品](../howto/device/manage/creating_product)。
 
 
 ## 步骤3：注册设备<registerdevice>
@@ -186,7 +186,7 @@
 
 在该步骤中，我们通过设备端SDK模拟发送逆变器有功功率至云端。
 
-1. 获取[设备端SDK](https://github.com/EnvisionIot/enos-mqtt-java-sdk)。更多信息，参考该SDK的GitHub readme文件。
+1. 获取 [设备端SDK](https://github.com/EnvisionIot/enos-mqtt-java-sdk)。更多信息，参考该SDK的GitHub readme文件。
 
 2. 配置EnOS Cloud连接地址。
 
@@ -213,9 +213,7 @@
        public static final String deviceKey = "{DeviceKey}";
        public static final String deviceSecret = "{DeviceSecret}";
        private static MqttClient client;
-       private static volatile boolean subDeviceLogined = false;
        private static Random random = new Random();
-       private static int idInc = 20;
        private static final char[] HEX_CHAR = new char[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
    
        public demo() {
@@ -264,18 +262,6 @@
                var3.printStackTrace();
            }
        }
-   	
-   } public static void postMeasurepoint() {
-        Random random = new Random();
-        System.out.println("start post measurepoint ...");
-        MeasurepointPostRequest request = (MeasurepointPostRequest)MeasurepointPostRequest.builder().addMeasurePoint("INV.GenActivePW", random.nextDouble()).build();
-        try {
-            client.fastPublish(request);
-            System.out.println(" post measurepoint success...");
-        } catch (Exception var3) {
-            var3.printStackTrace();
-        }
-    }
    ```
 
 6. 使用`handleServiceInvocation()`方法响应云端的服务命令。
@@ -292,7 +278,7 @@
     }
    ```
 
-SDK具体使用参考[SDK设备端连接](../howto/device/develop/using_java_sdk)。
+SDK具体使用参考 [SDK设备端连接](../howto/device/develop/using_java_sdk)。
 
 ## 步骤5：查看设备连接状态<checkconnection>
 
@@ -304,7 +290,7 @@ SDK具体使用参考[SDK设备端连接](../howto/device/develop/using_java_sdk
 
 1. 在设备列表中，找到 **INV001** 设备，并点击 **操作** 列中的 **查看** 图标，进入 **设备详情** 页面。
 2. 点击 **测点** 标签，找到测点 **INV.GenActivePW**，点击 **查看数据**，打开 **时序洞察** 页面。
-3. 查看测点的最新数据。如果已为该测点配置存储策略，亦可在时序洞察页面生成该测点的历史数据图表。有关时序洞察的详细信息，参见[生成时序数据图表](/docs/data-asset/zh_CN/latest/howto/storage/generating_data_chart.html)。
+3. 查看测点的最新数据。如果已为该测点配置存储策略，亦可在时序洞察页面生成该测点的历史数据图表。有关时序洞察的详细信息，参见 [生成时序数据图表](/docs/data-asset/zh_CN/latest/howto/storage/generating_data_chart.html)。
 
 ## 步骤7：通过在线调试工具调试测点置数
 

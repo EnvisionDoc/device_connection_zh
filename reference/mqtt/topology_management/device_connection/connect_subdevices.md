@@ -9,20 +9,19 @@
 
 ## 请求数据格式
 
-```
+``` json
 {
- "id": "123",
- "params": {
- "productKey": "123",
- "deviceKey": "test",
- "clientId": "123",
- "timestamp": "123",
- "signMethod": "hmacmd5",
- "sign": "xxxxxx",
- "cleanSession": "true"
- }
+    "id":"123",
+    "params":{
+        "productKey":"123",
+        "deviceKey":"test",
+        "clientId":"123",
+        "timestamp":"123",
+        "signMethod":"hmacmd5",
+        "sign":"xxxxxx",
+        "cleanSession":"true"
+    }
 }
-
 ```
 
 ## 响应数据格式

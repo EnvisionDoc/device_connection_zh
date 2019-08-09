@@ -4,44 +4,74 @@
 
 上行
 - 请求TOPIC: `/sys/{productKey}/{deviceKey}/thing/device/register`
-
 - 响应TOPIC: `/sys/{productKey}/{deivceKey}/thing/device/register_reply`
 
 ### 请求数据格式
 
-```
-"id": "123",
-"version": "1.0",
-"params": [
+``` json
 {
-"productKey": "1234556554",
-"deviceAttributes": {
-"color":"red"
-},
-"deviceKey" : "deviceKey1234",
-"deviceName": "deviceName1234",
-"deviceDesc": "deviceDesc1234"
+    "method":"thing.device.register",
+    "id":"1",
+    "params":[
+        {
+            "timezone":"+08:00",
+            "deviceKey":"sample_dev_01",
+            "productKey":"aVpQQTDp",
+            "deviceAttributes":{
+                "location":"Shanghai",
+                "name":"dev_01"
+            },
+            "deviceName":{
+                "defaultValue":"sample_dev_01",
+                "i18nValue":{
+                    "en_US":"eng_dev_01",
+                    "zh_CN":"中文设备01"
+                }
+            },
+            "deviceDesc":"dev desc"
+        },
+        {
+            "timezone":"+09:00",
+            "deviceKey":"sample_dev_02",
+            "productKey":"aVpQQTDp",
+            "deviceAttributes":{
+                "location":"Beijing",
+                "name":"dev_01"
+            },
+            "deviceName":{
+                "defaultValue":"sample_dev_02",
+                "i18nValue":{
+                    "en_US":"eng_dev_02",
+                    "zh_CN":"中文设备02"
+                }
+            },
+            "deviceDesc":"dev desc"
+        }
+    ],
+    "version":"1.1"
 }
-],
-"method": "thing.device.register"
-}
-
 ```
 
 ### 响应数据格式
 
-```
+``` json
 {
- "id": "123",
- "code": 200,
- "data": [
- {
- "assetId": "12344",
- "productKey": "1234556554",
- "deviceKey": "deviceKey1234",
- "deviceSecret": "xxxxxx"
- }
- ]
+    "code":200,
+    "data":[
+        {
+            "deviceSecret":"u2kWIr9eQXcIpXF18X4R",
+            "assetId":"LOMCp6V2",
+            "deviceKey":"sample_dev_01",
+            "productKey":"aVpQQTDp"
+        },
+        {
+            "deviceSecret":"pulapAO2d3Rbopxrw6pz",
+            "assetId":"8MGrcj2b",
+            "deviceKey":"sample_dev_02",
+            "productKey":"aVpQQTDp"
+        }
+    ],
+    "id":"1"
 }
 
 ```
@@ -71,10 +101,6 @@
      - String
      - 可选
      - 设备的属性列
-   * - color
-     - String
-     - 可选
-     - 设备的属性
    * - deviceKey
      - String
      - 可选

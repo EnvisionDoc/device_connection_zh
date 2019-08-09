@@ -8,3 +8,4 @@
 
    connect_subdevices
    disconnect_subdevices
+   batch_connect_subdevices

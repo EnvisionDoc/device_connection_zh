@@ -4,7 +4,7 @@
 
 
 ## 场景描述<scenario>
-接入场景参考[设备接入方案](../learn/connection_scenarios)当中提到的“场景2.1”。
+接入场景参考 [设备接入方案](../learn/connection_scenarios) 当中提到的“场景2.1”。
 
 
 ## 任务描述<description>
@@ -43,7 +43,7 @@
 
 ## 前提条件<prerequisites>
 
-本示例的前提是你已经完成子设备注册（逆变器，如[直连设备连接快速入门](gettingstarted_device_connection)中所述）。
+本示例的前提是你已经完成子设备注册（逆变器，如 [直连设备连接快速入门](gettingstarted_device_connection) 中所述）。
 在本示例当中，只创建网关设备的模型、产品、设备。
 
 
@@ -68,7 +68,7 @@
 
 3. 点击 **确定** 完成操作。
 
-4. 点击 **查看**，在模型详细信息界面中点击 **功能定义** 标签。
+4. 点击 **修改**，在模型详细信息界面中点击 **功能定义** 标签。
 
 5. 点击 **新增**，并在 **添加功能** 窗口提供以下配置信息：
 
@@ -79,7 +79,7 @@
    - **数据长度**：20
    - **是否必填**：是
 
-有关设备模型设置的详细信息，参见[创建模型](../howto/model/creating_model)。
+有关设备模型设置的详细信息，参见 [创建模型](../howto/model/creating_model)。
 
 
 ## 步骤2：创建产品<createproduct>
@@ -92,14 +92,14 @@
 
    - **产品名称**：Edge_Product
    - **节点类型**：网关
-   - **设备模型**：Edge_Product
+   - **设备模型**：Edge_Model
    - **数据格式**：Json
    - **证书双向认证**：禁用
    - **产品描述**：Edge Product
 
 3. 点击 **确定** 完成操作。
 
-有关产品设置的详细信息，参见[创建产品](../howto/device/manage/creating_product)。
+有关产品设置的详细信息，参见 [创建产品](../howto/device/manage/creating_product)。
 
 
 ## 步骤3：注册网关<registergateway>
@@ -131,17 +131,17 @@
 
 4. 发布配置到edge网关。
 
-更多关于EnOS Edge网关配置相关内容，参考[添加EnOS Edge网关](../howto/edge/managing_edge) 。
+更多关于EnOS Edge网关配置相关内容，参考 [添加EnOS Edge网关](../howto/edge/managing_edge) 。
 
 ## 步骤5：通过设备端SDK模拟网关代理子设备发送数据<DeviceSDK>
 
 在该步骤中，我们通过设备端SDK模拟发送逆变器有功功率至云端。
 
-1. 获取[设备端SDK](https://github.com/EnvisionIot/enos-mqtt-java-sdk)。更多信息，参考该SDK的GitHub readme文件。
+1. 获取 [设备端SDK](https://github.com/EnvisionIot/enos-mqtt-java-sdk)。更多信息，参考该SDK的GitHub readme文件。
 
 2. 根据readme中的步骤配置EnOS Cloud连接。
 
-3. 将网关和子设备的三元组（`ProductKey`,`DeviceKey`,`DeviceSecret`）配置到示例连接程序当中。设备三元组为注册设备步骤中获得。
+3. 将网关和子设备的三元组（`ProductKey`, `DeviceKey`, `DeviceSecret`）配置到示例连接程序当中。设备三元组为注册设备步骤中获得。
 
 4. 修改 **postSubMeasurepoint** 方法，配置发送数据测点名称，本例中为发送逆变器有功功率点，设置点名 **INV.GenActivePW**，以及对应的点值。
 
@@ -205,7 +205,7 @@
      }
      ```
 
-SDK具体使用参考[Java SDK README](https://github.com/EnvisionIot/enos-mqtt-sdk-java)。
+SDK具体使用参考 [Java SDK README](https://github.com/EnvisionIot/enos-mqtt-sdk-java)。
 
 
 ## 步骤6：查看设备状态<checkdevice>
@@ -216,4 +216,4 @@ SDK具体使用参考[Java SDK README](https://github.com/EnvisionIot/enos-mqtt-
 
 1. 在 **设备** 页面，找到此设备并点击 **查看** 进入设备详情页面。
 2. 点击 **测点** 标签，选择测点 **INV.GenActivePW**，点击 **查看数据**，打开 **时序洞察** 页面。
-3. 查看测点的最新数据。如果已为该测点配置存储策略，亦可在时序洞察页面生成该测点的历史数据图表。有关时序洞察的详细信息，参见[生成时序数据图表](/docs/data-asset/zh_CN/latest/howto/storage/generating_data_chart.html)。
+3. 查看测点的最新数据。如果已为该测点配置存储策略，亦可在时序洞察页面生成该测点的历史数据图表。有关时序洞察的详细信息，参见 [生成时序数据图表](/docs/data-asset/zh_CN/latest/howto/storage/generating_data_chart.html)。
