@@ -54,7 +54,7 @@ EnOS™设备管理产品可帮助你管理从计划和设计阶段到设备退�
 - 通过EnOS在控制面板中原生提供的设备管理仪表板获得设备与消息动态的概览信息。你还可以开发你自己的数据呈现应用。
 - 从云端对设备进行远程控制，以启用或禁用设备，或触发设备模型所定义的服务。
 - 使用资产警报服务监控设备上的警报（由警报触发规则针对实时测量点遥测数据而定义）。有关更多信息，参见[设备警报](../howto/alert/alert_overview)。
-- 根据业务需求管理、使用和存储设备数据。有关更多信息，参见[数据资产管理](https://docs.eniot.io/docs/data-asset/zh_CN/latest/data_asset_overview.html)。
+- 根据业务需求管理、使用和存储设备数据。有关更多信息，参见[数据资产管理](https://www.envisioniot.com/docs/data-asset/zh_CN/latest/data_asset_overview.html)。
 
 ## 维护阶段
 
