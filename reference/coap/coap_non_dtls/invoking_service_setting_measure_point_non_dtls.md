@@ -40,7 +40,7 @@ Customized Option 2101: ${Sign}
 
 3. 使用拼接的字段和SignKey计算出Sign，方法是`AES_128(${SignKey}, token${Token}sequence${Sequence})`，模式为CBC。
 
-4. 将得到的16进制字符串中的字母转换为大写
+4. 将得到的16进制字符串中的字母转换为大写。
 
 EnOS的响应格式如下：
 

@@ -29,7 +29,7 @@ Briefly mention what the user's learning goal is and include the following SEO k
 
 **步骤3. 配置告警内容**
 
-定义告警的内容，包含对事件的详细描述，触发事件的原因，以及处理方法。定义告警内容时还需要选择告警的类型。详见[创建告警内容](create_alert_content).
+定义告警的内容，包含对事件的详细描述，触发事件的原因，以及处理方法。定义告警内容时还需要选择告警的类型。详见[创建告警内容](create_alert_content)。
 
 **步骤4. 配置告警规则**
 

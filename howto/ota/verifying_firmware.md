@@ -10,8 +10,8 @@
 
 ## 开始前准备
 
-- 已经完成了[新增固件](adding_firmware)
-- 设备已经上报了固件版本和`deviceKey`
+- 已经完成了[新增固件](adding_firmware)。
+- 设备已经上报了固件版本和`deviceKey`。
 
 ## 步骤
 

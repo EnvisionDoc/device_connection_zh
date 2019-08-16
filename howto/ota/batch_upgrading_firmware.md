@@ -31,7 +31,7 @@ EnOS Cloud推送升级可以选择升级的推送时间段，仅在时间段之�
 
 ## 开始前准备
 
-- 完成[验证固件](verifying_firmware)步骤
+- 完成[验证固件](verifying_firmware)步骤。
 
 ## 步骤
 

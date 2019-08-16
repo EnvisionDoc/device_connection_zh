@@ -108,11 +108,11 @@
    * - allowOfflineSubDevice
      - boolean
      - 可选
-     - 是否允许给离线子设备发测点数据，默认false。如果该选项为false且请求中存在离线子设备，那么整个请求将会拒绝。
+     - 是否允许给离线子设备发测点数据，默认false。如果该选项为false且请求中存在离线子设备，那么整个请求将会拒绝
    * - skipInvalidMeasurepoints
      - boolean
      - 可选
-     - 是否忽略请求中格式无效的测点数据，默认false。如果该选项为false且请求中存在无效测点，那么整个请求将会拒绝。
+     - 是否忽略请求中格式无效的测点数据，默认false。如果该选项为false且请求中存在无效测点，那么整个请求将会拒绝
    * - params
      - Object
      - 必需
@@ -120,11 +120,11 @@
    * - productKey
      - String
      - 可选
-     - 设备的product key。如需上报具体子设备的数据，需要提供子设备的productKey和deviceKey；如不提供子设备的productKey和deviceKey，则默认使用网关设备topic的这两个参数。
+     - 设备的product key。如需上报具体子设备的数据，需要提供子设备的productKey和deviceKey；如不提供子设备的productKey和deviceKey，则默认使用网关设备topic的这两个参数
    * - deviceKey
      - String
      - 可选
-     - 设备的device key。如需上报具体子设备的数据，需要提供子设备的productKey和deviceKey；如不提供子设备的productKey和deviceKey，则默认使用网关设备topic的这两个参数。 
+     - 设备的device key。如需上报具体子设备的数据，需要提供子设备的productKey和deviceKey；如不提供子设备的productKey和deviceKey，则默认使用网关设备topic的这两个参数
    * - method
      - String
      - 必需
@@ -132,35 +132,35 @@
    * - measurepoints
      - Object
      - 必需
-     - 需上报的测点的标识符的列表。
+     - 需上报的测点的标识符的列表
    * - power
      - String
      - 可选
-     - 要上报的测点的标识符，在此示例中为属性 **power** 的标识符。此处设置的格式必须与服务的数据类型匹配。例如，当质量位被选择时，此处的数据即为 **value** 和 **quality** 。
+     - 要上报的测点的标识符，在此示例中为属性 **power** 的标识符。此处设置的格式必须与服务的数据类型匹配。例如，当质量位被选择时，此处的数据即为 **value** 和 **quality** 
    * - value
      - Integer
      - 可选
-     - 该测点的标识符。在本例中，为参数 **value** 。此处设置的值必须与服务的数据类型匹配。例如，当此参数的数据类型在模型中设置为integer时，那么值必须为integer。
+     - 该测点的标识符。在本例中，为参数 **value** 。此处设置的值必须与服务的数据类型匹配。例如，当此参数的数据类型在模型中设置为integer时，那么值必须为integer
    * - quality
      - Integer
      - 可选
-     - 该测点的标识符。在本例中，为参数 **quality** 。如上，此处设置的值必须与服务的数据类型匹配。
+     - 该测点的标识符。在本例中，为参数 **quality** 。如上，此处设置的值必须与服务的数据类型匹配
    * - temp
      - String
      - 可选
-     - 要上报的测点的标识符，在此示例中为属性 **temp** 的标识符。如上，此处设置的值必须与服务的数据类型匹配。
+     - 要上报的测点的标识符，在此示例中为属性 **temp** 的标识符。如上，此处设置的值必须与服务的数据类型匹配
    * - branchCurr
      - String
      - 可选
-     - 要上报的测点的标识符，在此示例中为属性 **branchCurr** 的标识符。如上，此处设置的值必须与服务的数据类型匹配。
+     - 要上报的测点的标识符，在此示例中为属性 **branchCurr** 的标识符。如上，此处设置的值必须与服务的数据类型匹配
    * - time
      - Timestamp
      - 可选
-     - 测点的时间戳。如果为空，时间戳会被设为服务器的时间。
+     - 测点的时间戳。如果为空，时间戳会被设为服务器的时间
    * - code
      - Integer
      - 必需
-     - 结果返回码。200代表请求成功执行。
+     - 结果返回码。200代表请求成功执行
    * - data
      - JSON
      - 可选

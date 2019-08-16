@@ -77,7 +77,7 @@ Edge类型的设备， 可以通过该Topic上行请求添加它和子设备之�
    * - signmethod
      - String
      - 必需
-     - 签名方法，支持hmacSha1。
+     - 签名方法，支持hmacSha1
    * - timestamp
      - String
      - 必需
@@ -85,11 +85,11 @@ Edge类型的设备， 可以通过该Topic上行请求添加它和子设备之�
    * - clientId
      - String
      - 必需
-     - 本地标记。可以为productKey或deviceKey。
+     - 本地标记。可以为productKey或deviceKey
    * - code
      - Integer
      - 必需
-     - 结果返回码，200代表请求成功执行。
+     - 结果返回码，200代表请求成功执行
 
 
 

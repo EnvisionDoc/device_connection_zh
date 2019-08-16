@@ -60,8 +60,8 @@ public <T extends IMqttResponse> void publish(IMqttRequest<T> request, IResponse
 
 两者的不同之处在于：
 
-- 带有回调函数的发布方法是异步方法
-- 带有响应参数的发布方法是同步方法
+- 带有回调函数的发布方法是异步方法。
+- 带有响应参数的发布方法是同步方法。
 
 需注意的是，如果`MeasurepointPostRequest`错误地调用了推送命令，服务就不会响应任何错误信息，直至会话超时为止。
 

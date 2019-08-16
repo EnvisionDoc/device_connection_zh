@@ -42,7 +42,7 @@ EnOS支持CoAP协议连接通信。CoAP协议适用在资源受限的低功耗�
 
 ## 连接CoAP服务器
 
-CoAP服务器地址为`coap-<hostname>`，其中 _hostname_ 是EnOS环境所在的服务器地址，例如EnOS所在环境的服务器地址为*abc.def.com*，则CoAP的服务器地址为*coap-abc.def.com*。
+CoAP服务器地址为`coap-<hostname>`，其中 _hostname_ 是EnOS环境所在的服务器地址，例如EnOS所在环境的服务器地址为*abc.def.com*，则CoAP的服务器地址为*coap-abc.def.com* 。
 
 ## 建立DTLS安全通道
 
@@ -64,7 +64,7 @@ key:SHA-256({DeviceSecret})中第9到第24字节（共16字节）
    :widths: auto
 
    "参数", "说明"
-   "ProductKey", "设备认证密钥ProductKey"
+   "ProductKey", "设备认证密钥ProductKey。"
    "DeviceKey",	"设备认证密钥deviceKey。保证OU下唯一，建议使用NB-IoT模组的IMEI。"
    "SecureMode", "采用“一机一密”认证模式时，SecureMode为2。"
    "Lifetime", "用于判断设备的在线状态。如果设备在Lifetime内没有与云端发生消息交互，设备会被判断为离线。Lifetime的单位为秒，允许设置30 - 86400内的一个值。"

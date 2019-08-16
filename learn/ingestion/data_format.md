@@ -42,12 +42,12 @@
 }
 ```
 在以上示例中：
-- `id`是message ID
-- `version`是协议版本
-- `params`包裹的JSON数组为传输的数据
-- `method`为请求方法
+- `id`是message ID。
+- `version`是协议版本。
+- `params`包裹的JSON数组为传输的数据。
+- `method`为请求方法。
 
-EnOS设备协议定义了数据以何种格式通过哪个topic与云端进行数据传输，详细信息，参考[设备协议](../../reference/mqtt/index).
+EnOS设备协议定义了数据以何种格式通过哪个topic与云端进行数据传输，详细信息，参考[设备协议](../../reference/mqtt/index)。
 
 ## 自定义数据格式
 
@@ -63,4 +63,4 @@ EnOS Cloud为开发者提供了以下功能:
 2. 支持对脚本的模拟数据调试，可输入上下行数据进行模拟转换，查看脚本运行结果。
 3. 提交脚本到运行环境，在设备上下行时进行调用。
 
-获取更多信息，请参见[创建数据解析脚本](../../howto/device/manage/creating_data_parsing_script).
+获取更多信息，请参见[创建数据解析脚本](../../howto/device/manage/creating_data_parsing_script)。

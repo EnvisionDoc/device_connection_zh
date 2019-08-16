@@ -6,7 +6,7 @@
 
 通过CoAP接入的低功耗设备消耗的数据格式常见为二进制数据流，可以使用透传模式上报至EnOS Cloud并在云端通过脚本解析器将数据转成EnOS标准JSON。
 
-当设备通过CoAP协议接入EnOS时，Topic规范和MQTT Topic一致，有关上行消息的请求数据格式、响应数据格式、参数说明，参见[设备上报属性、测点和事件（透传）](../../mqtt/upstream/device_else/report_event_pass)
+当设备通过CoAP协议接入EnOS时，Topic规范和MQTT Topic一致，有关上行消息的请求数据格式、响应数据格式、参数说明，参见[设备上报属性、测点和事件（透传）](../../mqtt/upstream/device_else/report_event_pass)。
 
 响应中除了包括EnOS设备协议规范定义的响应数据（Payload）外，还包括了CoAP返回码，返回码和响应数据的结构如下：
 

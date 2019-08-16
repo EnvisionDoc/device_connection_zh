@@ -61,11 +61,11 @@
    * - productKey
      - String
      - 必需
-     - 子设备的productKey.
+     - 子设备的productKey
    * - deviceKey
      - String
      - 必需
-     - 子设备的deviceKey.
+     - 子设备的deviceKey
    * - method
      - String
      - 必需
@@ -73,7 +73,7 @@
    * - code
      - Integer
      - 必需
-     - 200或设备端定义的错误码。200代表请求成功执行。
+     - 200或设备端定义的错误码。200代表请求成功执行
    * - data
      - Integer
      - 可选
