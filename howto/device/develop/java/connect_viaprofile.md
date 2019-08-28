@@ -53,29 +53,85 @@
 使用配置文件方式连接服务的示例代码如下：
 
 ```java
-    public void connect() {
-        MqttClient client = new MqttClient(new FileProfile(".config"));
-        System.out.println("start connect with callback ... ");
-        try {
-            client.connect(new IConnectCallback() {
-                @Override
-                public void onConnectSuccess() {
-                    System.out.println("connect success");
-                }
-                @Override
-                public void onConnectLost() {
-                    System.out.println("onConnectLost");
-                }
+package com.envision.energy.enos_mqtt_sample;
 
-                @Override
-                public void onConnectFailed(int reasonCode) {
-                    System.out.println("onConnectFailed : " + reasonCode);
-                }
 
-            });
-        } catch (EnvisionException e) {
-            //e.printStackTrace();
-        }
-        System.out.println("connect result :" + client.isConnected());
+import com.envisioniot.enos.iot_mqtt_sdk.core.IConnectCallback;
+import com.envisioniot.enos.iot_mqtt_sdk.core.MqttClient;
+import com.envisioniot.enos.iot_mqtt_sdk.core.internals.SignMethod;
+import com.envisioniot.enos.iot_mqtt_sdk.core.profile.FileProfile;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.File;
+
+public class ConfigFileBasedConnectExample {
+    private final static Logger LOG = LoggerFactory.getLogger(ConfigFileBasedConnectExample.class);
+
+    /**
+     * 参考文档 https://www.envisioniot.com/docs/device-connection/zh_CN/latest/learn/deviceconnection_authentication.html
+     * 以了解如何创建SSL jks文件
+     */
+    private final static String SSL_JKS_PATH = "<path>";
+    private final static String SSL_PASSWORD = "<password>";
+
+    private final static String SSL_SERVER_URL = "ssl://{regionUrl}:18883";
+
+    private final static String PRODUCT_KEY = "<productKey>";
+    private final static String DEVICE_KEY = "<deviceKey>";
+    private final static String DEVICE_SECRET = "<deviceSecret>";
+
+    private final static File CONFIG_FILE = new File(System.getProperty("java.io.tmpdir"), DEVICE_KEY + ".config");
+
+    private static void persistConfigFile() throws Exception {
+        final String absPath = CONFIG_FILE.getAbsolutePath();
+        System.out.println("profile abs path: " + absPath);
+
+        FileProfile profile = new FileProfile(absPath);
+        profile.setProductKey(PRODUCT_KEY);
+        profile.setDeviceKey(DEVICE_KEY);
+        profile.setDeviceSecret(DEVICE_SECRET);
+        profile.setSignMethod(SignMethod.SHA256);
+        profile.setKeepAlive(300);
+        profile.setAutoReconnect(true);
+
+        // 使用SSL连接
+        profile.setServerUrl(SSL_SERVER_URL);
+        profile.setSSLSecured(true);
+        profile.setSSLJksPath(SSL_JKS_PATH, SSL_PASSWORD);
+
+        profile.persist();
     }
+
+    public static void main(String[] args) throws Exception {
+        if (!CONFIG_FILE.exists()) {
+            persistConfigFile();
+        }
+
+        // 现在使用配置文件连接。这里我们无需
+        // 再次显式提供配置
+        FileProfile profile = new FileProfile(CONFIG_FILE.getPath());
+        final MqttClient client = new MqttClient(profile);
+
+        client.connect(new IConnectCallback() {
+            public void onConnectSuccess() {
+                LOG.info("onConnectSuccess");
+                client.close();
+            }
+
+            public void onConnectLost() {
+                LOG.info("onConnectLost");
+                client.close();
+            }
+
+            public void onConnectFailed(int reason) {
+                LOG.info("onConnectFailed");
+                client.close();
+            }
+        });
+    }
+}
+
 ```
+
+

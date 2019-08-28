@@ -42,14 +42,7 @@
 .. image:: ../media/INV002.png
 
 
-### 步骤1：获取根证书<rootcert>
-
-下载CA根证书 `cacert.pem` ，下载地址为：`Link <https://<cluster_name>.envisioniot.com/enos/CA/cacert>`。
-
-<!-- - 如果是公有云用户，<cluster_name>参考[EnOS Cloud集群信息]()。-->
-- 如果是私有云用户，<cluster_name>请咨询远景智能客户经理或支持。
-
-### 步骤2：创建证书请求文件和私钥<createcsr>
+### 步骤1：创建证书请求文件和私钥<createcsr>
 
 使用openssl命令创建证书请求文件 **edge.csr** 和私钥 **edge.key**，示例命令如下：
 
@@ -62,14 +55,18 @@ openssl req -new -newkey rsa:2048 -out edge.csr -keyout edge.key -subj /C=CN/ST=
 
 创建证书命令具体可参考[创建证书签名申请](https://www.envisioniot.com/docs/enos/zh_CN/latest/security/x509_ca/creating_csr.html)。
 
-### 步骤3：调用REST API申请证书<invokeapi>
+### 步骤2：调用REST API申请证书<invokeapi>
 
 在生成`edge.csr`以后，调用EnOS Cloud的REST API申请证书。创建 **Edge01_Certificate** 网关设备时获得了设备三元组，此处可调用`applyCertificateByDeviceKey`接口获取证书。
 
 .. image:: ../media/postman_getcertificate.png
 
 
-获取到证书以后，将其保存为`edge.pem`。
+获取到证书以后，将其保存为`edge.pem`。需等待约30秒后，证书方能生效。
+
+### 步骤3：获取根证书
+
+根据步骤2中返回的根证书地址，即`certChainURL`的值，下载CA根证书，保存为`cacert.pem`。
 
 ### 步骤4：使用keytool生成JKS文件<generatejks>
 

@@ -18,16 +18,12 @@
 基于上述接入流程图，本示例主要有以下任务：
 
 1. 创建设备模型；
-
 2. 创建产品；
-
 3. 注册设备；
-
-4. 通过设备SDK模拟设备发送数据；
-
-5. 查看设备通信状态；
-
-6. 查看设备数据；
+4. 为测点数据配置存储策略
+5. 通过设备SDK模拟设备发送数据；
+6. 查看设备通信状态；
+7. 查看设备数据；
 
 ## 步骤1：创建设备模型<createmodel>
 
@@ -178,11 +174,18 @@
    .. image:: ../media/register_device.png
 
 
-有关设备设置的详细信息，参见[创建设备](../howto/device/manage/creating_device)。
+有关设备设置的详细信息，参见 [创建设备](../howto/device/manage/creating_device)。
 
 完成设备注册后，获取设备三元组`ProductKey`，`DeviceKey`和`DeviceSecret`，将在下一步中使用。
 
-## 步骤4：SDK模拟设备发送数据<senddata>
+## 步骤4：为测点数据配置存储策略
+
+在完成设备注册、开始连接设备到云端之前，我们需要为设备测点（INV.GenActivePW）的数据配置存储策略，否则测点数据不会被存储到时序数据库。为测点数据配置存储策略的步骤如下：
+
+1. 如未申请开通时序数据库资源，在EnOS控制台中选择 **资源管理**，在 **数据资产管理** 标签下，申请时序数据库资源。有关资源申请和管理的详细信息，参见 [资源管理概述](/docs/enos/zh_CN/latest/resourcemanagement/overview.html)。
+2. 在EnOS控制台中选择 **时序数据管理 > 存储策略**，为设备测点数据配置相应的存储类型和时长。有关配置存储策略的详细步骤，参见 [配置TSDB存储](/docs/data-asset/zh_CN/latest/configuring_tsdb_storage.html)。
+
+## 步骤5：SDK模拟设备发送数据<senddata>
 
 在该步骤中，我们通过设备端SDK模拟发送逆变器有功功率至云端。
 
@@ -280,19 +283,19 @@
 
 SDK具体使用参考 [SDK设备端连接](../howto/device/develop/using_java_sdk)。
 
-## 步骤5：查看设备连接状态<checkconnection>
+## 步骤6：查看设备连接状态<checkconnection>
 
 在EnOS控制台中选择 **设备管理**，在设备列表中，查看 **INV001** 设备的状态，确认设备处于 **在线** 状态。
 
 .. image:: ../media/device_status.png
 
-## 步骤6：查看设备数据<viewdata>
+## 步骤7：查看设备数据<viewdata>
 
 1. 在设备列表中，找到 **INV001** 设备，并点击 **操作** 列中的 **查看** 图标，进入 **设备详情** 页面。
 2. 点击 **测点** 标签，找到测点 **INV.GenActivePW**，点击 **查看数据**，打开 **时序洞察** 页面。
 3. 查看测点的最新数据。如果已为该测点配置存储策略，亦可在时序洞察页面生成该测点的历史数据图表。有关时序洞察的详细信息，参见 [生成时序数据图表](/docs/data-asset/zh_CN/latest/howto/storage/generating_data_chart.html)。
 
-## 步骤7：通过在线调试工具调试测点置数
+## 步骤8：通过在线调试工具调试测点置数
 
 1. 点击 **设备管理 > 产品管理**，点击所需调试设备所属的产品操作栏的 **查看**。
 
