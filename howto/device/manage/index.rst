@@ -14,3 +14,5 @@
    creating_data_parsing_script
    creating_offline_message_integration_channel
    using_device_simulator
+   mirroring_device_data
+   managing_mirror_device

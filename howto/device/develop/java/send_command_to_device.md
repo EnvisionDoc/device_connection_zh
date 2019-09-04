@@ -5,7 +5,7 @@
 在以下代码示例中，会对设置测量点和禁用的设备进行监控。
 
 ```java
- package com.envision.energy.enos_mqtt_sample;
+package com.envision.energy.enos_mqtt_sample;
 
 import com.envisioniot.enos.iot_mqtt_sdk.core.IConnectCallback;
 import com.envisioniot.enos.iot_mqtt_sdk.core.MqttClient;

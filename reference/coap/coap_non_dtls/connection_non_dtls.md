@@ -6,7 +6,7 @@ EnOS支持CoAP协议连接通信。CoAP协议适用在资源受限的低功耗�
 
 ## 连接安全
 
-设备需要具备SHA-256和AES-128算法能力，以生成鉴权时的数字签名。
+设备需要具备SHA-256算法能力，以生成鉴权时的数字签名。如果需要加密数据，你可以使用二进制解析功能。
 
 ## 基础流程
 
@@ -19,9 +19,9 @@ EnOS支持CoAP协议连接通信。CoAP协议适用在资源受限的低功耗�
 1. 用户在EnOS创建产品、关联模型，获取产品的认证密钥productKey、productSecret。
 
 2. 用户应在EnOS注册设备，需要获得设备认证密钥deviceSecret。
-   
+
 3. 设备开发者在NB-IoT设备上集成认证密钥：productKey、deviceKey和deviceSecret。
-   
+
 4. 设备上电入网。
 
 5. 设备向EnOS发送鉴权请求，请求中包含了认证密钥productKey、deviceKey、deviceSecret以及数字签名。
@@ -33,7 +33,7 @@ EnOS支持CoAP协议连接通信。CoAP协议适用在资源受限的低功耗�
 ## 开始前准备
 
 - 逐一注册设备并获取设备的`productKey`，`deviceKey`和`deviceSecret`。有关如何注册设备，参见[注册设备](../../../howto/device/manage/creating_device)。
-- 确保设备具有AES-128和SHA-256加密能力。
+- 确保设备具有SHA-256加密能力。
 
 ## 连接CoAP服务器
 
@@ -70,10 +70,9 @@ CoAP服务器地址为`coap-<hostname>`，其中 _hostname_ 是EnOS环境所在�
 
     3. 使用SHA-256算法获得该拼接字段的摘要，并将其中的字母转换为大写。
 
-2. 鉴权通过，EnOS在鉴权请求的响应中包含CoAP协议定义的返回码和一个token，用于后续session的鉴权。响应的格式如下：
+2. 鉴权通过，EnOS在鉴权请求的响应中包含CoAP协议定义的返回码。响应的格式如下：
    ```json
    Code: CoAP返回码，参考CoAP协议说明
-   Payload: 如果设备鉴权上线成功 { "token" : ${Token} }
    ```
 
-   Token是EnOS随机分配的一个字符串，用于为后续消息鉴权。Token具有一定的有效时间，与设备鉴权时请求的Lifetime相关。如果设备在Lifetime内不与云端通信，Token过期。当Token过期后，设备必须重新执行鉴权流程，以获得新的Token。
+

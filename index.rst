@@ -47,7 +47,7 @@
    howto/ota/index
    howto/alert/index
    howto/asset_tree/index
-   howto/edge/index   
+   
 
 .. toctree::
    :maxdepth: 1

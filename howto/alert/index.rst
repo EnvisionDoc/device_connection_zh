@@ -23,3 +23,4 @@
    create_alert_rule
    managing_alerts_in_batch
    masking_alert
+   set_alert_rule_for_device
