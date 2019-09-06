@@ -166,6 +166,12 @@
      - 可选
      - 返回的详细信息。JSON格式
 
+## 结果返回码
 
+| 返回码 | 错误信息 | 释义 |
+|---------|---------|---------|
+| 1204 | Model validate failed | 测点格式不符合模型规定 |
+| 1206 | Measurepoint post data format error | JSON请求格式无效 |
+| 1212 | No sub-device permission | 子设备不在线或者子设备没有通过指定的网关接入云端 |
 
 <!--end-->

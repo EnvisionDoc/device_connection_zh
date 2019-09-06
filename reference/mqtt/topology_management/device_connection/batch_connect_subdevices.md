@@ -1,8 +1,15 @@
 # 批量上线子设备
 
-在子设备批量上线前，需要确保子设备身份已经在EnOS Cloud中注册，并在Edge中添加拓扑关系。云端需要根据拓扑关系对子设备进行身份校验，以确定子设备具有使用网关通道的能力，才会上线该子设备。
+## 开始前准备
 
-上行
+1. 需要确保子设备身份已经在EnOS Cloud中注册。
+
+2. 在网关设备中添加拓扑关系。
+
+## Topics
+
+上行：
+
 - 请求TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/login/batch`
 - 响应TOPIC: `/ext/session/{productKey}/{deviceKey}/combine/login/batch_reply`
 
@@ -112,7 +119,9 @@
 ```
 
 ## 正确处理响应
+
 当相应数据的code为200时，这表明子设备全部登入成功。否则，这表明子设备全部或者部分登入失败。当请求存则格式错误（或者其他内部服务错误）时，响应中loginedSubDevices和failedSubDevices将为空。因此，当响应中code不为200时，用户不能简单地通过failedSubDevices判断哪些子设备登入失败。因此，响应的正确处理方式应为：
+
 ``` java
 if (code == 200) {
   // 所有的子设备登入成功
@@ -193,5 +202,17 @@ if (code == 200) {
      - 登入失败的子设备
 
 .. note:: 网关下同时在线的子设备数目不能超过200，超过后，新的子设备上线请求将被拒绝。
+
+## 结果返回码
+
+| 返回码 | 错误信息 | 释义 |
+|---------|---------|---------|
+| 705 | It failed to query device, not existed this device | 子设备不存在 |
+| 723 | Device is disable | 子设备被禁用 |
+| 770 | Dynamic activate is not allowed | 该产品未启用动态激活 |
+| 771 | Sub device cannot connect to mqtt broker directly | 子设备不能与EnOS Cloud直连 |
+| 740 | Sub device not belong the gateway | 该设备并非该网关的子设备 |
+| 742 | Sign check failed | Hash签名验证失败 |
+| 746 | The device must login by ssl | 该产品启用了证书双向认证 |
 
 <!--end-->

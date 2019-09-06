@@ -436,6 +436,10 @@ public class OtaSample {
      - 必需
      - 结果返回码，200代表请求成功执行
 
+| 返回码 | 错误信息 | 释义|
+|---------|---------|---------|
+| 764 | Device task not found | 没有找到与该设备相关的ota升级任务 |
+| 765 | Device task not start | 设备尚未启动ota升级任务 |
 
 ### 设备主动请求升级
 
