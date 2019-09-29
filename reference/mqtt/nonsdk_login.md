@@ -1,6 +1,6 @@
 # 与EnOS Cloud建立连接
 
-本文参数如何通过MQTT协议建立从设备到EnOS Cloud的连接。
+本文介绍如何通过MQTT协议建立从设备到EnOS Cloud的连接。
 
 支持的MQTT版本：
 
@@ -14,34 +14,52 @@
 ```java
   mqttClientId: {clientId}|securemode={secureMode},signmethod=sha256,timestamp={timeStamp}|
   mqttUsername: {deviceKey}&{productKey}
-  mqttPassword: toUpperCase(sha256(content{deviceSecret}/{productSecret}))
+  mqttPassword: toUpperCase(sha256({content}{deviceSecret}/{productSecret}))
 ```
 
-- **mqttClientId** 部分:
+- **mqttClientId** 部分: 由下列字段按照前述方式拼接而成：
 
   - `clientId`: 变量，必填项。可指定使用MAC地址或设备序列号。不可超过64个字符。
 
-  在``||``中的参数为必填项。
-
   - `securemode`: 必填项。表示所使用的安全模式。
-   - 使用静态激活认证方式的设备，`securemode=2`
-   - 使用动态激活认证方式的设备，`securemode=3`
+    - 使用静态激活认证方式的设备，`securemode=2`
+    - 使用动态激活认证方式的设备，`securemode=3`
   - `signmethod`: 必填项，当前支持sha256。表示使用SHA256签名算法。
-  - `timestamp`: 变量，必填项。表示当前的时间的UNIX时间戳毫秒值。
+  - `timestamp`: 变量，必填项。表示当前的时间的UNIX时间戳，单位为毫秒。
+
+   例如，`mqttClientId`所需的各字段如下所示：
+   - `clientId`=id123456
+   - `securemode`=2，即采用静态激活模式
+   - `sighmethod`=sha256
+   - `timestamp`=1234567890
+ 
+   则`mqttClientId`= `clientIdid123456|securemode=2,signmethod=sha256,timestamp=1234567890|`
 
 
-- **mqttUsername** 部分:
+- **mqttUsername** 部分: 由`deviceKey`、 “&”、 `productKey`三个要素拼接而成：
 
   - `deviceKey` ：变量，设备的device key，可以在EnOS控制台上获取。
   - `productKey`：变量，设备的product key，可以在EnOS控制台上获取。
 
   例如，某设备的`deviceKey`为`abcdefg`，`productKey`为`1234567`。则此处的`mqttUsername`为`abcdefg&1234567`
 
-- **mqttPassword** 部分:
+- **mqttPassword** 部分: 静态激活的设备，由`content`与`deviceSecret`拼接而成；动态激活的设备，由`content`与`productSecret`拼接而成。然后将拼接得来的字符串用SHA256算法计算出新的字符串，再将新的字符串的字母全部转换成大写字母。
 
   <!--- **mqttPassword** 可以由[password小工具](../../`static/nonsdk`enosmqttsign`index.html)生成，传入指定的参数可以自动生成。-->
 
- 使用静态激活和动态激活认证方式的设备，采用不同的方式生成`mqttPassword`
+  - `content`：按照 `clientID` , `deviceKey`, `productKey`, `timestamp`的顺序，将字段名称和值串联组合。
+    
+    例如：设备的参数值如下所示
+      - `clientId`=id123456
+      - `deviceKey`=dK987654
+      - `productKey`=pK11111
+      - `timestamp`=1234567890
+    
+    则 `content`= `clientIdid123456deviceKeydK987654productKeypK11111timestamp1234567890`
+
+  - `deviceSecret`：设备的device secret。当设备完成创建后，可在EnOS Console上查看该值。
+  - `productSecret`：设备的product secret。当设备完成创建后，可在EnOS Console上查看该值。
+
 
 ### 静态激活
 
@@ -49,13 +67,8 @@
 
 对于静态激活认证方式：
 ```java
-mqttPassword: toUpperCase(sha256(content{deviceSecret}))
+mqttPassword: toUpperCase(sha256({content}{deviceSecret}))
 ```
-
-将`content`和`deviceSecret`字段拼接以生成`mqttPassword`。各字段含义如下：
-
-- `content`: 为 `clientID` , `deviceKey`, `productKey`, `timestamp`,和他们值的串联组合。 将参数按照字母顺序排序，然后将参数和值依次拼接（无字符或空格）。
-- `deviceSecret`: 设备 `deviceSecret` 的值，当设备完成创建后，可在EnOS Console上查看该值。该值紧跟 `content` 之后，无需空格和符号。
 
 .. note:: `timestamp`的值必须和 **mqttClientId** 部分的 `timestamp` 保持一致。
 
@@ -92,11 +105,6 @@ mqttPassword = toUpperCase(sha256(clientId123456deviceKeytPbZGCdmaEproductKeyKV3
 ```java
 mqttPassword: toUpperCase(sha256({content}{productSecret}))
 ```
-
-将`content`和`productSecret`字段拼接以生成`mqttPassword`。各字段含义如下：
-
-- `content`: 为 `clientID` , `deviceKey`, `productKey`, `timestamp`,和他们值的串联组合。 将参数按照字母顺序排序，然后将参数和值依次拼接（无字符或空格）。
-- `productSecret`: 设备 `productSecret` 的值，当设备完成创建后，可在EnOS Console上查看该值。该值紧跟 `content` 之后，无需空格和符号。
 
 .. note:: `timestamp`的值必须和 **mqttClientId** 部分的 `timestamp` 保持一致。
 

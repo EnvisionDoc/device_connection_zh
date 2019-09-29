@@ -12,22 +12,20 @@
    :maxdepth: 1
    :caption: 概念
 
-   howto/model/model_overview
-   learn/connection_scenarios
-   learn/message_flow
-   learn/enos_coap   
-   howto/asset_tree/assettree_overview
+   howto/model/thing_modeling
+   learn/index
    learn/device_lifecycle_management
-   learn/ingestion/index   
    learn/deviceconnection_authentication
 
 .. toctree::
    :maxdepth: 1
-   :caption: 入门指引
+   :caption: 操作
 
-   quickstart/gettingstarted_device_connection
-   quickstart/gettingstarted_edge_connection
-   quickstart/gettingstarted_java_ssl_connection
+   howto/model/index
+   howto/device/index
+   howto/asset_tree/index
+   howto/alert/index
+   `数据订阅概述 </docs/data-asset/zh_CN/2.0.9/learn/data_subscription_overview.html>`_
 
 .. toctree::
    :maxdepth: 2
@@ -39,21 +37,9 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: 操作
-
-   howto/model/index
-   howto/device/manage/index
-   howto/device/develop/index
-   howto/ota/index
-   howto/alert/index
-   howto/asset_tree/index
-   
-
-.. toctree::
-   :maxdepth: 1
    :caption: 参考信息
 
-   reference/mqtt/index
+   reference/index
    reference/coap/index
-   reference/mqtt_offline/index
    reference/i18n
+

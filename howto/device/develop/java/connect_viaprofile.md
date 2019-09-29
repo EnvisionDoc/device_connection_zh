@@ -69,7 +69,7 @@ public class ConfigFileBasedConnectExample {
     private final static Logger LOG = LoggerFactory.getLogger(ConfigFileBasedConnectExample.class);
 
     /**
-     * 参考文档 /docs/device-connection/zh_CN/latest/learn/deviceconnection_authentication.html
+     * 参考文档 /docs/device-connection/zh_CN/2.0.9/learn/deviceconnection_authentication.html
      * 以了解如何创建SSL jks文件
      */
     private final static String SSL_JKS_PATH = "<path>";

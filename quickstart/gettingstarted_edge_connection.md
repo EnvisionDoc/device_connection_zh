@@ -1,4 +1,4 @@
-# 将非智能设备通过edge连接至EnOS Cloud
+# 快速入门：将非智能设备通过edge连接至EnOS Cloud
 
 该文章帮助你快速入门将子设备与edge预配至EnOS Cloud，使子设备通过edge连接并发送数据至EnOS Cloud，并从EnOS Cloud查看设备与edge的通信信息。
 
@@ -216,4 +216,4 @@ SDK具体使用参考 [Java SDK README](https://github.com/EnvisionIot/enos-mqtt
 
 1. 在 **设备** 页面，找到此设备并点击 **查看** 进入设备详情页面。
 2. 点击 **测点** 标签，选择测点 **INV.GenActivePW**，点击 **查看数据**，打开 **时序洞察** 页面。
-3. 查看测点的最新数据。如果已为该测点配置存储策略，亦可在时序洞察页面生成该测点的历史数据图表。有关时序洞察的详细信息，参见 [生成时序数据图表](/docs/data-asset/zh_CN/latest/howto/storage/generating_data_chart.html)。
+3. 查看测点的最新数据。如果已为该测点配置存储策略，亦可在时序洞察页面生成该测点的历史数据图表。有关时序洞察的详细信息，参见 [生成时序数据图表](/docs/data-asset/zh_CN/2.0.9/howto/storage/generating_data_chart.html)。
