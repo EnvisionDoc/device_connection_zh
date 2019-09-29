@@ -138,13 +138,5 @@
      - 可选
      - 返回的详细信息。JSON格式
 
-## 结果返回码
-
-| 返回码 | 错误消息 | 释义 |
-|---------|---------|---------|
-| 702 | DeviceKey existed | 自定义的device key已存在 |
-| 714 | Generate deviceKey failed | 自动生成device key失败 |
-| 739 | Exceed the product max device size | 设备数量超过单个产品下允许的最大值 |
-
 
 <!--end-->

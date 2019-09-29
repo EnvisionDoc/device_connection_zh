@@ -4,7 +4,7 @@
 
 ## 开始前准备
 
-- 你需要有设备管理操作权限，如果没有请联系组织管理员添加，参见[策略，角色，与权限](/docs/iam/zh_CN/latest/access_policy)。
+- 你需要有设备管理操作权限，如果没有请联系组织管理员添加，参见[策略，角色，与权限](/docs/iam/zh_CN/2.0.8/access_policy)。
 - 了解设备的激活运行状态，参考[基于密钥的单向认证](../../../learn/deviceconnection_authentication)。
 
 ## 查看激活状态
@@ -60,7 +60,7 @@
 
 ## 为网关设备批量添加子设备
 
-按照以下步骤，可以为除EnOS Edge以外的其他网关设备添加子设备；为EnOS Edge添加子设备，参见[管理Edge](/docs/enos-edge/zh_CN/latest/howto/console_configuration/managing_edge)。
+按照以下步骤，可以为除EnOS Edge以外的其他网关设备添加子设备；为EnOS Edge添加子设备，参见[管理Edge](/docs/enos-edge/zh_CN/2.0.8/howto/console_configuration/managing_edge)。
 
 1. 进入 **设备管理 > 设备管理** 。
 

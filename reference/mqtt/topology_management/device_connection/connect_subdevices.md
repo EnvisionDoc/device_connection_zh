@@ -105,16 +105,4 @@
 
 .. note:: 网关下同时在线的子设备数目不能超过200，超过后，新的子设备上线请求将被拒绝。
 
-## 结果返回码
-
-| 返回码 | 错误消息 | 释义 |
-|---------|---------|---------|
-| 705 | It failed to query device, not existed this device | 子设备不存在 |
-| 723 | Device is disable | 子设备被禁用 |
-| 770 | Dynamic activate is not allowed | 该产品未启用动态激活 |
-| 771 | Sub device cannot connect to mqtt broker directly | 子设备不能与EnOS Cloud直连 |
-| 740 | Sub device not belong the gateway | 该设备并非该网关的子设备 |
-| 742 | Sign check failed | Hash签名验证失败 |
-| 746 | The device must login by ssl | 该产品启用了证书双向认证 |
-
 <!--end-->

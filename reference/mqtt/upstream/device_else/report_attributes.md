@@ -84,11 +84,6 @@
      - 可选
      - 返回的详细信息。JSON格式
 
-## 结果返回码
 
-| 返回码 | 错误消息 | 释义|
-|---------|---------|---------|
-| 1204 | Model validate failed | 属性不符合模型定义 |
-| 1207 | Attribute update data format error | 请求格式不正确 |
 
 <!--end-->

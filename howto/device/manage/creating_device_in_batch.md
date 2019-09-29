@@ -11,7 +11,7 @@
 ## 开始前准备
 
 - 该设备所属的产品已经被创建。有关如何创建，参见[创建产品](creating_product)。
-- 你需要有设备管理操作权限，如果没有请联系组织管理员添加，参见[策略，角色，与权限](/docs/iam/zh_CN/latest/access_policy)。
+- 你需要有设备管理操作权限，如果没有请联系组织管理员添加，参见[策略，角色，与权限](/docs/iam/zh_CN/2.0.8/access_policy)。
 
 ## 操作步骤
 
@@ -66,7 +66,7 @@
 
 ## 后续操作
 
-新创建的设备在未上线的情况显示为未激活。如需激活设备，你需要通过设备端SDK发起连接。更多信息，参考[EnOS SDK 快速入门](/docs/app-development/zh_CN/latest/gettingstarted_sdk.html)
+新创建的设备在未上线的情况显示为未激活。如需激活设备，你需要通过设备端SDK发起连接。更多信息，参考[EnOS SDK 快速入门](/docs/app-development/zh_CN/2.0.8/gettingstarted_sdk.html)
 
 ## 相关信息
 

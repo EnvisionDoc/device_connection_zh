@@ -181,8 +181,8 @@
 
 在完成设备注册、开始连接设备到云端之前，我们需要为设备测点（INV.GenActivePW）的数据配置存储策略，否则测点数据不会被存储到时序数据库。为测点数据配置存储策略的步骤如下：
 
-1. 如未申请开通时序数据库资源，在EnOS控制台中选择 **资源管理**，在 **数据资产管理** 标签下，申请时序数据库资源。有关资源申请和管理的详细信息，参见 [资源管理概述](/docs/enos/zh_CN/latest/resourcemanagement/overview.html)。
-2. 在EnOS控制台中选择 **时序数据管理 > 存储策略**，为设备测点数据配置相应的存储类型和时长。有关配置存储策略的详细步骤，参见 [配置TSDB存储](/docs/data-asset/zh_CN/latest/configuring_tsdb_storage.html)。
+1. 如未申请开通时序数据库资源，在EnOS控制台中选择 **资源管理**，在 **数据资产管理** 标签下，申请时序数据库资源。有关资源申请和管理的详细信息，参见 [资源管理概述](/docs/enos/zh_CN/2.0.8/resourcemanagement/overview.html)。
+2. 在EnOS控制台中选择 **时序数据管理 > 存储策略**，为设备测点数据配置相应的存储类型和时长。有关配置存储策略的详细步骤，参见 [配置TSDB存储](/docs/data-asset/zh_CN/2.0.8/configuring_tsdb_storage.html)。
 
 ## 步骤5：SDK模拟设备发送数据<senddata>
 
@@ -292,7 +292,7 @@ SDK具体使用参考 [SDK设备端连接](../howto/device/develop/using_java_sd
 
 1. 在设备列表中，找到 **INV001** 设备，并点击 **操作** 列中的 **查看** 图标，进入 **设备详情** 页面。
 2. 点击 **测点** 标签，找到测点 **INV.GenActivePW**，点击 **查看数据**，打开 **时序洞察** 页面。
-3. 查看测点的最新数据。如果已为该测点配置存储策略，亦可在时序洞察页面生成该测点的历史数据图表。有关时序洞察的详细信息，参见 [生成时序数据图表](/docs/data-asset/zh_CN/latest/howto/storage/generating_data_chart.html)。
+3. 查看测点的最新数据。如果已为该测点配置存储策略，亦可在时序洞察页面生成该测点的历史数据图表。有关时序洞察的详细信息，参见 [生成时序数据图表](/docs/data-asset/zh_CN/2.0.8/howto/storage/generating_data_chart.html)。
 
 ## 步骤8：通过在线调试工具调试测点置数
 
