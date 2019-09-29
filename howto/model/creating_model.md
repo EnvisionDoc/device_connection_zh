@@ -5,7 +5,7 @@
 ## 开始前准备<beforestart>
 
 - 已设计好该模型所需要的功能。有关如何进行模型的功能设计，参见 [物模型概述](model_overview)。
-- 你需要有设备管理操作权限，如果没有需联系组织管理员添加。有关EnOS内的用户权限，参见 [策略，角色，与权限](/docs/iam/zh_CN/2.0.9/access_policy)。
+- 你需要有设备管理操作权限，如果没有需联系组织管理员添加。有关EnOS内的用户权限，参见 [策略，角色，与权限](/docs/iam/zh_CN/latest/access_policy)。
 
 ## 任务描述<description>
 
@@ -96,7 +96,7 @@
      - PI：PI类型的测点数据一般为电量计算数据，在读取数据时可进行聚合处理
      - 通用：除以上类型以外的其他类型的测点，一般用于上传非数值类型的数据
 
-     .. note:: 如果已有测点数据存储到TSDB，测点类型不能修改。测点类型的变更会导致已存储的历史数据无法查询。更多详细信息，参见 [配置TSDB存储](/docs/data-asset/zh_CN/2.0.9/configuring_tsdb_storage.html)。
+     .. note:: 如果已有测点数据存储到TSDB，测点类型不能修改。测点类型的变更会导致已存储的历史数据无法查询。更多详细信息，参见 [配置TSDB存储](/docs/data-asset/zh_CN/latest/configuring_tsdb_storage.html)。
 
    - **是否有质量位**：设置该测点值是否代表数据质量。如果设置为 **有**，则配置如下：
 
@@ -124,7 +124,7 @@
 
 3. 重复以上操作创建更多测点。
 
-   .. note:: 在创建新测点之后，需要及时为测点数据配置存储策略。否则设备接入到云端后，测点数据不会默认被存储到时序数据库。有关配置存储策略的详细步骤，参见 [配置TSDB存储](/docs/data-asset/zh_CN/2.0.9/configuring_tsdb_storage.html)。
+   .. note:: 在创建新测点之后，需要及时为测点数据配置存储策略。否则设备接入到云端后，测点数据不会默认被存储到时序数据库。有关配置存储策略的详细步骤，参见 [配置TSDB存储](/docs/data-asset/zh_CN/latest/configuring_tsdb_storage.html)。
 
 ### 新增服务<services>
 

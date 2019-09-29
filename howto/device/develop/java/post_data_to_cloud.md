@@ -5,7 +5,7 @@
 在以下示例中：
 
 - serverUrl是指服务器地址。如果使用TCP连接，服务器URL的格式可以是`tcp://{regionUrl}:11883`。
-- <productKey、deviceKey、deviceSecret>（或当拟采用动态方式激活设备时的<productKey、deviceKey、productSecret>）是指你注册设备时由EnOS发布的设备凭证。有关设备注册的更多信息，参见[将智能设备接入EnOS云端](/docs/device-connection/zh_CN/2.0.9/quickstart/gettingstarted_device_connection)。
+- <productKey、deviceKey、deviceSecret>（或当拟采用动态方式激活设备时的<productKey、deviceKey、productSecret>）是指你注册设备时由EnOS发布的设备凭证。有关设备注册的更多信息，参见[将智能设备接入EnOS云端](/docs/device-connection/zh_CN/latest/quickstart/gettingstarted_device_connection)。
 
 ```java
 package com.envision.energy.enos_mqtt_sample;

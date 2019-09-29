@@ -14,7 +14,7 @@ In this unit, configure storage policy for the following measuring points that h
 | mem_percent | AI Raw Data | When the memory usage percentage data of the PC is calculated by the stream processing job, store the calculated data in TSDB. |
 
 
-For detailed description of the supported storage types, see [Configuring TSDB Storage](/docs/data-asset/en/2.0.9/configuring_tsdb_storage.html).
+For detailed description of the supported storage types, see [Configuring TSDB Storage](/docs/data-asset/en/latest/configuring_tsdb_storage.html).
 
 
 ## Step 1. Creating a storage policy group
