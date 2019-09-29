@@ -13,12 +13,12 @@
 
 - 实时数据库redis，时序数据库，及归档数据库。
   - redis数据库存放所有最新时间点的设备数据；
-  - 时序数据库根据存储策略的定义存储访问频次较高的用户指定测点的数据，存储时间为用户指定时长，如1个月，6个月，1年，的设备数据。EnOS默认只通过redis存储最新的设备数据，你必须配置存储策略才能将一段时间内的数据存至时序数据库，并通过时序数据库对应的API访问数据。[了解更多信息>>](/docs/data-asset/zh_CN/latest/learn/storage_policy_overview)
+  - 时序数据库根据存储策略的定义存储访问频次较高的用户指定测点的数据，存储时间为用户指定时长，如1个月，6个月，1年，的设备数据。EnOS默认只通过redis存储最新的设备数据，你必须配置存储策略才能将一段时间内的数据存至时序数据库，并通过时序数据库对应的API访问数据。[了解更多信息>>](/docs/data-asset/zh_CN/2.0.9/learn/storage_policy_overview)
   - 归档数据库根据存储策略的定义访问访问频次较低的历史相对更加久远的数据；
 
 - 告警引擎，根据配置的触发条件生成告警记录。
 
-- 流式计算引擎，根据配置的流式计算处理逻辑对实时数据进行处理并返回给数据中心以供其他服务模块使用或API获取。EnOS提供了简单易用的图形界面的流式分析IDE以帮助提升流数据分析处理的效率。[了解更多信息>>](/docs/data-asset/zh_CN/latest/learn/index)
+- 流式计算引擎，根据配置的流式计算处理逻辑对实时数据进行处理并返回给数据中心以供其他服务模块使用或API获取。EnOS提供了简单易用的图形界面的流式分析IDE以帮助提升流数据分析处理的效率。[了解更多信息>>](/docs/data-asset/zh_CN/2.0.9/learn/index)
 
 设备接入数据流中涉及以下功能模块及概念：
 
@@ -34,7 +34,7 @@ IoT Hub是EnOS为设备连接提供的云代理服务。IoT Hub有以下功能�
 
 Edge位于Envision EnOS IoT平台的前端，采集现场设备数据或连接到第三方系统，并传输数据到EnOS Cloud。EnOS物联网操作系统支持EnOS Edge和符合EnOS设备数据传输协议的第三方edge产品。
 
-EnOS Edge是一款基于软件的edge产品，支持数据采集，多种通信约定，本地缓存和断点续建。它可以部署在云计算机中，也可以部署在指定品牌型号的现场硬件上。Edge必须含有由Envision分配的合法序列号（SN）才能被EnOS Cloud识别。更多信息，参考[EnOS Edge概述](/docs/enos-edge/zh_CN/latest/edge_overview.html)。
+EnOS Edge是一款基于软件的edge产品，支持数据采集，多种通信约定，本地缓存和断点续建。它可以部署在云计算机中，也可以部署在指定品牌型号的现场硬件上。Edge必须含有由Envision分配的合法序列号（SN）才能被EnOS Cloud识别。更多信息，参考[EnOS Edge概述](/docs/enos-edge/zh_CN/2.0.9/edge_overview.html)。
 
 ## 接入场景<scenarios>
 
