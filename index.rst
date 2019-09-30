@@ -25,7 +25,7 @@
    howto/device/index
    howto/asset_tree/index
    howto/alert/index
-   数据订阅概述 </docs/data-asset/zh_CN/2.0.9/learn/data_subscription_overview.html>
+   数据订阅概述 </docs/data-asset/zh_CN/2.0.9/howto/obtain/index.html>
 
 .. toctree::
    :maxdepth: 2
