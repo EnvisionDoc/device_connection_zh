@@ -25,7 +25,7 @@
    howto/device/index
    howto/asset_tree/index
    howto/alert/index
-   数据订阅概述 <https://www.envisioniot.com/docs/data-asset/zh_CN/2.0.9/howto/obtain/index.html>
+   数据订阅 <http://docs.eniot.io/docs/data-asset/zh_CN/2.0.9/learn/data_subscription_overview.html>
 
 .. toctree::
    :maxdepth: 2
@@ -42,4 +42,3 @@
    reference/index
    reference/coap/index
    reference/i18n
-

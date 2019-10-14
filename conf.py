@@ -132,7 +132,7 @@ html_static_path = ['./static']
 # to template names.
 #
 # This is required for the alabaster theme
-# refs: http://alabaster.readthedocs.io/en/latest/installation.html#sidebars
+# refs: http://alabaster.readthedocs.io/en/2.0.9/installation.html#sidebars
 html_sidebars = {
     '**': [
         'relations.html',  # needs 'show_related': True theme option to display
@@ -253,7 +253,7 @@ latex_elements = {
 
             \vspace{5mm}
 
-            \huge \textmd{版本}\textbf{ latest}
+            \huge \textmd{版本}\textbf{ 2.0.9}
             %% \vfill adds at the bottom
             \vfill
         \end{titlepage}

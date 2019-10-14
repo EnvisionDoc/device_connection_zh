@@ -1,8 +1,8 @@
-# Unit 4: Monitoring CPU Load
+# 单元 4: 监测CPU负载
 
-By ingesting the PC system data with specified intervals, you can monitor the CPU load and report CPU load events if the CPU load exceeds the set threshold (for example, 50%).
+通过以指定的时间间隔提取PC系统数据，可以监控CPU负载并在CPU负载超过设置的阈值（例如50％）时报告CPU负载事件。
 
-In this unit, update the program that is used in [Unit 3](connecting_device) to add the function of monitoring CPU load.
+在本机中，更新[单元 3](connecting_device)中使用的程序，以添加监控CPU负载的功能。
 
 1. Declare the function `monitor()` for monitoring the CPU load.
 

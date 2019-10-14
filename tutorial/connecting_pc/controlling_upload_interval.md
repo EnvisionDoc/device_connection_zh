@@ -1,4 +1,4 @@
-# Unit 5: Controlling Data Upload Interval
+# 单元 5: 控制数据上传间隔
 
 With the `control` service that is defined in the computer model, you can control the interval (frequency) of uploading the PC system data to EnOS Cloud.
 
@@ -238,5 +238,4 @@ In this unit, update the program that is used in [Unit 4](monitoring_cpu_load) t
 
 ## Next Unit
 
-[Calculating Memory Usage Percentage](calculating_memory_usage)
-
+[计算内存使用百分比](calculating_memory_usage)

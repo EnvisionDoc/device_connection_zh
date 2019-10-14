@@ -1,12 +1,13 @@
-# Unit 3: Connecting the PC into EnOS and Ingesting Data
+# 单元 3: 将个人电脑连接至EnOS并提取数据
 
-After the device modeling, device registration, and data storage policy configuration of the PC are completed on EnOS Consle, you can now program with the EnOS Java SDK for MQTT to connect the PC into EnOS and start ingesting data.
+在EnOS控制台上完成PC的设备建模、设备注册和数据存储策略配置之后，您现在可以使用EnOS Java SDK for MQTT进行编程，以将PC连接到EnOS并开始提取数据。
 
-For detailed information about the EnOS Java SDK for MQTT, refer to the readme file on [GitHub](https://github.com/EnvisionIot/enos-mqtt-sdk-java).
+有关用于MQTT的EnOS Java SDK的详细信息，请参阅以下网站上的自述文件。 [GitHub](https://github.com/EnvisionIot/enos-mqtt-sdk-java).
 
-## Step 1: Setting up Development Environment
+## 步骤 1: 搭建开发环境
 
-EnOS Java SDK for MQTT requires Java SE 8 and Maven 3. Take the following steps to set up your development environment:
+EnOS Java SDK for MQTT要求Java SE 8 and Maven 3。
+按照以下步骤搭建开发环境：
 
 1. Install JDK, which can be downloaded at <https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html>.
 
@@ -34,7 +35,7 @@ EnOS Java SDK for MQTT requires Java SE 8 and Maven 3. Take the following steps 
    </dependency>
    ```
 
-## Step 2. Programming for Device Connection
+## 步骤 2. 设备连接编程
 
 After the development environment is set up, take the following steps to connect the PC into EnOS Cloud:
 
@@ -93,7 +94,7 @@ After the development environment is set up, take the following steps to connect
 
 
 
-## Step 3. Programming for Ingesting Data and Uploading Data into EnOS Cloud
+## 步骤 3. 编程以提取数据并将数据上传到EnOS Cloud
 
 After the PC is connected into EnOS, take the following steps to ingest system and hardware data of the PC and upload the data into EnOS Cloud:
 
@@ -163,7 +164,7 @@ After the PC is connected into EnOS, take the following steps to ingest system a
        }
    ```
 
-## Step 4. Running the Program and Checking the Results
+## 步骤 4. 运行程序并检查结果
 
 1. Compile and run the program for device connection and data ingestion. See the follow example of the program code:
 
@@ -308,6 +309,6 @@ After the PC is connected into EnOS, take the following steps to ingest system a
 
    .. image:: media/uploaded_data.png
 
-## Next Unit
+## 下一单元
 
-[Monitoring CPU Load](monitoring_cpu_load)
+[监测CPU负载](monitoring_cpu_load)

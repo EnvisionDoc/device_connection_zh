@@ -1,15 +1,15 @@
-Tutorial - Connecting a PC into EnOS
+教程 - 将PC连接至EnOS控制台
 
-Keywords: PC attributes, CPU usage, memory usage, event monitoring, controlling device
+关键词： PC属性, CPU使用率，内存使用率，事件监控，控制设备
 
-Cover page description: Learn how to connect a PC into EnOS, monitor its CPU usage and memory usage, report CPU load events, and send command to control the data uploading frequency. 
+卡片描述: 了解如何将PC连接到EnOS，监视其CPU使用率和内存使用率，报告CPU负载事件以及发送命令以控制数据上载频率。
 
-This tutorial guides you through connecting a PC into EnOS to monitor its running status.
+本教程将指导您将PC连接到EnOS，以监控其运行状态。
 
-Tutorial Overview: Learning how to connect a PC into EnOS and monitor its running status.
-Unit 1: Defining a computer model and register the PC as a device on EnOS Console.
-Unit 2: Configuring storage policy for the system data and calculated data of the PC.
-Unit 3. Programming with EnOS Java SDK for MQTT to connect the PC into EnOS and upload data to the cloud.
-Unit 4: Monitoring the CPU load and report events to the cloud when the CPU load exceeds the threshold. 
-Unit 5: Issuing commands from the cloud to the CP to control the data uploading frequency.
-Unit 6. Developing a stream data processing job to calculate the real-time memory usage percentage.
+概述：学习如何将PC连接到EnOS并监控其运行状态。
+单元 1：定义计算机型号并将PC注册为EnOS控制台上的设备。
+单元 2：配置PC的系统数据和计算数据的存储策略。
+单元 3：使用EnOS Java SDK进行MQTT编程，将PC连接到EnOS并将数据上传到EnOS Cloud。
+单元 4：监控CPU负载，并在CPU负载超过阈值时将事件报告至EnOS Cloud。
+单元 5：从EnOS Cloud向CP发出命令以控制数据上传频率。
+单元 6：开发流数据处理作业以计算实时内存使用率。

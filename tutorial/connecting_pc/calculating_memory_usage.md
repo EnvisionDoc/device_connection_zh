@@ -1,4 +1,4 @@
-# Unit 6: Calculating Memory Usage Percentage
+# 单元 6: 计算内存使用百分比
 
 With the total memory and used memory data ingested, we can now develop a stream data processing job to calculate the real-time memory usage percentage of the PC.
 
@@ -25,20 +25,33 @@ EnOS Stream Analytics provides a Multi-Point Merging template, which supports ca
 
 In this step, configure the *Multi-Point Merging* template for calculating the memory usage percentage with the following parameters:
 
-| Field                | Value                                          | Description                                                  |
-| -------------------- | ---------------------------------------------- | ------------------------------------------------------------ |
-| Triggering Mode      | Point                                          | The data processing job is triggered by the arrived input data. |
-| Timing Interpolation | lastValue                                      | The interpolation policy.                                    |
-| Output Point         | Computer::mem_percent                          | The measuring point receiving the processed data.            |
-| Triggering Point     | Computer::mem_used                             | The measuring point triggering the data processing job.      |
-| Output Logic         | `${Computer::mem_used}/${Computer::mem_total}` | The expression for getting the memory usage percentage.      |
+.. list-table::
+
+   * - Field
+     - Value
+     - 描述
+   * - Triggering Mode
+     - Point
+     - The data processing job is triggered by the arrived input data.
+   * - Timing Interpolation
+     - lastValue
+     - The interpolation policy.
+   * - Output Point
+     - Computer::mem_percent
+     - The measuring point receiving the processed data.
+   * - Triggering Point
+     - Computer::mem_used
+     - The measuring point triggering the data processing job.
+   * - Output Logic
+     - ``${Computer::mem_used}/${Computer::mem_total}``
+     - The expression for getting the memory usage percentage.
 
 See the following example:
 
 .. image:: media/stream_config.png
 
 
-For more information about the *Multi-Point Merging* template, see [Multi-Point Merging Template](/docs/data-asset/en/latest/learn/multi_point_overview.html).
+For more information about the *Multi-Point Merging* template, see [Multi-Point Merging Template](/docs/data-asset/en/2.0.9/learn/multi_point_overview.html).
 
 
 ## Step 3. Running the data processing job
@@ -51,16 +64,15 @@ After the data processing job configuration is completed, you can publish it onl
 
 3. On the **Stream Operation** page, find the data processing job that is online, and then click the  the **Start** icon to start the job.
 
-
 The data processing job will start running if there is no error.
 
 ## Step 4. Viewing the calculated data
 
 On the **Time Series Data > Data Insights** page, view the calculated memory usage percentage data:
 
-1. In the **Select Time Range** section, select or specify the time range for querying data (for example, `1D` for the current day). 
+1. In the **Select Time Range** section, select or specify the time range for querying data (for example, `1D` for the current day).
 
-2. Click the **Select Devices** input box, and search for and select the `PC_Win10` device. 
+2. Click the **Select Devices** input box, and search for and select the `PC_Win10` device.
 
 3. In the **Select Data Type** section, select **ALL**.
 

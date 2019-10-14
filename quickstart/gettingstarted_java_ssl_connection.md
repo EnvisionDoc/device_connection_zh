@@ -53,7 +53,7 @@ openssl req -new -newkey rsa:2048 -out edge.csr -keyout edge.key -subj /C=CN/ST=
 - 证书请求文件用于向EnOS Cloud申请证书。
 - 私钥用于解密被证书加密的内容。
 
-创建证书命令具体可参考[创建证书签名申请](/docs/enos/zh_CN/latest/security/x509_ca/creating_csr.html)。
+创建证书命令具体可参考[创建证书签名申请](/docs/enos/zh_CN/2.0.9/security/x509_ca/creating_csr.html)。
 
 ### 步骤2：调用REST API申请证书<invokeapi>
 

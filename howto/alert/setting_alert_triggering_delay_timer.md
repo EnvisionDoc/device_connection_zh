@@ -24,11 +24,11 @@
 
 ## 任务描述
 
-本文以一个智能楼宇场景，介绍如何为告警规则设置告警触发延时。该场景的具体描述，参见[教程：为同一模型的设备设置不同阈值的告警](/docs/device-connection/zh_CN/latest/howto/alert/set_alert_rule_for_device.html#id2)。为方便起见，本文只使用该教程中模拟的测量电冰箱实时电流的电表来触发告警。
+本文以一个智能楼宇场景，介绍如何为告警规则设置告警触发延时。该场景的具体描述，参见[教程：为同一模型的设备设置不同阈值的告警](/docs/device-connection/zh_CN/2.0.9/howto/alert/set_alert_rule_for_device.html#id2)。为方便起见，本文只使用该教程中模拟的测量电冰箱实时电流的电表来触发告警。
 
 ## 开始前准备
 
-- 你需要有告警管理相关操作权限，如果没有请联系组织管理员添加，参见[策略，角色，与权限](/docs/iam/zh_CN/latest/access_policy)。
+- 你需要有告警管理相关操作权限，如果没有请联系组织管理员添加，参见[策略，角色，与权限](/docs/iam/zh_CN/2.0.9/access_policy)。
 - 你已经完成了[教程：为同一模型的设备设置不同阈值的告警](set_alert_rule_for_device)。
 
 ## 步骤
@@ -45,7 +45,7 @@
 
   此时告警被设定为当电流表的 **实时电流** 大于 **最大允许通过电流** ，并且持续60秒，才会触发。
 
-3. 复制[教程：为同一模型的设备设置不同阈值的告警](/docs/device-connection/zh_CN/latest/howto/alert/set_alert_rule_for_device.html#enos-java-sdk-for-mqtt)的示例代码**fridgeMQTT** 到你的IDE中，并作如下改动：
+3. 复制[教程：为同一模型的设备设置不同阈值的告警](/docs/device-connection/zh_CN/2.0.9/howto/alert/set_alert_rule_for_device.html#enos-java-sdk-for-mqtt)的示例代码**fridgeMQTT** 到你的IDE中，并作如下改动：
 
   - `MeasurepointPostRequest request = MeasurepointPostRequest.builder().addMeasurePoint("rt_current", random.nextDouble() * 1500).build()` 改为 `MeasurepointPostRequest request = MeasurepointPostRequest.builder().addMeasurePoint("rt_current", random.nextDouble() + 1500 ).build()` 这一步是为了使模拟的电流表发送的测点数据 **实时电流** 全部高于 **最大允许通过电流** ，以便触发告警。
   - 将代码段最后的 `Thread.sleep(10000L)` 改为 `Thread.sleep(30000L)`。这一步的目的是让电冰箱和节能灯的模拟电流表，每30秒钟上报一次实时电流数据。只要任意一个模拟电流表连续3次上报的实时电流都大于其设备属性中设置的 **最大允许通过电流** ，**一分钟电流告警** 告警就会被触发。

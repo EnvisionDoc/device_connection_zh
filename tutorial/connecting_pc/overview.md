@@ -1,54 +1,57 @@
 # 教程概述
 
-## Scenario
+## 应用场景
 
-Personal computer is one of the best choices for experimenting device connection into EnOS. With an open source plug-in, you can ingest the system and hardware data of your PC and upload the ingested data to EnOS Cloud for further processing and analysis, so that you can monitor the CPU load and memory usage. Besides, you can also send commands from EnOS Cloud to control the data ingesting interval.
+个人计算机是将设备连接到EnOS的最佳选择之一。使用开源插件，您可以采集PC的系统和硬件数据，并将采集的数据上传到EnOS Cloud进行进一步的处理和分析，从而可以监视CPU负载和内存使用情况。此外，您还可以从EnOS Cloud发送命令以控制数据采集间隔。
 
-The scenario is depicted in the following chart:
+该场景如下图所示
 
 .. image:: media/scenario_connect_pc.png
 
-This tutorial walks you through modeling and registering your PC as a device on the EnOS Cloud,  ingesting system and hardware data of the PC, updating the attributes of the PC with the ingested data, uploading the CPU and memory usage data to the cloud, and sending commands from the cloud to control the data ingesting interval. In this tutorial, you will:
+本教程将引导您在EnOS Cloud上建模以及将你的个人电脑注册至EnOS，采集PC系统和硬件数据，使用采集的数据更新PC的属性，将CPU和内存使用情况数据上传到EnOS Cloud，以及从EnOS Cloud发送命令以控制数据采集间隔。
 
-- Define a model for computer and register the PC as device on EnOS Console
-- Configure TSDB storage policy for the PC system data
-- Develop a program with the EnOS Java SDK for MQTT to connect the PC into EnOS
-- Run the program to ingest data of the PC and upload the data into EnOS Cloud
-- Monitor the CPU load the the PC
-- Send commands from EnOS Cloud to control the data ingesting interval
-- Develop a stream data processing job for calculating the PC memory usage percentage
+在本教程中，您将：
 
-### [Start >](registering_device)
+- 为计算机定义模型并将PC注册为EnOS控制台上的设备
+- 为PC系统数据配置TSDB存储策略
+- 使用EnOS Java SDK for MQTT开发程序以将PC连接到EnOS
+- 运行程序以提取PC数据并将数据上传到EnOS Cloud
+- 监视PC的CPU负载
+- 从EnOS Cloud发送命令以控制数据摄取间隔
+- 开发用于计算PC内存使用率的流数据处理作业
 
-## Prerequisites
 
-- You have signed up to EnOS for an individual account or an enterprise account to access the EnOS Console.
-- Your account must have been assigned full access to the model service, device connectivity & management service, and data asset management service.
+### [开始 >](registering_device)
 
-## Units
+## 前提条件
 
-This tutorial includes the following units:
+- 您已经在EnOS注册了个人帐户或企业帐户，以访问EnOS控制台。
+- 确保您的帐户拥有对模型服务、设备连接和管理服务以及数据资产管理服务的完全访问权限。
 
-> [Unit 1. Registering the PC on EnOS Console](registering_device)
+## 教程单元
+
+本教程包括以下单元：
+
+> [Unit 1. 在EnOS控制台上注册个人电脑](registering_device)
 >
-> 20 minutes
+> 20 分钟
 
-> [Unit 2. Configuring Storage Policy for the Device Data](configuring_storage_policy)
+> [Unit 2. 为设备数据设置存储策略](configuring_storage_policy)
 >
-> 20 minutes
+> 20 分钟
 
-> [Unit 3. Connecting the PC into EnOS and Ingesting Data](connecting_device)
+> [Unit 3. 将个人电脑连接至EnOS并提取数据](connecting_device)
 >
-> 30 minutes
+> 30 分钟
 
-> [Unit 4. Monitoring CPU Load](monitoring_cpu_load)
+> [Unit 4. 监测CPU负载](monitoring_cpu_load)
 >
-> 10 minutes
+> 10 分钟
 
-> [Unit 5. Controlling Data Upload Interval](controlling_upload_interval)
+> [Unit 5. 控制数据上传间隔](controlling_upload_interval)
 >
-> 10 minutes
+> 10 分钟
 
-> [Unit 6. Calculating Memory Usage Percentage](calculating_memory_usage)
+> [Unit 6. 计算内存使用百分比](calculating_memory_usage)
 >
-> 20 minutes
+> 20 分钟

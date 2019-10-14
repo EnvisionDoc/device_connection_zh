@@ -35,7 +35,7 @@
 1. 创建模型参考：[创建模型](../../howto/model/creating_model)。
 2. 创建产品参考：[创建产品](../../howto/device/manage/creating_product)。
 3. 创建设备参考：[创建设备](../../howto/device/manage/creating_device)。
-4. 创建应用参考：[管理应用](/docs/app-development/zh_CN/latest/managing_apps.html)。创建应用以后，平台为应用分配`accessKey`和`secretKey`，凭借`accessKey`和`secretKey`可以调用EnOS API接口。
+4. 创建应用参考：[管理应用](/docs/app-development/zh_CN/2.0.9/managing_apps.html)。创建应用以后，平台为应用分配`accessKey`和`secretKey`，凭借`accessKey`和`secretKey`可以调用EnOS API接口。
 
 ### 第二部分：数据转发App
 
@@ -45,14 +45,15 @@
 
    .. note:: 在第三方云上整理设备主数据id，可以将设备主数据id作为EnOS Cloud的deviceKey，并且每个设备必须关联其在EnOS Cloud上对应的product。
 
-3. 测点数据上报主要涉及两个接口，获取设备信息：主要基于deviceKey获取assetId，对应接口getDeviceByDeviceKey。
+3. 测点数据上报主要涉及两个接口，获取设备信息：主要基于deviceKey获取assetId，对应API`getDeviceByDeviceKey`。
 
-4. 发送测点数据：对应接口uploadDeviceMeasurepoints。
+4. 发送测点数据：对应API`uploadDeviceMeasurepoints`。
 
-5. 创建设备：对应接口registerDevices。
+5. 创建设备：对应API`registerDevices`。
 
-接口调用参考：[EnOS REST API 快速入门](/docs/app-development/zh_CN/latest/gettingstarted_api.html)
-assetId可以基于getDeviceByDeviceKey接口动态查询获得，整体映射表如下表所示：
+有关API的调用，参见 **控制台 > EnOS API** 。
+
+`assetId`可以使用`getDeviceByDeviceKey`API动态查询获得，整体映射表如下表所示：
 
 .. list-table::
    :widths: auto

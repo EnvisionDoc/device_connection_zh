@@ -1,18 +1,18 @@
 # 添加子设备拓扑关系
 
-Edge类型的设备， 可以通过该Topic上行请求添加它和子设备之间的拓扑关系。
+网关类型的设备，可以通过该Topic上行请求添加它和子设备之间的拓扑关系。
 
 上行
 - 请求TOPIC: `/sys/{productKey}/{deviceKey}/thing/topo/add`
 
 - 响应TOPIC: `/sys/{productKey}/{deviceKey}/thing/topo/add_reply`
 
-.. note:: TOPIC中的 productKey和 deviceKey为网关的三元组。
+.. note:: TOPIC中的`productKey`和`deviceKey`为网关设备的product key和device key。
 
 
 ## 请求数据格式
 
-```
+```json
 {
  "id": "123",
  "version": "1.0",
@@ -32,7 +32,7 @@ Edge类型的设备， 可以通过该Topic上行请求添加它和子设备之�
 
 ## 响应数据格式
 
-```
+```json
 {
  "id": "123",
  "code": 200,
@@ -73,7 +73,7 @@ Edge类型的设备， 可以通过该Topic上行请求添加它和子设备之�
    * - sign
      - String
      - 必需
-     - 签名
+     - 签名，生成方法见下文
    * - signmethod
      - String
      - 必需
@@ -92,12 +92,16 @@ Edge类型的设备， 可以通过该Topic上行请求添加它和子设备之�
      - 结果返回码，200代表请求成功执行
 
 
+生成`sign`需要使用`params`结构体中，除去`sign`和`signmethod`之外其他的键值对。其步骤如下：
 
-所有发往EnOS Cloud 的参数都会被加密，除了sign和signmethod之外。EnOS Cloud会将参数按照字母顺序排序，然后将参数和值依次拼接（无拼接符号）。对加签内容，需使用signMethod指定的加签算法进行加签。
+1. 将除了`sign`和`signmethod`之外其他的键值对，按照键的首字母顺序，以“键名+值”“键名+值”“键名+值”的方式拼接成一个字符串（无需“+”号或者任何其他表示拼接的符号）
 
-例如，在如下request请求中，对params中的参数按照字母顺序依次拼接后进行加签。
+  例如，在上述请求中，`params`中被抽取的字段应拼接成如下字符串：
+  `clientIdxxxxxxdeviceKeydeviceKey1234productKey1234556554timestamp1524448722000`
 
-sign=uppercase(hmacsha1( clientId123deviceKeytestproductKey123timestamp1524448722000{deviceSecret}))
+2. 将该字符串与子设备的device secret拼接，再使用`signmethod`中规定的方法进行签名运算，并将所有英文字符转换为大写字母。假定子设备的device secret为xyz123,则其运算表达式如下：
+
+  sign=uppercase(hmacsha1(clientId123deviceKeytestproductKey123timestamp1524448722000xyz123))
 
 ## 结果返回码
 
